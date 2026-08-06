@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5D0FE"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14141E"/>
+      <stop offset="100%" stop-color="#08080C"/>
+    </linearGradient>
+  </defs>
+  <!-- Base tile -->
+  <rect x="1" y="1" width="30" height="30" rx="8" fill="url(#bg-grad)" stroke="url(#logo-grad)" stroke-width="1.5"/>
+  <!-- Terminal Prompt Symbol -->
+  <path d="M9 11L14 16L9 21" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="16" y1="21" x2="23" y2="21" stroke="#F5D0FE" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
