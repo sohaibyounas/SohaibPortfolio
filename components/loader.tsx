@@ -8,11 +8,7 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
   const [done, setDone] = React.useState(false);
 
   React.useEffect(() => {
-    // Skip loader on repeat visits within same session
-    if (sessionStorage.getItem("loader_shown")) {
-      onComplete();
-      return;
-    }
+
 
     let current = 0;
     const target = 100;
@@ -26,7 +22,6 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
         clearInterval(timer);
         setTimeout(() => {
           setDone(true);
-          sessionStorage.setItem("loader_shown", "true");
           setTimeout(onComplete, 700);
         }, 200);
       }
