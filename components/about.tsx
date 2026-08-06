@@ -4,7 +4,7 @@ import * as React from "react";
 import { SectionReveal } from "@/components/section-reveal";
 
 const STATS = [
-  { value: "3+", label: "Years Experience" },
+  { value: "2+", label: "Years Experience" },
   { value: "React / Next.js", label: "Primary Stack" },
   { value: "Production", label: "Applications" },
   { value: "API", label: "Integration" },

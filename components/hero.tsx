@@ -303,7 +303,8 @@ export function Hero() {
 
               <a
                 href="/resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Download size={14} />
@@ -319,8 +320,8 @@ export function Hero() {
               className="mt-10 flex items-center gap-6 border-t border-border pt-8"
             >
               {[
-                { value: "3+", label: "Years" },
-                { value: "20+", label: "Projects" },
+                { value: "2+", label: "Years" },
+                { value: "10+", label: "Projects" },
                 { value: "React", label: "Primary Stack" },
               ].map((stat) => (
                 <div key={stat.label}>

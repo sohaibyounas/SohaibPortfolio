@@ -19,7 +19,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: "Email",
-    href: "mailto:sohaib@dev.pk",
+    href: "mailto:sohaibyounas24@gmail.com",
     icon: Mail,
     external: false,
   },
@@ -66,14 +66,18 @@ export function Footer() {
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
                   aria-label={link.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground"
+                  className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground"
                 >
                   <link.icon size={15} />
+                  <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#84cc16] px-3 py-1 text-xs font-semibold text-black opacity-0 transition-all duration-300 group-hover:-top-11 group-hover:opacity-100">
+                    {link.label}
+                  </span>
                 </a>
               ))}
               <a
                 href="/resume.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-9 items-center gap-2 rounded-lg border border-border px-3 font-mono text-xs text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground"
               >
                 <Download size={12} /> Resume
@@ -119,21 +123,9 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
-          <p className="font-mono text-xs text-muted-foreground">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-8">
+          <p className="font-mono text-xs text-muted-foreground hover:text-white">
             © 2026 Sohaib Younas. All rights reserved.
-          </p>
-          <p className="font-mono text-xs text-muted-foreground">
-            Built with{" "}
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-accent transition-colors"
-            >
-              Next.js
-            </a>{" "}
-            ↗
           </p>
         </div>
       </div>

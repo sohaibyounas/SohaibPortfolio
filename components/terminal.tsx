@@ -4,24 +4,24 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionReveal } from "@/components/section-reveal";
 
-type TabId = "whoami" | "skills" | "projects" | "contact";
+type TabId = "who am i" | "skills" | "projects" | "contact";
 
 const TABS: { id: TabId; label: string }[] = [
-  { id: "whoami", label: "whoami" },
+  { id: "who am i", label: "who am i" },
   { id: "skills", label: "skills" },
   { id: "projects", label: "projects" },
   { id: "contact", label: "contact" },
 ];
 
 const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success" | "info" | "muted" | "accent" }[] }> = {
-  whoami: {
+  "who am i": {
     lines: [
-      { text: "$ whoami", type: "cmd" },
+      { text: "$ who am i", type: "cmd" },
       { text: "", type: "muted" },
       { text: "sohaib younas", type: "accent" },
       { text: "role       → Frontend Developer", type: "info" },
       { text: "location   → Pakistan", type: "info" },
-      { text: "experience → 3+ years", type: "info" },
+      { text: "experience → 2+ years", type: "info" },
       { text: "stack      → React · Next.js · TypeScript", type: "info" },
       { text: "status     → Available for opportunities", type: "success" },
       { text: "", type: "muted" },
@@ -123,8 +123,8 @@ function TypewriterLines({ lines }: { lines: { text: string; type: string }[] })
 }
 
 export function Terminal() {
-  const [activeTab, setActiveTab] = React.useState<TabId>("whoami");
-  const [prevTab, setPrevTab] = React.useState<TabId>("whoami");
+  const [activeTab, setActiveTab] = React.useState<TabId>("who am i");
+  const [prevTab, setPrevTab] = React.useState<TabId>("who am i");
 
   const switchTab = (id: TabId) => {
     if (id === activeTab) return;
@@ -170,11 +170,10 @@ export function Terminal() {
                 <button
                   key={tab.id}
                   onClick={() => switchTab(tab.id)}
-                  className={`relative shrink-0 px-4 py-2.5 font-mono text-xs transition-colors ${
-                    activeTab === tab.id
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`relative shrink-0 px-4 py-2.5 font-mono text-xs transition-colors ${activeTab === tab.id
+                    ? "text-accent"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {activeTab === tab.id && (
                     <motion.div
