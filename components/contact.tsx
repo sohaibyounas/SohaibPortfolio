@@ -45,7 +45,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="contact-heading"
     >
       <div className="container mx-auto">
@@ -64,7 +64,7 @@ export function Contact() {
                 <br className="hidden sm:inline" />
                 <span className="text-muted-foreground">worth building?</span>
               </h2>
-              <p className="mb-8 sm:mb-10 max-w-sm text-sm sm:text-base text-muted-foreground">
+              <p className="mb-8 sm:mb-10 max-w-full sm:max-w-sm text-sm sm:text-base text-muted-foreground">
                 Let&apos;s create something fast, useful and memorable. I&apos;m
                 currently available for full-time roles and freelance projects.
               </p>
@@ -94,7 +94,7 @@ export function Contact() {
                 </a>
 
                 <a
-                  href="mailto:sohaib@dev.pk"
+                  href="mailto:sohaibyounas24@gmail.com"
                   className="group flex items-center gap-3 rounded-xl border border-border p-3.5 sm:p-4 transition-all hover:border-foreground/20 hover:bg-muted"
                 >
                   <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
@@ -102,7 +102,7 @@ export function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">Email Me</p>
-                    <p className="font-mono text-xs text-muted-foreground truncate">sohaib@dev.pk</p>
+                    <p className="font-mono text-xs text-muted-foreground truncate">sohaibyounas24@gmail.com</p>
                   </div>
                   <ArrowUpRight
                     size={14}
@@ -115,7 +115,7 @@ export function Contact() {
 
           {/* Right: Form */}
           <SectionReveal delay={0.2} direction="left">
-            <div className="rounded-2xl border border-border bg-card p-5 sm:p-8">
+            <div className="rounded-2xl border border-border bg-card p-4 xs:p-6 sm:p-8">
               <h3 className="mb-6 font-display text-lg font-semibold text-foreground">
                 Start a Conversation
               </h3>

@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Github, Linkedin, Mail, ArrowUpRight, Download } from "lucide-react";
-import { SectionReveal } from "@/components/section-reveal";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 const SOCIAL_LINKS = [
   {

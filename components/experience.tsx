@@ -8,9 +8,9 @@ import { SectionReveal } from "@/components/section-reveal";
 const EXPERIENCES = [
   {
     id: "drudots",
-    role: "Junior React Developer",
+    role: "React Developer",
     company: "Drudots Technologies",
-    duration: "2022 — Present",
+    duration: "2025 — Present",
     type: "Full-time",
     description:
       "Building and maintaining production-ready React applications, collaborating with design and backend teams to deliver scalable frontend solutions.",
@@ -21,14 +21,14 @@ const EXPERIENCES = [
       "Optimized application performance and load times",
       "Collaborated in agile sprints with cross-functional teams",
     ],
-    tech: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "REST APIs", "Git"],
+    tech: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "REST APIs", "Git", "Redux Toolkit"],
     current: true,
   },
   {
     id: "freelance",
     role: "Frontend Developer",
     company: "Freelance",
-    duration: "2021 — 2022",
+    duration: "2022 — 2024",
     type: "Contract",
     description:
       "Delivered bespoke web applications and landing pages for clients across various industries, focusing on performance and user experience.",
@@ -49,7 +49,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="experience-heading"
     >
       <div className="container mx-auto">

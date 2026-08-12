@@ -3,11 +3,11 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
 
 const PROJECTS = [
+  // mixxer
   {
     slug: "mixxer",
     index: "01",
@@ -17,10 +17,12 @@ const PROJECTS = [
       "A production-focused web application with modern responsive interfaces and API-driven functionality. Built with emphasis on component architecture and user experience.",
     tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI"],
     image: "/mixxer.png",
-    live: "#",
-    github: "#",
+    live: "https://mixxerapp.vercel.app/",
+    github: "https://github.com/sohaibyounas/MixxerApp",
     color: "#22c55e",
   },
+
+  // dewis
   {
     slug: "dewis",
     index: "02",
@@ -30,10 +32,12 @@ const PROJECTS = [
       "A data-driven web platform built with React.js and integrated REST APIs. Focused on delivering a smooth, performant user experience across all device sizes.",
     tech: ["React.js", "JavaScript", "REST APIs", "Component Architecture"],
     image: "/dewis.png",
-    live: "#",
-    github: "#",
+    live: "https://dewis.netlify.app/",
+    github: "https://github.com/sohaibyounas/DewisApp",
     color: "#3b82f6",
   },
+
+  // amexio
   {
     slug: "amexio",
     index: "03",
@@ -43,10 +47,70 @@ const PROJECTS = [
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
     image: "/amexio.png",
-    live: "#",
-    github: "#",
+    live: "https://amexiofuse.netlify.app/",
+    github: "https://github.com/sohaibyounas/Amexio-fuse",
     color: "#a78bfa",
   },
+
+  // next merce
+  {
+    slug: "next-merce",
+    index: "04",
+    name: "Next Merce",
+    category: "Web Application",
+    description:
+      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
+    tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
+    image: "/next-merce.png",
+    live: "https://nextmercee.netlify.app/",
+    github: "https://github.com/sohaibyounas/NextMerce",
+    color: "#a78bfa",
+  },
+
+  // blossend
+  {
+    slug: "blossend",
+    index: "05",
+    name: "Blossend",
+    category: "Web Application",
+    description:
+      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
+    tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
+    image: "/blossend.png",
+    live: "https://blossend.netlify.app/",
+    github: "https://github.com/sohaibyounas/Blossend",
+    color: "#a78bfa",
+  },
+
+  // open my pro E-Commerece
+  {
+    slug: "openpro",
+    index: "06",
+    name: "Open My Pro",
+    category: "E-Commerece",
+    description:
+      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
+    tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
+    image: "/openpro.png",
+    live: "https://open-my-pro-alpha.vercel.app/",
+    github: "https://github.com/sohaibyounas/OpenMyPro",
+    color: "#a78bfa",
+  },
+
+  // taskflow pro
+  {
+    slug: "taskflowpro",
+    index: "07",
+    name: "Taskflow Pro",
+    category: "Web Application",
+    description:
+      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
+    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Supabase"],
+    image: "/taskflowpro.png",
+    live: "https://taskflow-sync.netlify.app/login",
+    github: "https://github.com/sohaibyounas/TaskFlow-Pro",
+    color: "#a78bfa",
+  }
 ];
 
 function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: number }) {
@@ -59,10 +123,10 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
         data-cursor="view"
       >
         {/* Image */}
-        <div
-          className={`relative overflow-hidden rounded-xl border border-border ${
-            isEven ? "lg:order-first" : "lg:order-last"
-          }`}
+        <Link
+          href={`/projects/${project.slug}`}
+          className={`relative block overflow-hidden rounded-xl border border-border ${isEven ? "lg:order-first" : "lg:order-last"
+            }`}
         >
           <div className="relative aspect-[16/10] w-full">
             <Image
@@ -77,14 +141,13 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
 
           {/* Hover overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <Link
-              href={`/projects/${project.slug}`}
+            <span
               className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20"
             >
               View Case Study <ArrowUpRight size={14} />
-            </Link>
+            </span>
           </div>
-        </div>
+        </Link>
 
         {/* Content */}
         <div className={isEven ? "lg:order-last" : "lg:order-first"}>
@@ -98,8 +161,10 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             </span>
           </div>
 
-          <h3 className="font-display text-2xl sm:text-display-md font-bold text-foreground mb-3 sm:mb-4 group-hover:text-accent transition-colors">
-            {project.name}
+          <h3 className="font-display text-2xl sm:text-display-md font-bold text-foreground mb-3 sm:mb-4 transition-colors">
+            <Link href={`/projects/${project.slug}`} className="hover:text-accent">
+              {project.name}
+            </Link>
           </h3>
 
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base mb-4 sm:mb-6">
@@ -155,7 +220,7 @@ export function SelectedWork() {
   return (
     <section
       id="work"
-      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="work-heading"
     >
       <div className="container mx-auto">

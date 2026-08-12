@@ -66,7 +66,7 @@ export function Philosophy() {
   return (
     <section
       id="philosophy"
-      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="philosophy-heading"
     >
       <div className="container mx-auto">

@@ -305,7 +305,7 @@ export function Hero() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex justify-center items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground py-2 xs:py-0"
+                className="flex justify-center items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-foreground/30 hover:bg-muted w-full xs:w-auto"
               >
                 <Download size={14} />
                 Resume
@@ -383,7 +383,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="relative z-10 flex justify-center pb-10"
+        className="relative z-10 flex justify-center pt-5"
       >
         <motion.button
           onClick={() => scrollTo("marquee")}

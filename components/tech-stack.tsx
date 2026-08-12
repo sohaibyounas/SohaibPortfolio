@@ -81,7 +81,7 @@ export function TechStack() {
   return (
     <section
       id="stack"
-      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="stack-heading"
     >
       <div className="container mx-auto">

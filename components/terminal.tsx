@@ -134,7 +134,8 @@ export function Terminal() {
 
   return (
     <section
-      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
+      id="terminal"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32 scroll-mt-20 sm:scroll-mt-24"
       aria-label="Interactive terminal"
     >
       <div className="container mx-auto">
@@ -165,7 +166,7 @@ export function Terminal() {
             </div>
 
             {/* Tab buttons */}
-            <div className="flex overflow-x-auto border-b border-border no-scrollbar">
+            <div className="flex overflow-x-auto border-b border-border custom-scrollbar pb-0.5">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
@@ -188,7 +189,7 @@ export function Terminal() {
             </div>
 
             {/* Terminal output */}
-            <div className="min-h-[250px] sm:min-h-[280px] p-4 sm:p-6 overflow-x-auto">
+            <div className="min-h-[250px] sm:min-h-[280px] p-3.5 sm:p-6 overflow-x-auto custom-scrollbar">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
