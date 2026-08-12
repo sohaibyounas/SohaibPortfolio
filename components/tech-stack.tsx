@@ -68,7 +68,7 @@ function TechBadge({ name, desc }: { name: string; desc: string }) {
         initial={false}
         animate={{ opacity: hovered ? 1 : 0, y: hovered ? -4 : 0 }}
         transition={{ duration: 0.15 }}
-        className="pointer-events-none absolute -top-10 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-md border border-border bg-card px-2.5 py-1.5 text-xs text-muted-foreground shadow-lg"
+        className="pointer-events-none absolute -top-10 left-1/2 z-20 -translate-x-1/2 max-w-[220px] text-center rounded-md border border-border bg-card px-2.5 py-1.5 text-xs text-muted-foreground shadow-lg hidden sm:block"
       >
         {desc}
         <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border-b border-r border-border bg-card" />
@@ -81,7 +81,7 @@ export function TechStack() {
   return (
     <section
       id="stack"
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-labelledby="stack-heading"
     >
       <div className="container mx-auto">
@@ -91,15 +91,15 @@ export function TechStack() {
           </p>
           <h2
             id="stack-heading"
-            className="mb-16 font-display text-display-lg font-bold text-foreground"
+            className="mb-10 sm:mb-16 font-display text-display-lg font-bold text-foreground"
           >
-            Tools I use to
-            <br />
+            Tools I use to{" "}
+            <br className="hidden sm:inline" />
             <span className="text-muted-foreground">build products.</span>
           </h2>
         </SectionReveal>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {CATEGORIES.map((cat, i) => (
             <SectionReveal key={cat.title} delay={i * 0.08}>
               <div>

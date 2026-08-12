@@ -55,7 +55,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
   return (
     <SectionReveal delay={index * 0.1}>
       <article
-        className="group grid gap-8 border-b border-border py-16 last:border-b-0 lg:grid-cols-2 lg:items-center lg:gap-16"
+        className="group grid gap-6 sm:gap-8 border-b border-border py-10 sm:py-16 last:border-b-0 lg:grid-cols-2 lg:items-center lg:gap-16"
         data-cursor="view"
       >
         {/* Image */}
@@ -88,7 +88,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
 
         {/* Content */}
         <div className={isEven ? "lg:order-last" : "lg:order-first"}>
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-3 mb-3 sm:mb-5">
             <span className="font-mono text-xs text-muted-foreground">
               {project.index}
             </span>
@@ -98,26 +98,26 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             </span>
           </div>
 
-          <h3 className="font-display text-display-md font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
+          <h3 className="font-display text-2xl sm:text-display-md font-bold text-foreground mb-3 sm:mb-4 group-hover:text-accent transition-colors">
             {project.name}
           </h3>
 
-          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base mb-6">
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base mb-4 sm:mb-6">
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-xs text-muted-foreground"
+                className="rounded-full border border-border bg-muted px-2.5 py-0.5 sm:px-3 sm:py-1 font-mono text-[11px] sm:text-xs text-muted-foreground"
               >
                 {t}
               </span>
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <Link
               href={`/projects/${project.slug}`}
               className="group/link flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-accent"
@@ -155,7 +155,7 @@ export function SelectedWork() {
   return (
     <section
       id="work"
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-labelledby="work-heading"
     >
       <div className="container mx-auto">
@@ -167,11 +167,11 @@ export function SelectedWork() {
             id="work-heading"
             className="mb-2 font-display text-display-lg font-bold text-foreground"
           >
-            Projects I&apos;ve
-            <br />
+            Projects I&apos;ve{" "}
+            <br className="hidden sm:inline" />
             helped bring to life.
           </h2>
-          <p className="mb-16 max-w-lg text-base text-muted-foreground">
+          <p className="mb-10 sm:mb-16 max-w-lg text-sm sm:text-base text-muted-foreground">
             Products, interfaces and experiences built with a focus on performance
             and engineering quality.
           </p>

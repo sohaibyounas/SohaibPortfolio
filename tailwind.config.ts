@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: { DEFAULT: "1.5rem", lg: "2rem", xl: "3rem" },
+      padding: { DEFAULT: "1rem", sm: "1.5rem", lg: "2rem", xl: "3rem" },
       screens: { "2xl": "1400px" },
     },
     extend: {
@@ -40,10 +40,10 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       fontSize: {
-        "display-2xl": ["clamp(3rem, 8vw, 6.5rem)", { lineHeight: "1.02", letterSpacing: "-0.04em" }],
-        "display-xl": ["clamp(2.5rem, 6vw, 5rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
-        "display-lg": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
-        "display-md": ["clamp(1.5rem, 3vw, 2.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-2xl": ["clamp(2.25rem, 7vw, 6.5rem)", { lineHeight: "1.05", letterSpacing: "-0.04em" }],
+        "display-xl": ["clamp(2rem, 5vw, 5rem)", { lineHeight: "1.06", letterSpacing: "-0.03em" }],
+        "display-lg": ["clamp(1.75rem, 4vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.025em" }],
+        "display-md": ["clamp(1.35rem, 3vw, 2.5rem)", { lineHeight: "1.12", letterSpacing: "-0.02em" }],
       },
       keyframes: {
         "fade-up": {

@@ -47,15 +47,15 @@ function PrincipleCard({
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="group border-l-2 border-border pl-8 py-2 transition-all hover:border-accent"
+      className="group border-l-2 border-border pl-5 sm:pl-8 py-2 transition-all hover:border-accent"
     >
-      <span className="block font-mono text-5xl font-bold text-border transition-colors group-hover:text-accent/40 mb-4 leading-none">
+      <span className="block font-mono text-4xl sm:text-5xl font-bold text-border transition-colors group-hover:text-accent/40 mb-3 sm:mb-4 leading-none">
         {principle.number}
       </span>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+      <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3">
         {principle.title}
       </h3>
-      <p className="text-sm leading-relaxed text-muted-foreground">
+      <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
         {principle.description}
       </p>
     </motion.div>
@@ -66,7 +66,7 @@ export function Philosophy() {
   return (
     <section
       id="philosophy"
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-labelledby="philosophy-heading"
     >
       <div className="container mx-auto">
@@ -76,15 +76,15 @@ export function Philosophy() {
           </p>
           <h2
             id="philosophy-heading"
-            className="mb-16 max-w-2xl font-display text-display-lg font-bold text-foreground"
+            className="mb-10 sm:mb-16 max-w-2xl font-display text-display-lg font-bold text-foreground"
           >
-            Good frontend isn&apos;t just
-            <br />
+            Good frontend isn&apos;t just{" "}
+            <br className="hidden sm:inline" />
             <span className="text-muted-foreground">about looking good.</span>
           </h2>
         </SectionReveal>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {PRINCIPLES.map((principle, i) => (
             <PrincipleCard key={principle.number} principle={principle} index={i} />
           ))}

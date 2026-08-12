@@ -49,7 +49,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-labelledby="experience-heading"
     >
       <div className="container mx-auto">
@@ -59,16 +59,16 @@ export function Experience() {
           </p>
           <h2
             id="experience-heading"
-            className="mb-16 font-display text-display-lg font-bold text-foreground"
+            className="mb-8 sm:mb-16 font-display text-display-lg font-bold text-foreground"
           >
             Where I&apos;ve worked.
           </h2>
         </SectionReveal>
 
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid gap-6 sm:gap-12 lg:grid-cols-12">
           {/* Timeline column */}
-          <div className="relative lg:col-span-1">
-            <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-border lg:left-1/2" />
+          <div className="relative hidden lg:col-span-1 lg:block">
+            <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-border" />
           </div>
 
           {/* Experience list */}
@@ -77,7 +77,8 @@ export function Experience() {
               <SectionReveal key={exp.id} delay={i * 0.1}>
                 <div className="relative">
                   {/* Timeline dot */}
-                  <div className="absolute -left-[2.75rem] top-6 hidden h-3 w-3 rounded-full border-2 border-background ring-2 ring-border lg:block"
+                  <div
+                    className="absolute -left-[2.75rem] top-6 hidden h-3 w-3 rounded-full border-2 border-background ring-2 ring-border lg:block"
                     style={{ backgroundColor: exp.current ? "hsl(var(--accent))" : "hsl(var(--border))" }}
                   />
 
@@ -85,7 +86,7 @@ export function Experience() {
                     onClick={() =>
                       setActiveId(activeId === exp.id ? null : exp.id)
                     }
-                    className="group w-full rounded-xl border border-border bg-card p-6 text-left transition-all hover:border-foreground/20"
+                    className="group w-full rounded-xl border border-border bg-card p-4 sm:p-6 text-left transition-all hover:border-foreground/20"
                     aria-expanded={activeId === exp.id}
                   >
                     <div className="flex items-start justify-between gap-4">

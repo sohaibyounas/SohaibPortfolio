@@ -210,7 +210,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen flex-col overflow-hidden bg-background pt-16"
+      className="relative flex min-h-[100dvh] flex-col justify-between overflow-hidden bg-background pt-24 pb-8 sm:pt-28 lg:pt-20 lg:pb-12"
       onMouseMove={handleMouseMove}
       aria-label="Hero section"
     >
@@ -220,8 +220,8 @@ export function Hero() {
         style={{
           left: glowX,
           top: glowY,
-          width: 400,
-          height: 400,
+          width: 350,
+          height: 350,
           background: "radial-gradient(circle, hsl(142 70% 45% / 0.4), transparent 70%)",
         }}
       />
@@ -230,10 +230,10 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40" />
 
       {/* Ambient glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[140px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[450px] w-[450px] sm:h-[600px] sm:w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[140px]" />
 
       <div className="container relative mx-auto flex flex-1 items-center">
-        <div className="grid w-full gap-16 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div className="grid w-full gap-12 lg:grid-cols-2 lg:items-center lg:gap-12">
           {/* ── Left Column ── */}
           <div className="flex flex-col">
             {/* Status badge */}
@@ -241,27 +241,27 @@ export function Hero() {
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-8 inline-flex w-fit items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-1.5"
+              className="mb-6 sm:mb-8 inline-flex w-fit items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 sm:px-3.5 sm:py-1.5"
             >
               <motion.span
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="h-1.5 w-1.5 rounded-full bg-accent"
               />
-              <span className="font-mono text-xs text-accent">
+              <span className="font-mono text-[11px] sm:text-xs text-accent">
                 Available for opportunities
               </span>
             </motion.div>
 
             {/* Main heading */}
-            <h1 className="font-display text-display-2xl font-bold text-foreground">
+            <h1 className="font-display text-3xl font-bold tracking-tight text-foreground xs:text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] sm:leading-[1.04]">
               <StaggerText text="Frontend experiences" />
-              <br />
+              <br className="hidden sm:inline" />{" "}
               <StaggerText
                 text="built for the"
                 className="text-muted-foreground"
               />
-              <br />
+              <br className="hidden sm:inline" />{" "}
               <StaggerText text="real world." />
             </h1>
 
@@ -270,7 +270,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.9 }}
-              className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg"
+              className="mt-4 sm:mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg"
             >
               I build fast, scalable and polished web applications with React,
               Next.js and modern frontend technologies.
@@ -281,11 +281,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.1 }}
-              className="mt-10 flex flex-wrap items-center gap-4"
+              className="mt-8 sm:mt-10 flex flex-col xs:flex-row xs:flex-wrap items-stretch xs:items-center gap-3 sm:gap-4"
             >
               <button
                 onClick={() => scrollTo("work")}
-                className="group flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_hsl(142_70%_45%/0.4)]"
+                className="group flex justify-center items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_hsl(142_70%_45%/0.4)] w-full xs:w-auto"
               >
                 View My Work
                 <ArrowUpRight
@@ -296,7 +296,7 @@ export function Hero() {
 
               <button
                 onClick={() => scrollTo("contact")}
-                className="flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-foreground/30 hover:bg-muted"
+                className="flex justify-center items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-foreground/30 hover:bg-muted w-full xs:w-auto"
               >
                 Let&apos;s Connect
               </button>
@@ -305,7 +305,7 @@ export function Hero() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="flex justify-center items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground py-2 xs:py-0"
               >
                 <Download size={14} />
                 Resume
@@ -317,18 +317,18 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.4 }}
-              className="mt-10 flex items-center gap-6 border-t border-border pt-8"
+              className="mt-8 sm:mt-10 grid grid-cols-3 gap-2 sm:gap-6 border-t border-border pt-6 sm:pt-8"
             >
               {[
                 { value: "2+", label: "Years" },
                 { value: "10+", label: "Projects" },
                 { value: "React", label: "Primary Stack" },
               ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="font-display text-xl font-bold text-foreground">
+                <div key={stat.label} className="text-left">
+                  <p className="font-display text-lg sm:text-xl font-bold text-foreground">
                     {stat.value}
                   </p>
-                  <p className="font-mono text-xs text-muted-foreground">
+                  <p className="font-mono text-[10px] sm:text-xs text-muted-foreground truncate">
                     {stat.label}
                   </p>
                 </div>

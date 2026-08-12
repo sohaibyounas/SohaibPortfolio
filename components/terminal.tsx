@@ -110,13 +110,13 @@ function TypewriterLines({ lines }: { lines: { text: string; type: string }[] })
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.15 }}
-          className={`font-mono text-xs leading-6 sm:text-sm ${TYPE_COLORS[line.type] ?? "text-foreground"}`}
+          className={`font-mono text-[11px] leading-5 sm:text-xs sm:leading-6 md:text-sm whitespace-pre-wrap break-words ${TYPE_COLORS[line.type] ?? "text-foreground"}`}
         >
           {line.text || "\u00A0"}
         </motion.div>
       ))}
       {visibleCount < lines.length && (
-        <span className="inline-block h-4 w-2 bg-accent terminal-cursor" />
+        <span className="inline-block h-3.5 w-1.5 sm:h-4 sm:w-2 bg-accent terminal-cursor" />
       )}
     </div>
   );
@@ -134,7 +134,7 @@ export function Terminal() {
 
   return (
     <section
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-label="Interactive terminal"
     >
       <div className="container mx-auto">
@@ -142,9 +142,9 @@ export function Terminal() {
           <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
             Terminal
           </p>
-          <h2 className="mb-12 font-display text-display-md font-bold text-foreground">
-            Get to know me
-            <br />
+          <h2 className="mb-8 sm:mb-12 font-display text-display-md font-bold text-foreground">
+            Get to know me{" "}
+            <br className="hidden sm:inline" />
             <span className="text-muted-foreground">in developer mode.</span>
           </h2>
         </SectionReveal>
@@ -152,25 +152,25 @@ export function Terminal() {
         <SectionReveal delay={0.15}>
           <div className="overflow-hidden rounded-xl border border-border bg-[#0d0d0d]">
             {/* Terminal titlebar */}
-            <div className="flex items-center justify-between border-b border-border px-4 py-3">
+            <div className="flex items-center justify-between border-b border-border px-3.5 py-2.5 sm:px-4 sm:py-3">
               <div className="flex gap-1.5">
-                <div className="h-3 w-3 rounded-full bg-red-500/70" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
-                <div className="h-3 w-3 rounded-full bg-accent/70" />
+                <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-red-500/70" />
+                <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-yellow-500/70" />
+                <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-accent/70" />
               </div>
-              <span className="font-mono text-xs text-muted-foreground">
+              <span className="font-mono text-[11px] sm:text-xs text-muted-foreground">
                 sohaib@portfolio:~$
               </span>
-              <div className="w-16" />
+              <div className="w-8 sm:w-16" />
             </div>
 
             {/* Tab buttons */}
-            <div className="flex overflow-x-auto border-b border-border">
+            <div className="flex overflow-x-auto border-b border-border no-scrollbar">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => switchTab(tab.id)}
-                  className={`relative shrink-0 px-4 py-2.5 font-mono text-xs transition-colors ${activeTab === tab.id
+                  className={`relative shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 font-mono text-[11px] sm:text-xs transition-colors ${activeTab === tab.id
                     ? "text-accent"
                     : "text-muted-foreground hover:text-foreground"
                     }`}
@@ -188,7 +188,7 @@ export function Terminal() {
             </div>
 
             {/* Terminal output */}
-            <div className="min-h-[280px] p-5 sm:p-6">
+            <div className="min-h-[250px] sm:min-h-[280px] p-4 sm:p-6 overflow-x-auto">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}

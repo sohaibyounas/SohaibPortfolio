@@ -42,8 +42,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-background" aria-label="Site footer">
-      <div className="container mx-auto py-16">
-        <div className="grid gap-10 lg:grid-cols-3">
+      <div className="container mx-auto py-12 sm:py-16">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-3">
           {/* Brand */}
           <div>
             <button
@@ -58,7 +58,7 @@ export function Footer() {
             </p>
 
             {/* Social */}
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
               {SOCIAL_LINKS.map((link) => (
                 <a
                   key={link.label}
@@ -69,7 +69,7 @@ export function Footer() {
                   className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground"
                 >
                   <link.icon size={15} />
-                  <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#84cc16] px-3 py-1 text-xs font-semibold text-black opacity-0 transition-all duration-300 group-hover:-top-11 group-hover:opacity-100">
+                  <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#84cc16] px-3 py-1 text-xs font-semibold text-black opacity-0 transition-all duration-300 group-hover:-top-11 group-hover:opacity-100 hidden sm:block">
                     {link.label}
                   </span>
                 </a>
@@ -123,8 +123,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-8">
-          <p className="font-mono text-xs text-muted-foreground hover:text-white">
+        <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-6 sm:pt-8">
+          <p className="font-mono text-xs text-muted-foreground hover:text-white text-center">
             © 2026 Sohaib Younas. All rights reserved.
           </p>
         </div>

@@ -42,12 +42,12 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 export function Metrics() {
   return (
     <section
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-label="Key metrics"
     >
       <div className="container mx-auto">
         <SectionReveal>
-          <p className="mb-12 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mb-8 sm:mb-12 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
             By the numbers
           </p>
         </SectionReveal>
@@ -55,14 +55,14 @@ export function Metrics() {
         <div className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
           {METRICS.map((metric, i) => (
             <SectionReveal key={metric.label} delay={i * 0.1}>
-              <div className="group bg-background p-8 transition-colors hover:bg-muted lg:p-12">
-                <p className="font-display text-display-xl font-bold text-foreground">
+              <div className="group bg-background p-4 sm:p-8 lg:p-12 transition-colors hover:bg-muted">
+                <p className="font-display text-3xl sm:text-4xl lg:text-display-xl font-bold text-foreground">
                   <CountUp target={metric.value} suffix={metric.suffix} />
                 </p>
-                <p className="mt-2 font-display text-sm font-semibold text-foreground">
+                <p className="mt-1.5 sm:mt-2 font-display text-xs sm:text-sm font-semibold text-foreground">
                   {metric.label}
                 </p>
-                <p className="mt-1 font-mono text-xs text-muted-foreground">
+                <p className="mt-1 font-mono text-[10px] sm:text-xs text-muted-foreground">
                   {metric.description}
                 </p>
               </div>

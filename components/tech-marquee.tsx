@@ -33,8 +33,8 @@ export function TechMarquee() {
   const doubled = [...TECH_ITEMS, ...TECH_ITEMS];
 
   return (
-    <section id="marquee" className="border-y border-border bg-background py-16">
-      <div className="container mx-auto mb-10">
+    <section id="marquee" className="border-y border-border bg-background py-10 sm:py-16">
+      <div className="container mx-auto mb-6 sm:mb-10">
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           Focused on building products where performance, usability and
           engineering quality meet.
@@ -44,8 +44,8 @@ export function TechMarquee() {
       {/* Marquee */}
       <div className="relative overflow-hidden">
         {/* Fade masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 sm:w-20 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 sm:w-20 bg-gradient-to-l from-background to-transparent" />
 
         <div className="flex overflow-hidden">
           <div className="marquee-track flex gap-6 whitespace-nowrap">

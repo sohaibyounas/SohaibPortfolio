@@ -45,11 +45,11 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="border-b border-border bg-background py-24 lg:py-32"
+      className="border-b border-border bg-background py-16 sm:py-24 lg:py-32"
       aria-labelledby="contact-heading"
     >
       <div className="container mx-auto">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
+        <div className="grid gap-10 sm:gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Left: CTA */}
           <div>
             <SectionReveal>
@@ -58,55 +58,55 @@ export function Contact() {
               </p>
               <h2
                 id="contact-heading"
-                className="mb-6 font-display text-display-lg font-bold text-foreground"
+                className="mb-4 sm:mb-6 font-display text-display-lg font-bold text-foreground"
               >
-                Have a product
-                <br />
+                Have a product{" "}
+                <br className="hidden sm:inline" />
                 <span className="text-muted-foreground">worth building?</span>
               </h2>
-              <p className="mb-10 max-w-sm text-base text-muted-foreground">
+              <p className="mb-8 sm:mb-10 max-w-sm text-sm sm:text-base text-muted-foreground">
                 Let&apos;s create something fast, useful and memorable. I&apos;m
                 currently available for full-time roles and freelance projects.
               </p>
             </SectionReveal>
 
             <SectionReveal delay={0.15}>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3.5 sm:gap-4">
                 <a
                   href="https://linkedin.com/in/sohaib-younas"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 rounded-xl border border-border p-4 transition-all hover:border-foreground/20 hover:bg-muted"
+                  className="group flex items-center gap-3 rounded-xl border border-border p-3.5 sm:p-4 transition-all hover:border-foreground/20 hover:bg-muted"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
                     <Linkedin size={18} />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">LinkedIn</p>
-                    <p className="font-mono text-xs text-muted-foreground">
+                    <p className="font-mono text-xs text-muted-foreground truncate">
                       linkedin.com/in/sohaib-younas
                     </p>
                   </div>
                   <ArrowUpRight
                     size={14}
-                    className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="text-muted-foreground shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </a>
 
                 <a
                   href="mailto:sohaib@dev.pk"
-                  className="group flex items-center gap-3 rounded-xl border border-border p-4 transition-all hover:border-foreground/20 hover:bg-muted"
+                  className="group flex items-center gap-3 rounded-xl border border-border p-3.5 sm:p-4 transition-all hover:border-foreground/20 hover:bg-muted"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
                     <Mail size={18} />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">Email Me</p>
-                    <p className="font-mono text-xs text-muted-foreground">sohaib@dev.pk</p>
+                    <p className="font-mono text-xs text-muted-foreground truncate">sohaib@dev.pk</p>
                   </div>
                   <ArrowUpRight
                     size={14}
-                    className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="text-muted-foreground shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </a>
               </div>
@@ -115,7 +115,7 @@ export function Contact() {
 
           {/* Right: Form */}
           <SectionReveal delay={0.2} direction="left">
-            <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="rounded-2xl border border-border bg-card p-5 sm:p-8">
               <h3 className="mb-6 font-display text-lg font-semibold text-foreground">
                 Start a Conversation
               </h3>
