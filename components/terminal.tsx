@@ -50,16 +50,21 @@ const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success
     lines: [
       { text: "$ ls ./projects", type: "cmd" },
       { text: "", type: "muted" },
-      { text: "total 3 projects", type: "muted" },
+      { text: "total 8 projects", type: "muted" },
       { text: "", type: "muted" },
-      { text: "drwxr  mixxer/     → Web Application · React.js", type: "info" },
-      { text: "drwxr  dewis/      → Web Application · React.js + APIs", type: "info" },
-      { text: "drwxr  amexio/     → Web Application · React + Next.js", type: "info" },
+      { text: "drwxr  alreem/      → Web Application · React.js", type: "info" },
+      { text: "drwxr  mixxer/      → Web Application · React.js", type: "info" },
+      { text: "drwxr  dewis/       → Web Application · React.js + APIs", type: "info" },
+      { text: "drwxr  amexio/      → Web Application · React + Next.js", type: "info" },
+      { text: "drwxr  next-merce/  → Web Application · React + Next.js", type: "info" },
+      { text: "drwxr  blossend/    → Web Application · React + Next.js", type: "info" },
+      { text: "drwxr  openpro/     → E-Commerce      · React + Next.js", type: "info" },
+      { text: "drwxr  taskflowpro/ → Web Application · React + Next.js + Supabase", type: "info" },
       { text: "", type: "muted" },
       { text: "$ cat mixxer/README.md", type: "cmd" },
       { text: "Production web app · responsive UI · API integration", type: "muted" },
       { text: "", type: "muted" },
-      { text: "✓ 3 projects · all production-deployed", type: "success" },
+      { text: "✓ 8 projects · all production-deployed", type: "success" },
     ],
   },
   contact: {
@@ -68,7 +73,7 @@ const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success
       { text: "", type: "muted" },
       { text: "initiating connection...", type: "muted" },
       { text: "", type: "muted" },
-      { text: "email     → sohaib@dev.pk", type: "info" },
+      { text: "email     → sohaibyounas24@gmail.com", type: "info" },
       { text: "linkedin  → linkedin.com/in/sohaib-younas", type: "info" },
       { text: "github    → github.com/sohaib-younas", type: "info" },
       { text: "", type: "muted" },
@@ -159,8 +164,8 @@ export function Terminal() {
                 <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-yellow-500/70" />
                 <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-accent/70" />
               </div>
-              <span className="font-mono text-[11px] sm:text-xs text-muted-foreground">
-                sohaib@portfolio:~$
+              <span className="font-mono text-[11px] sm:text-xs text-accent">
+                sohaib@portfolio
               </span>
               <div className="w-8 sm:w-16" />
             </div>

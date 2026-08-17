@@ -1,14 +1,12 @@
 "use client";
 
-import * as React from "react";
-import { motion } from "framer-motion";
-
 const TECH_ITEMS = [
   "React.js",
   "Next.js",
   "JavaScript",
   "TypeScript",
   "Tailwind CSS",
+  "Material UI",
   "REST APIs",
   "Git",
   "Node.js",
@@ -21,7 +19,7 @@ const TECH_ITEMS = [
 function TechItem({ name }: { name: string }) {
   return (
     <div className="flex shrink-0 items-center gap-6">
-      <span className="font-display text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+      <span className="font-display text-sm font-medium text-foreground transition-colors hover:text-foreground">
         {name}
       </span>
       <span className="h-1 w-1 rounded-full bg-border" aria-hidden="true" />
@@ -35,7 +33,7 @@ export function TechMarquee() {
   return (
     <section id="marquee" className="border-y border-border bg-background py-10 sm:py-16">
       <div className="container mx-auto mb-6 sm:mb-10">
-        <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="max-w-xl text-sm leading-relaxed text-foreground sm:text-base">
           Focused on building products where performance, usability and
           engineering quality meet.
         </p>

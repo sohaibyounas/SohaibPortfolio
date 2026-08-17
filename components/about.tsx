@@ -43,12 +43,12 @@ export function About() {
           {/* Right: prose + stats */}
           <div className="lg:col-span-7">
             <SectionReveal delay={0.15}>
-              <p className="mb-4 sm:mb-6 text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
+              <p className="mb-4 sm:mb-6 text-sm leading-relaxed text-foreground sm:text-base md:text-lg">
                 I&apos;m a frontend developer focused on turning complex product
                 requirements into fast, accessible and intuitive web
                 experiences.
               </p>
-              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
+              <p className="text-sm leading-relaxed text-foreground sm:text-base md:text-lg">
                 I build responsive interfaces that balance product requirements,
                 performance and maintainable frontend architecture. My approach
                 is to treat every component as a product decision—not just a
@@ -67,7 +67,7 @@ export function About() {
                     <p className="font-display text-sm sm:text-lg font-semibold text-foreground truncate">
                       {stat.value}
                     </p>
-                    <p className="mt-0.5 font-mono text-[10px] sm:text-xs text-muted-foreground truncate">
+                    <p className="mt-0.5 font-mono text-[10px] sm:text-xs text-foreground truncate">
                       {stat.label}
                     </p>
                   </div>

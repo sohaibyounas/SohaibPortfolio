@@ -24,7 +24,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sohaib Younas — Frontend Developer | React & Next.js",
+  title: "Sohaib Younas | Frontend Developer",
   description:
     "Frontend Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications. Based in Pakistan.",
   keywords: [
