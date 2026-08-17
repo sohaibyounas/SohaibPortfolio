@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Linkedin, Mail, Download } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 
 const SOCIAL_LINKS = [
   {
@@ -13,7 +14,7 @@ const SOCIAL_LINKS = [
   {
     label: "GitHub",
     href: "https://github.com/sohaib-younas",
-    icon: Github,
+    icon: GithubIcon,
     external: true,
   },
   {

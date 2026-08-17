@@ -3,20 +3,36 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 import { SectionReveal } from "@/components/section-reveal";
 
 const PROJECTS = [
+  // alreem
+  {
+    slug: "alreem",
+    index: "01",
+    name: "Alreem",
+    category: "Web Application",
+    description:
+      "A production-focused web application with modern responsive interfaces and API-driven functionality. Built with emphasis on component architecture and user experience.",
+    tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI"],
+    image: "/alreem.png",
+    live: "https://alreems.netlify.app/",
+    github: "https://github.com/sohaibyounas/Alreem",
+    color: "#B9A863",
+  },
+
   // mixxer
   {
     slug: "mixxer",
-    index: "01",
+    index: "02",
     name: "Mixxer",
     category: "Web Application",
     description:
       "A production-focused web application with modern responsive interfaces and API-driven functionality. Built with emphasis on component architecture and user experience.",
     tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI"],
-    image: "/mixxer.png",
+    image: "/mixxer-v2.png",
     live: "https://mixxerapp.vercel.app/",
     github: "https://github.com/sohaibyounas/MixxerApp",
     color: "#22c55e",
@@ -25,13 +41,13 @@ const PROJECTS = [
   // dewis
   {
     slug: "dewis",
-    index: "02",
+    index: "03",
     name: "Dewis",
     category: "Web Application",
     description:
       "A data-driven web platform built with React.js and integrated REST APIs. Focused on delivering a smooth, performant user experience across all device sizes.",
     tech: ["React.js", "JavaScript", "REST APIs", "Component Architecture"],
-    image: "/dewis.png",
+    image: "/dewis-v2.png",
     live: "https://dewis.netlify.app/",
     github: "https://github.com/sohaibyounas/DewisApp",
     color: "#3b82f6",
@@ -40,13 +56,13 @@ const PROJECTS = [
   // amexio
   {
     slug: "amexio",
-    index: "03",
+    index: "04",
     name: "AmeXio",
     category: "Web Application",
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
-    image: "/amexio.png",
+    image: "/amexio-v2.png",
     live: "https://amexiofuse.netlify.app/",
     github: "https://github.com/sohaibyounas/Amexio-fuse",
     color: "#a78bfa",
@@ -55,13 +71,13 @@ const PROJECTS = [
   // next merce
   {
     slug: "next-merce",
-    index: "04",
+    index: "05",
     name: "Next Merce",
     category: "Web Application",
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
-    image: "/next-merce.png",
+    image: "/next-merce-v2.png",
     live: "https://nextmercee.netlify.app/",
     github: "https://github.com/sohaibyounas/NextMerce",
     color: "#a78bfa",
@@ -70,13 +86,13 @@ const PROJECTS = [
   // blossend
   {
     slug: "blossend",
-    index: "05",
+    index: "06",
     name: "Blossend",
     category: "Web Application",
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
-    image: "/blossend.png",
+    image: "/blossend-v2.png",
     live: "https://blossend.netlify.app/",
     github: "https://github.com/sohaibyounas/Blossend",
     color: "#a78bfa",
@@ -85,13 +101,13 @@ const PROJECTS = [
   // open my pro E-Commerece
   {
     slug: "openpro",
-    index: "06",
+    index: "07",
     name: "Open My Pro",
     category: "E-Commerece",
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
-    image: "/openpro.png",
+    image: "/openpro-v2.png",
     live: "https://open-my-pro-alpha.vercel.app/",
     github: "https://github.com/sohaibyounas/OpenMyPro",
     color: "#a78bfa",
@@ -100,13 +116,13 @@ const PROJECTS = [
   // taskflow pro
   {
     slug: "taskflowpro",
-    index: "07",
+    index: "08",
     name: "Taskflow Pro",
     category: "Web Application",
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Supabase"],
-    image: "/taskflowpro.png",
+    image: "/taskflowpro-v2.png",
     live: "https://taskflow-sync.netlify.app/login",
     github: "https://github.com/sohaibyounas/TaskFlow-Pro",
     color: "#a78bfa",
@@ -207,7 +223,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github size={14} /> GitHub
+              <GithubIcon size={14} /> GitHub
             </a>
           </div>
         </div>
