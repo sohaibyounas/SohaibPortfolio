@@ -28,15 +28,24 @@ export function Contact() {
 
   const onSubmit = async (data: FormValues) => {
     setStatus("loading");
-    // Simulate API call (replace with actual endpoint)
-    await new Promise((res) => setTimeout(res, 1500));
     try {
-      // In production: await fetch("/api/contact", { method: "POST", body: JSON.stringify(data) })
-      console.log("Contact form:", data);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
       setStatus("success");
       reset();
       setTimeout(() => setStatus("idle"), 5000);
-    } catch {
+    } catch (error) {
+      console.error(error);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
     }

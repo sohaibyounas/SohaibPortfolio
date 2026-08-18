@@ -13,7 +13,15 @@ const TABS: { id: TabId; label: string }[] = [
   { id: "contact", label: "contact" },
 ];
 
-const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success" | "info" | "muted" | "accent" }[] }> = {
+const TAB_CONTENT: Record<
+  TabId,
+  {
+    lines: {
+      text: string;
+      type: "cmd" | "success" | "info" | "muted" | "accent";
+    }[];
+  }
+> = {
   "who am i": {
     lines: [
       { text: "$ who am i", type: "cmd" },
@@ -37,11 +45,17 @@ const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success
       { text: "  ├── next.js            ██████████░░ advanced", type: "info" },
       { text: "  ├── typescript         ████████░░░░ advanced", type: "info" },
       { text: "  ├── tailwind-css       ████████████ expert", type: "info" },
-      { text: "  └── framer-motion      ██████░░░░░░ proficient", type: "info" },
+      {
+        text: "  └── framer-motion      ██████░░░░░░ proficient",
+        type: "info",
+      },
       { text: "", type: "muted" },
       { text: "apis/", type: "accent" },
       { text: "  ├── rest-apis          ████████████ expert", type: "info" },
-      { text: "  └── react-query        ██████░░░░░░ proficient", type: "info" },
+      {
+        text: "  └── react-query        ██████░░░░░░ proficient",
+        type: "info",
+      },
       { text: "", type: "muted" },
       { text: "✓ all skills verified from production work", type: "success" },
     ],
@@ -52,17 +66,44 @@ const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success
       { text: "", type: "muted" },
       { text: "total 8 projects", type: "muted" },
       { text: "", type: "muted" },
-      { text: "drwxr  alreem/      → Web Application · React.js", type: "info" },
-      { text: "drwxr  mixxer/      → Web Application · React.js", type: "info" },
-      { text: "drwxr  dewis/       → Web Application · React.js + APIs", type: "info" },
-      { text: "drwxr  amexio/      → Web Application · React + Next.js", type: "info" },
-      { text: "drwxr  next-merce/  → Web Application · React + Next.js", type: "info" },
-      { text: "drwxr  blossend/    → Web Application · React + Next.js", type: "info" },
-      { text: "drwxr  openpro/     → E-Commerce      · React + Next.js", type: "info" },
-      { text: "drwxr  taskflowpro/ → Web Application · React + Next.js + Supabase", type: "info" },
+      {
+        text: "drwxr  alreem/      → Web Application · React.js",
+        type: "info",
+      },
+      {
+        text: "drwxr  mixxer/      → Web Application · React.js",
+        type: "info",
+      },
+      {
+        text: "drwxr  dewis/       → Web Application · React.js + APIs",
+        type: "info",
+      },
+      {
+        text: "drwxr  amexio/      → Web Application · React + Next.js",
+        type: "info",
+      },
+      {
+        text: "drwxr  next-merce/  → Web Application · React + Next.js",
+        type: "info",
+      },
+      {
+        text: "drwxr  blossend/    → Web Application · React + Next.js",
+        type: "info",
+      },
+      {
+        text: "drwxr  openpro/     → E-Commerce      · React + Next.js",
+        type: "info",
+      },
+      {
+        text: "drwxr  taskflowpro/ → Web Application · React + Next.js + Supabase",
+        type: "info",
+      },
       { text: "", type: "muted" },
       { text: "$ cat mixxer/README.md", type: "cmd" },
-      { text: "Production web app · responsive UI · API integration", type: "muted" },
+      {
+        text: "Production web app · responsive UI · API integration",
+        type: "muted",
+      },
       { text: "", type: "muted" },
       { text: "✓ 8 projects · all production-deployed", type: "success" },
     ],
@@ -80,7 +121,10 @@ const TAB_CONTENT: Record<TabId, { lines: { text: string; type: "cmd" | "success
       { text: "response_time → < 24 hours", type: "accent" },
       { text: "availability  → open to work", type: "success" },
       { text: "", type: "muted" },
-      { text: "✓ best way: scroll down and use the contact form", type: "success" },
+      {
+        text: "✓ best way: scroll down and use the contact form",
+        type: "success",
+      },
     ],
   },
 };
@@ -93,15 +137,20 @@ const TYPE_COLORS: Record<string, string> = {
   accent: "text-accent",
 };
 
-function TypewriterLines({ lines }: { lines: { text: string; type: string }[] }) {
+function TypewriterLines({
+  lines,
+}: {
+  lines: { text: string; type: string }[];
+}) {
   const [visibleCount, setVisibleCount] = React.useState(0);
 
   React.useEffect(() => {
-    setVisibleCount(0);
     let i = 0;
+
     const timer = setInterval(() => {
       i++;
       setVisibleCount(i);
+      
       if (i >= lines.length) clearInterval(timer);
     }, 80);
     return () => clearInterval(timer);
@@ -149,8 +198,7 @@ export function Terminal() {
             Terminal
           </p>
           <h2 className="mb-8 sm:mb-12 font-display text-display-md font-bold text-foreground">
-            Get to know me{" "}
-            <br className="hidden sm:inline" />
+            Get to know me <br className="hidden sm:inline" />
             <span className="text-muted-foreground">in developer mode.</span>
           </h2>
         </SectionReveal>
@@ -176,16 +224,21 @@ export function Terminal() {
                 <button
                   key={tab.id}
                   onClick={() => switchTab(tab.id)}
-                  className={`relative shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 font-mono text-[11px] sm:text-xs transition-colors ${activeTab === tab.id
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
+                  className={`relative shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 font-mono text-[11px] sm:text-xs transition-colors ${
+                    activeTab === tab.id
+                      ? "text-accent"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {activeTab === tab.id && (
                     <motion.div
                       layoutId="tab-indicator"
                       className="absolute inset-0 bg-white/5"
-                      transition={{ type: "spring", damping: 25, stiffness: 350 }}
+                      transition={{
+                        type: "spring",
+                        damping: 25,
+                        stiffness: 350,
+                      }}
                     />
                   )}
                   <span className="relative">$ {tab.label}</span>

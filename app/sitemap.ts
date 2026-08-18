@@ -1,10 +1,32 @@
 import type { MetadataRoute } from "next";
 
+const BASE_URL = "https://sohaib.dev";
+
+const PROJECT_SLUGS = [
+  "mixxer",
+  "dewis",
+  "amexio",
+  "next-merce",
+  "blossend",
+  "openpro",
+  "taskflowpro",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const projects: MetadataRoute.Sitemap = PROJECT_SLUGS.map((slug) => ({
+    url: `${BASE_URL}/projects/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   return [
-    { url: "https://sohaib.dev", lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: "https://sohaib.dev/projects/mixxer", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: "https://sohaib.dev/projects/dewis", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: "https://sohaib.dev/projects/amexio", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    {
+      url: BASE_URL,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    ...projects,
   ];
 }
