@@ -156,6 +156,21 @@ const PROJECTS = [
     live: "https://filesconvertor.netlify.app/",
     github: "https://github.com/sohaibyounas/FilesConvertor",
     color: "#a855f7",
+  },
+
+  // codelearn
+  {
+    slug: "codelearn",
+    index: "11",
+    name: "CodeLearn",
+    category: "Web Application",
+    description:
+      "Interactive full-stack engineering platform featuring an in-browser Monaco IDE sandbox, animated API and JWT request visualizers, progressive roadmaps, and AI-powered tutoring.",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "AI SDK"],
+    image: "/codelearn-v2.png",
+    live: "https://codelearn-tech.netlify.app/",
+    github: "https://github.com/sohaibyounas/ULearn",
+    color: "#6366f1",
   }
 ];
 

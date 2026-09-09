@@ -3,6 +3,32 @@ import type { Metadata } from "next";
 import { ProjectCaseStudy } from "./case-study";
 
 const PROJECTS_DATA = {
+  alreem: {
+    slug: "alreem",
+    name: "Alreem",
+    category: "Web Application",
+    description:
+      "A production-focused web application with modern responsive interfaces and API-driven functionality.",
+    image: "/alreem.png",
+    tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI"],
+    live: "https://alreems.netlify.app/",
+    github: "https://github.com/sohaibyounas/Alreem",
+    overview:
+      "Alreem is a production-grade web application built to deliver smooth, responsive user experiences backed by reliable API-driven workflows and clean component architecture.",
+    problem:
+      "The client required an intuitive, modern interface capable of consuming multiple APIs while maintaining responsive layout consistency across varying screen resolutions.",
+    solution:
+      "Engineered an efficient React.js component structure with standardized API error handling, fluid CSS layouts, and intuitive navigation states.",
+    role: "Frontend Developer responsible for architecture, responsive styling, and API integration.",
+    challenges: [
+      "Building a modular component hierarchy for effortless feature extension",
+      "Ensuring rapid initial page loads and responsive behavior across mobile devices",
+    ],
+    learnings: [
+      "Modular component design speeds up iteration and testing significantly",
+      "Early API contract alignment prevents integration friction later on",
+    ],
+  },
   mixxer: {
     slug: "mixxer",
     name: "Mixxer",
@@ -242,6 +268,33 @@ const PROJECTS_DATA = {
     learnings: [
       "Web Workers are essential for heavy client-side computation in React",
       "Transparent client-side processing builds immense user trust",
+    ],
+  },
+  codelearn: {
+    slug: "codelearn",
+    name: "CodeLearn",
+    category: "Web Application",
+    description:
+      "Interactive full-stack engineering platform featuring an in-browser Monaco IDE sandbox, animated API and JWT request visualizers, progressive roadmaps, and AI-powered tutoring.",
+    image: "/codelearn.png",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "AI SDK"],
+    live: "https://codelearn-tech.netlify.app/",
+    github: "https://github.com/sohaibyounas/ULearn",
+    overview:
+      "CodeLearn is a comprehensive full-stack learning platform engineered to help frontend developers transition seamlessly to backend engineering and systems architecture. It features an in-browser Monaco IDE with simulated Node.js stdout execution, interactive animated visualizers for REST APIs and JWT security, progressive skill trees, and an integrated AI tutor.",
+    problem:
+      "Backend concepts like the Node.js event loop, streams, and cryptographic JWT verification are notoriously abstract and difficult to grasp through static documentation, while complex local setups deter learners.",
+    solution:
+      "Engineered a zero-setup browser environment combining live code execution in Monaco Editor, interactive step-through visualizers for REST APIs and middleware, guided roadmaps, and context-aware AI tutoring.",
+    role: "Lead Full-Stack Developer & UI Architect.",
+    challenges: [
+      "Integrating Monaco Editor in Next.js with client-side simulation of runtime outputs",
+      "Designing interactive visualizers for asynchronous Node.js streams and event loop phases",
+      "Managing multi-modal learning state and user progress with lightweight persistence",
+    ],
+    learnings: [
+      "Interactive visualizations drastically reduce time-to-comprehension for system architecture",
+      "Sandboxed in-browser playgrounds eliminate initial setup friction for aspiring engineers",
     ],
   },
 };

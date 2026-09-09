@@ -72,19 +72,23 @@ export function CustomCursor() {
         }}
       >
         <motion.div
+          style={{
+            backgroundColor: "rgba(245, 245, 245, 0)",
+            borderColor: "rgba(245, 245, 245, 0.4)",
+          }}
           animate={{
             width: cursorState === "view" ? 80 : cursorState === "hover" ? 44 : 36,
             height: cursorState === "view" ? 80 : cursorState === "hover" ? 44 : 36,
             backgroundColor:
               cursorState === "view"
-                ? "hsl(142 70% 45% / 0.15)"
+                ? "rgba(34, 197, 94, 0.15)"
                 : cursorState === "hover"
-                ? "hsl(0 0% 96% / 0.12)"
-                : "transparent",
+                ? "rgba(245, 245, 245, 0.12)"
+                : "rgba(245, 245, 245, 0)",
             borderColor:
               cursorState === "view"
-                ? "hsl(142 70% 45% / 0.8)"
-                : "hsl(0 0% 96% / 0.4)",
+                ? "rgba(34, 197, 94, 0.8)"
+                : "rgba(245, 245, 245, 0.4)",
           }}
           transition={{ type: "spring", damping: 22, stiffness: 300 }}
           className="flex items-center justify-center rounded-full border"
