@@ -9,7 +9,9 @@ const projects = [
   { slug: "next-merce", url: "https://nextmercee.netlify.app/", output: "next-merce.png" },
   { slug: "blossend", url: "https://blossend.netlify.app/", output: "blossend.png" },
   { slug: "openpro", url: "https://open-my-pro-alpha.vercel.app/", output: "openpro.png" },
-  { slug: "taskflowpro", url: "https://taskflow-sync.netlify.app/login", output: "taskflowpro.png" }
+  { slug: "taskflowpro", url: "https://taskflow-sync.netlify.app/login", output: "taskflowpro.png" },
+  { slug: "uplift", url: "https://uplift-blog-amber.vercel.app/", output: "uplift-v2.png" },
+  { slug: "filesconvertor", url: "https://filesconvertor.netlify.app/", output: "filesconvertor-v2.png" }
 ];
 
 async function captureScreenshots() {

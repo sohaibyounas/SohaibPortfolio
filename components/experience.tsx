@@ -21,7 +21,16 @@ const EXPERIENCES = [
       "Optimized application performance and load times",
       "Collaborated in agile sprints with cross-functional teams",
     ],
-    tech: ["React.js", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "REST APIs", "Git", "Redux Toolkit"],
+    tech: [
+      "React.js",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST APIs",
+      "Git",
+      "Redux Toolkit",
+    ],
     current: true,
   },
   {
@@ -29,7 +38,7 @@ const EXPERIENCES = [
     role: "Frontend Developer",
     company: "Freelance",
     duration: "2022 — 2024",
-    type: "Contract",
+    type: "Full-time",
     description:
       "Delivered bespoke web applications and landing pages for clients across various industries, focusing on performance and user experience.",
     responsibilities: [
@@ -79,7 +88,11 @@ export function Experience() {
                   {/* Timeline dot */}
                   <div
                     className="absolute -left-[2.75rem] top-6 hidden h-3 w-3 rounded-full border-2 border-background ring-2 ring-border lg:block"
-                    style={{ backgroundColor: exp.current ? "hsl(var(--accent))" : "hsl(var(--border))" }}
+                    style={{
+                      backgroundColor: exp.current
+                        ? "hsl(var(--accent))"
+                        : "hsl(var(--border))",
+                    }}
                   />
 
                   <button
@@ -131,7 +144,10 @@ export function Experience() {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          transition={{
+                            duration: 0.35,
+                            ease: [0.25, 0.46, 0.45, 0.94],
+                          }}
                           className="overflow-hidden"
                         >
                           <div className="mt-5 border-t border-border pt-5">

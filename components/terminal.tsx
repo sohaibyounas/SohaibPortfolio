@@ -29,7 +29,7 @@ const TAB_CONTENT: Record<
       { text: "sohaib younas", type: "accent" },
       { text: "role       → Frontend Developer", type: "info" },
       { text: "location   → Pakistan", type: "info" },
-      { text: "experience → 2+ years", type: "info" },
+      { text: "experience → 3+ years", type: "info" },
       { text: "stack      → React · Next.js · TypeScript", type: "info" },
       { text: "status     → Available for opportunities", type: "success" },
       { text: "", type: "muted" },
@@ -42,18 +42,18 @@ const TAB_CONTENT: Record<
       { text: "", type: "muted" },
       { text: "frontend/", type: "accent" },
       { text: "  ├── react.js           ████████████ expert", type: "info" },
-      { text: "  ├── next.js            ██████████░░ advanced", type: "info" },
-      { text: "  ├── typescript         ████████░░░░ advanced", type: "info" },
+      { text: "  ├── next.js            ████████████ expert", type: "info" },
+      { text: "  ├── typescript         ████████████ expert", type: "info" },
       { text: "  ├── tailwind-css       ████████████ expert", type: "info" },
       {
-        text: "  └── framer-motion      ██████░░░░░░ proficient",
+        text: "  └── framer-motion      ████████████ expert",
         type: "info",
       },
       { text: "", type: "muted" },
       { text: "apis/", type: "accent" },
       { text: "  ├── rest-apis          ████████████ expert", type: "info" },
       {
-        text: "  └── react-query        ██████░░░░░░ proficient",
+        text: "  └── react-query        ████████████ expert",
         type: "info",
       },
       { text: "", type: "muted" },
@@ -150,7 +150,7 @@ function TypewriterLines({
     const timer = setInterval(() => {
       i++;
       setVisibleCount(i);
-      
+
       if (i >= lines.length) clearInterval(timer);
     }, 80);
     return () => clearInterval(timer);

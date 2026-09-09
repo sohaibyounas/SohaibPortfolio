@@ -98,7 +98,7 @@ const PROJECTS = [
     color: "#a78bfa",
   },
 
-  // open my pro E-Commerece
+  // open my-pro E-Commerece
   {
     slug: "openpro",
     index: "07",
@@ -126,6 +126,36 @@ const PROJECTS = [
     live: "https://taskflow-sync.netlify.app/login",
     github: "https://github.com/sohaibyounas/TaskFlow-Pro",
     color: "#a78bfa",
+  },
+
+  // uplift
+  {
+    slug: "uplift",
+    index: "09",
+    name: "Uplift",
+    category: "Web Application",
+    description:
+      "A modern wellness and lifestyle publication platform featuring dynamic article categorization, fluid responsive layouts, and interactive newsletter integration.",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    image: "/uplift-v2.png",
+    live: "https://uplift-blog-amber.vercel.app/",
+    github: "https://github.com/sohaibyounas/Uplift-Blog",
+    color: "#8EFF0A",
+  },
+
+  // fileconvert pro
+  {
+    slug: "filesconvertor",
+    index: "10",
+    name: "FileConvert Pro",
+    category: "Web Application",
+    description:
+      "Professional in-browser file conversion tool with OCR capabilities. Supports DOCX, PDF, PPTX, and image formats with client-side batch processing and complete privacy.",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "OCR", "Web Workers"],
+    image: "/filesconvertor-v2.png",
+    live: "https://filesconvertor.netlify.app/",
+    github: "https://github.com/sohaibyounas/FilesConvertor",
+    color: "#a855f7",
   }
 ];
 

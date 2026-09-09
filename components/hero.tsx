@@ -1,7 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 
 // ─── Tech Flow Diagram ───
@@ -171,7 +176,13 @@ function TechFlowDiagram() {
 }
 
 // ─── Word stagger animation ───
-function StaggerText({ text, className }: { text: string; className?: string }) {
+function StaggerText({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) {
   const words = text.split(" ");
   return (
     <span className={className} aria-label={text}>
@@ -181,7 +192,11 @@ function StaggerText({ text, className }: { text: string; className?: string }) 
           className="inline-block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 + i * 0.06, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{
+            duration: 0.6,
+            delay: 0.4 + i * 0.06,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
         >
           {word}&nbsp;
         </motion.span>
@@ -222,7 +237,8 @@ export function Hero() {
           top: glowY,
           width: 350,
           height: 350,
-          background: "radial-gradient(circle, hsl(142 70% 45% / 0.4), transparent 70%)",
+          background:
+            "radial-gradient(circle, hsl(142 70% 45% / 0.4), transparent 70%)",
         }}
       />
 
@@ -320,7 +336,7 @@ export function Hero() {
               className="mt-8 sm:mt-10 grid grid-cols-3 gap-2 sm:gap-6 border-t border-border pt-6 sm:pt-8"
             >
               {[
-                { value: "2+", label: "Years" },
+                { value: "3+", label: "Years" },
                 { value: "10+", label: "Projects" },
                 { value: "React", label: "Primary Stack" },
               ].map((stat) => (
@@ -368,9 +384,7 @@ export function Hero() {
                     Full-stack ready
                   </span>
                   <span className="h-1 w-1 rounded-full bg-border" />
-                  <span className="font-mono text-xs text-accent">
-                    ● Live
-                  </span>
+                  <span className="font-mono text-xs text-accent">● Live</span>
                 </div>
               </div>
             </div>

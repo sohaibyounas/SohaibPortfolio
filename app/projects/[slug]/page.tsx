@@ -192,6 +192,58 @@ const PROJECTS_DATA = {
       "Clear feedback indicators are vital for asynchronous sync tasks",
     ],
   },
+  uplift: {
+    slug: "uplift",
+    name: "Uplift",
+    category: "Web Application",
+    description:
+      "A modern wellness and lifestyle publication platform featuring dynamic article categorization, fluid responsive layouts, and interactive newsletter integration.",
+    image: "/uplift.png",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    live: "https://uplift-blog-amber.vercel.app/",
+    github: "https://github.com/sohaibyounas/Uplift-Blog",
+    overview:
+      "Uplift is a modern content and digital publication platform delivering health, wellness, and lifestyle articles with an engaging, interactive UI and fluid micro-animations.",
+    problem:
+      "Modern digital blogs need fast page loads, readable typography hierarchies, and dynamic category filtering without clunky full-page refreshes.",
+    solution:
+      "Developed using Next.js and Tailwind CSS with custom animated card transitions, newsletter subscription integration, and an ultra-clean mobile-first reading experience.",
+    role: "Lead Frontend Developer & UI Designer.",
+    challenges: [
+      "Creating smooth, staggered content animations without slowing down paint times",
+      "Structuring accessible and responsive layout grids across diverse mobile screen sizes",
+    ],
+    learnings: [
+      "Clean visual hierarchy drastically improves reading engagement",
+      "CSS Grid combined with Framer Motion creates captivating editorial layouts",
+    ],
+  },
+  filesconvertor: {
+    slug: "filesconvertor",
+    name: "FileConvert Pro",
+    category: "Web Application",
+    description:
+      "Professional in-browser file conversion tool with OCR capabilities. Supports DOCX, PDF, PPTX, and image formats with client-side processing and complete privacy.",
+    image: "/filesconvertor.png",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "OCR", "Web Workers"],
+    live: "https://filesconvertor.netlify.app/",
+    github: "https://github.com/sohaibyounas/FilesConvertor",
+    overview:
+      "FileConvert Pro is a secure, browser-based document conversion utility featuring optical character recognition (OCR) that allows users to convert documents without uploading sensitive data to cloud servers.",
+    problem:
+      "Many online converters require uploading sensitive documents to third-party servers, posing serious privacy and security risks.",
+    solution:
+      "Built a client-side conversion engine using Web Workers and in-browser OCR parsing, guaranteeing 100% data privacy with zero server uploads.",
+    role: "Full-stack Frontend Developer.",
+    challenges: [
+      "Handling heavy file parsing in the browser without freezing the UI thread",
+      "Supporting drag-and-drop batch conversions with progress tracking and ZIP packaging",
+    ],
+    learnings: [
+      "Web Workers are essential for heavy client-side computation in React",
+      "Transparent client-side processing builds immense user trust",
+    ],
+  },
 };
 
 export async function generateStaticParams() {

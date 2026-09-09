@@ -14,6 +14,7 @@ const CATEGORIES = [
       { name: "TypeScript", desc: "Type-safe application development" },
       { name: "HTML & CSS", desc: "Semantic, accessible markup" },
       { name: "Tailwind CSS", desc: "Utility-first styling system" },
+      { name: "Bootstrap", desc: "Utility-first styling system" },
     ],
   },
   {
@@ -93,8 +94,7 @@ export function TechStack() {
             id="stack-heading"
             className="mb-10 sm:mb-16 font-display text-display-lg font-bold text-foreground"
           >
-            Tools I use to{" "}
-            <br className="hidden sm:inline" />
+            Tools I use to <br className="hidden sm:inline" />
             <span className="text-muted-foreground">build products.</span>
           </h2>
         </SectionReveal>
@@ -108,7 +108,11 @@ export function TechStack() {
                 </h3>
                 <div className="grid grid-cols-1 gap-2">
                   {cat.items.map((item) => (
-                    <TechBadge key={item.name} name={item.name} desc={item.desc} />
+                    <TechBadge
+                      key={item.name}
+                      name={item.name}
+                      desc={item.desc}
+                    />
                   ))}
                 </div>
               </div>
