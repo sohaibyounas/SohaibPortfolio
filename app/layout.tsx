@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import PortfolioChatbot from "@/components/PortfolioChatbot";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -112,9 +113,17 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${display.variable} ${body.variable} ${mono.variable} font-sans antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange={false}
+        >
           <div className="grain-overlay" aria-hidden="true" />
           {children}
+
+          {/* Floating AI Chatbot har page par show hoga */}
+          <PortfolioChatbot />
         </ThemeProvider>
       </body>
     </html>

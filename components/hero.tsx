@@ -8,6 +8,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { smoothScrollTo } from "@/lib/utils";
 
 // ─── Tech Flow Diagram ───
 const nodes = [
@@ -273,30 +274,25 @@ export function Hero() {
             <h1 className="font-display text-3xl font-bold tracking-tight text-foreground xs:text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] sm:leading-[1.04]">
               <StaggerText text="Frontend experiences" />
               <br className="hidden sm:inline" />{" "}
-              <StaggerText
-                text="built for the"
-                className="text-muted-foreground"
-              />
-              <br className="hidden sm:inline" />{" "}
-              <StaggerText text="real world." />
+              <StaggerText text="that matter." className="text-accent" />
             </h1>
 
-            {/* Subheading */}
+            {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.9 }}
-              className="mt-4 sm:mt-6 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              I build fast, scalable and polished web applications with React,
-              Next.js and modern frontend technologies.
+              Frontend developer crafting modern, fast and accessible web
+              applications with React, Next.js, and TypeScript.
             </motion.p>
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
               className="mt-8 sm:mt-10 flex flex-col xs:flex-row xs:flex-wrap items-stretch xs:items-center gap-3 sm:gap-4"
             >
               <button
@@ -318,7 +314,7 @@ export function Hero() {
               </button>
 
               <a
-                href="/resume.pdf"
+                href="/resume"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex justify-center items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-foreground/30 hover:bg-muted w-full xs:w-auto"

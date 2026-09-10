@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { smoothScrollTo } from "@/lib/utils";
 
 const navLinks = [
   { label: "Work", href: "#work" },
@@ -56,9 +57,7 @@ export function Navbar() {
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    smoothScrollTo(href);
   };
 
   return (
