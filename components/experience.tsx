@@ -63,7 +63,7 @@ export function Experience() {
     >
       <div className="container mx-auto">
         <SectionReveal>
-          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
             Experience
           </p>
           <h2
@@ -114,15 +114,15 @@ export function Experience() {
                               Current
                             </span>
                           )}
-                          <span className="rounded-full bg-muted px-2.5 py-0.5 font-mono text-xs text-muted-foreground">
+                          <span className="rounded-full bg-muted px-2.5 py-0.5 font-mono text-xs text-foreground">
                             {exp.type}
                           </span>
                         </div>
                         <div className="mt-1 flex flex-wrap items-center gap-3">
-                          <span className="text-sm font-medium text-muted-foreground">
+                          <span className="text-sm font-medium text-foreground">
                             {exp.company}
                           </span>
-                          <span className="font-mono text-xs text-muted-foreground">
+                          <span className="font-mono text-xs text-foreground">
                             {exp.duration}
                           </span>
                         </div>
@@ -133,7 +133,7 @@ export function Experience() {
                       >
                         <ChevronDown
                           size={18}
-                          className="mt-1 shrink-0 text-muted-foreground"
+                          className="mt-1 shrink-0 text-foreground"
                         />
                       </motion.div>
                     </div>
@@ -151,7 +151,7 @@ export function Experience() {
                           className="overflow-hidden"
                         >
                           <div className="mt-5 border-t border-border pt-5">
-                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                            <p className="mb-4 text-sm leading-relaxed text-foreground">
                               {exp.description}
                             </p>
 
@@ -159,7 +159,7 @@ export function Experience() {
                               {exp.responsibilities.map((r, j) => (
                                 <li
                                   key={j}
-                                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                                  className="flex items-start gap-2 text-sm text-foreground"
                                 >
                                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
                                   {r}
@@ -171,7 +171,7 @@ export function Experience() {
                               {exp.tech.map((t) => (
                                 <span
                                   key={t}
-                                  className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-xs text-muted-foreground"
+                                  className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-xs text-foreground"
                                 >
                                   {t}
                                 </span>

@@ -1,0 +1,12 @@
+npm notice run sohaib-younas-portfolio@1.0.0 dev
+npm notice run next dev -p 3001
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.18.70:3001
+- Environments: .env.local
+✓ Ready in 2.9s
+
+○ Compiling / ...
+ GET / 200 in 204ms (next.js: 22ms, application-code: 182ms)
+ GET / 200 in 168ms (next.js: 19ms, application-code: 149ms)
+[?25h

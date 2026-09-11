@@ -136,7 +136,13 @@ const PROJECTS = [
     category: "Web Application",
     description:
       "A modern wellness and lifestyle publication platform featuring dynamic article categorization, fluid responsive layouts, and interactive newsletter integration.",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
     image: "/uplift-v2.png",
     live: "https://uplift-blog-amber.vercel.app/",
     github: "https://github.com/sohaibyounas/Uplift-Blog",
@@ -151,7 +157,14 @@ const PROJECTS = [
     category: "Web Application",
     description:
       "Professional in-browser file conversion tool with OCR capabilities. Supports DOCX, PDF, PPTX, and image formats with client-side batch processing and complete privacy.",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "OCR", "Web Workers"],
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "OCR",
+      "Web Workers",
+    ],
     image: "/filesconvertor-v2.png",
     live: "https://filesconvertor.netlify.app/",
     github: "https://github.com/sohaibyounas/FilesConvertor",
@@ -166,15 +179,28 @@ const PROJECTS = [
     category: "Web Application",
     description:
       "Interactive full-stack engineering platform featuring an in-browser Monaco IDE sandbox, animated API and JWT request visualizers, progressive roadmaps, and AI-powered tutoring.",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "AI SDK"],
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Monaco Editor",
+      "AI SDK",
+    ],
     image: "/codelearn-v2.png",
     live: "https://codelearn-tech.netlify.app/",
     github: "https://github.com/sohaibyounas/ULearn",
     color: "#6366f1",
-  }
+  },
 ];
 
-function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: number }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof PROJECTS)[0];
+  index: number;
+}) {
   const isEven = index % 2 === 0;
 
   return (
@@ -186,8 +212,9 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
         {/* Image */}
         <Link
           href={`/projects/${project.slug}`}
-          className={`relative block overflow-hidden rounded-xl border border-border ${isEven ? "lg:order-first" : "lg:order-last"
-            }`}
+          className={`relative block overflow-hidden rounded-xl border border-border ${
+            isEven ? "lg:order-first" : "lg:order-last"
+          }`}
         >
           <div className="relative aspect-[16/10] w-full">
             <Image
@@ -202,9 +229,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
 
           {/* Hover overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <span
-              className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20"
-            >
+            <span className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20">
               View Case Study <ArrowUpRight size={14} />
             </span>
           </div>
@@ -213,22 +238,25 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
         {/* Content */}
         <div className={isEven ? "lg:order-last" : "lg:order-first"}>
           <div className="flex items-center gap-3 mb-3 sm:mb-5">
-            <span className="font-mono text-xs text-muted-foreground">
+            <span className="font-mono text-xs text-foreground">
               {project.index}
             </span>
             <span className="h-px flex-1 bg-border max-w-[40px]" />
-            <span className="font-mono text-xs text-muted-foreground">
+            <span className="font-mono text-xs text-foreground">
               {project.category}
             </span>
           </div>
 
           <h3 className="font-display text-2xl sm:text-display-md font-bold text-foreground mb-3 sm:mb-4 transition-colors">
-            <Link href={`/projects/${project.slug}`} className="hover:text-accent">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="hover:text-accent"
+            >
               {project.name}
             </Link>
           </h3>
 
-          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base mb-4 sm:mb-6">
+          <p className="text-sm leading-relaxed text-foreground sm:text-base mb-4 sm:mb-6">
             {project.description}
           </p>
 
@@ -236,7 +264,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-border bg-muted px-2.5 py-0.5 sm:px-3 sm:py-1 font-mono text-[11px] sm:text-xs text-muted-foreground"
+                className="rounded-full border border-border bg-muted px-2.5 py-0.5 sm:px-3 sm:py-1 font-mono text-[11px] sm:text-xs text-foreground"
               >
                 {t}
               </span>
@@ -256,7 +284,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             </Link>
             <a
               href={project.live}
-              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-2 text-sm text-foreground transition-colors hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -264,7 +292,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             </a>
             <a
               href={project.github}
-              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-2 text-sm text-foreground transition-colors hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -286,20 +314,19 @@ export function SelectedWork() {
     >
       <div className="container mx-auto">
         <SectionReveal>
-          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
             Selected Work
           </p>
           <h2
             id="work-heading"
             className="mb-2 font-display text-display-lg font-bold text-foreground"
           >
-            Projects I&apos;ve{" "}
-            <br className="hidden sm:inline" />
+            Projects I&apos;ve <br className="hidden sm:inline" />
             helped bring to life.
           </h2>
-          <p className="mb-10 sm:mb-16 max-w-lg text-sm sm:text-base text-muted-foreground">
-            Products, interfaces and experiences built with a focus on performance
-            and engineering quality.
+          <p className="mb-10 sm:mb-16 max-w-lg text-sm sm:text-base tex-foreground">
+            Products, interfaces and experiences built with a focus on
+            performance and engineering quality.
           </p>
         </SectionReveal>
 

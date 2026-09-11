@@ -150,7 +150,7 @@ function TechFlowDiagram() {
             <text
               x={node.x + 34}
               y={node.y + 4}
-              fill="hsl(var(--muted-foreground))"
+              fill="hsl(var(--foreground))"
               fontSize="11"
               fontFamily="var(--font-mono)"
               fontWeight="500"
@@ -162,7 +162,7 @@ function TechFlowDiagram() {
             <text
               x={node.x - 34}
               y={node.y + 4}
-              fill="hsl(var(--border))"
+              fill="hsl(var(--muted-foreground))"
               fontSize="9"
               fontFamily="var(--font-mono)"
               textAnchor="end"
@@ -282,7 +282,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+              className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-foreground leading-relaxed"
             >
               Frontend developer crafting modern, fast and accessible web
               applications with React, Next.js, and TypeScript.
@@ -340,7 +340,7 @@ export function Hero() {
                   <p className="font-display text-lg sm:text-xl font-bold text-foreground">
                     {stat.value}
                   </p>
-                  <p className="font-mono text-[10px] sm:text-xs text-muted-foreground truncate">
+                  <p className="font-mono text-[10px] sm:text-xs text-foreground truncate">
                     {stat.label}
                   </p>
                 </div>
@@ -366,7 +366,7 @@ export function Hero() {
                     <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
                     <span className="h-2.5 w-2.5 rounded-full bg-accent/60" />
                   </div>
-                  <span className="font-mono text-xs text-muted-foreground">
+                  <span className="font-mono text-xs text-foreground">
                     architecture.tsx
                   </span>
                   <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
@@ -376,7 +376,7 @@ export function Hero() {
 
                 {/* Footer bar */}
                 <div className="mt-6 flex items-center gap-3 border-t border-border pt-4">
-                  <span className="font-mono text-xs text-muted-foreground">
+                  <span className="font-mono text-xs text-foreground">
                     Full-stack ready
                   </span>
                   <span className="h-1 w-1 rounded-full bg-border" />
@@ -399,7 +399,7 @@ export function Hero() {
           onClick={() => scrollTo("marquee")}
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+          className="flex flex-col items-center gap-2 text-foreground transition-colors hover:text-foreground"
           aria-label="Scroll down"
         >
           <span className="font-mono text-xs">scroll</span>

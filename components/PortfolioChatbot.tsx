@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useRef, useEffect } from "react";
 import { Send, Bot, X, Loader2, Sparkles } from "lucide-react";
 
@@ -6,6 +6,102 @@ interface Message {
   role: "user" | "assistant";
   content: string;
 }
+
+// ── Lightweight inline markdown renderer ──────────────────────────────────────
+function renderMarkdown(text: string): React.ReactNode[] {
+  const lines = text.split("\n");
+  const elements: React.ReactNode[] = [];
+  let key = 0;
+
+  const parseInline = (line: string): React.ReactNode[] => {
+    // Handle **bold**, *italic*, `code`, and [text](url)
+    const parts = line.split(
+      /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g,
+    );
+    return parts.map((part, i) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return (
+          <strong key={i} className="font-semibold text-white">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      if (part.startsWith("*") && part.endsWith("*") && part.length > 2) {
+        return <em key={i}>{part.slice(1, -1)}</em>;
+      }
+      if (part.startsWith("`") && part.endsWith("`")) {
+        return (
+          <code
+            key={i}
+            className="rounded bg-zinc-700 px-1 py-0.5 font-mono text-[10px] text-emerald-300"
+          >
+            {part.slice(1, -1)}
+          </code>
+        );
+      }
+      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        return (
+          <a
+            key={i}
+            href={linkMatch[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300"
+          >
+            {linkMatch[1]}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Skip empty lines (add spacing between blocks)
+    if (line.trim() === "") {
+      elements.push(<div key={key++} className="h-1.5" />);
+      continue;
+    }
+
+    // Bullet list item: "* " or "- "
+    if (/^[\*\-]\s+/.test(line)) {
+      elements.push(
+        <div key={key++} className="flex items-start gap-1.5 my-0.5">
+          <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
+          <span>{parseInline(line.replace(/^[\*\-]\s+/, ""))}</span>
+        </div>,
+      );
+      continue;
+    }
+
+    // Numbered list: "1. "
+    if (/^\d+\.\s+/.test(line)) {
+      const num = line.match(/^(\d+)\./)?.[1];
+      elements.push(
+        <div key={key++} className="flex items-start gap-1.5 my-0.5">
+          <span className="shrink-0 font-mono text-[10px] text-emerald-400">
+            {num}.
+          </span>
+          <span>{parseInline(line.replace(/^\d+\.\s+/, ""))}</span>
+        </div>,
+      );
+      continue;
+    }
+
+    // Normal paragraph line
+    elements.push(
+      <p key={key++} className="leading-relaxed">
+        {parseInline(line)}
+      </p>,
+    );
+  }
+
+  return elements;
+}
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function PortfolioChatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +153,7 @@ export default function PortfolioChatbot() {
         {
           role: "assistant",
           content: `Unable to answer right now (${err.message || "Connection error"}). Please try again!`,
+          content: `Sorry, I'm unable to answer right now. Please try again in a moment!`,
         },
       ]);
     } finally {
@@ -79,7 +176,7 @@ export default function PortfolioChatbot() {
 
       {/* Chat Window Popup */}
       {isOpen && (
-        <div className="flex h-[500px] w-[350px] sm:w-[380px] flex-col rounded-2xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden">
+        <div className="flex h-[500px] w-[280px] sm:w-[380px] flex-col rounded-2xl border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/90 px-4 py-3">
             <div className="flex items-center gap-2">
@@ -116,6 +213,13 @@ export default function PortfolioChatbot() {
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{m.content}</p>
+                  {m.role === "assistant" ? (
+                    <div className="space-y-0.5">
+                      {renderMarkdown(m.content)}
+                    </div>
+                  ) : (
+                    <p>{m.content}</p>
+                  )}
                 </div>
               </div>
             ))}

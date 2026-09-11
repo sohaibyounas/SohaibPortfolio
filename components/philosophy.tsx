@@ -55,7 +55,7 @@ function PrincipleCard({
       <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3">
         {principle.title}
       </h3>
-      <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
+      <p className="text-xs sm:text-sm leading-relaxed text-foreground">
         {principle.description}
       </p>
     </motion.div>
@@ -71,7 +71,7 @@ export function Philosophy() {
     >
       <div className="container mx-auto">
         <SectionReveal>
-          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
             Engineering Philosophy
           </p>
           <h2
@@ -80,7 +80,7 @@ export function Philosophy() {
           >
             Good frontend isn&apos;t just{" "}
             <br className="hidden sm:inline" />
-            <span className="text-muted-foreground">about looking good.</span>
+            <span className="text-foreground">about looking good.</span>
           </h2>
         </SectionReveal>
 

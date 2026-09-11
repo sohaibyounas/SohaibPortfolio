@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -44,7 +43,7 @@ export function Navbar() {
           }
         });
       },
-      { rootMargin: "-40% 0px -50% 0px" }
+      { rootMargin: "-40% 0px -50% 0px" },
     );
 
     ids.forEach((id) => {
@@ -82,7 +81,10 @@ export function Navbar() {
           </button>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+          <nav
+            className="hidden items-center gap-1 lg:flex"
+            aria-label="Main navigation"
+          >
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -90,7 +92,7 @@ export function Navbar() {
                 className={`relative px-3 py-2 text-sm transition-colors ${
                   activeSection === link.href
                     ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-foreground hover:text-foreground"
                 }`}
               >
                 {activeSection === link.href && (

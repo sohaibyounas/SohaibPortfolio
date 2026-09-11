@@ -64,7 +64,7 @@ const TAB_CONTENT: Record<
     lines: [
       { text: "$ ls ./projects", type: "cmd" },
       { text: "", type: "muted" },
-      { text: "total 8 projects", type: "muted" },
+      { text: "total 8 projects", type: "info" },
       { text: "", type: "muted" },
       {
         text: "drwxr  alreem/      → Web Application · React.js",
@@ -102,7 +102,7 @@ const TAB_CONTENT: Record<
       { text: "$ cat mixxer/README.md", type: "cmd" },
       {
         text: "Production web app · responsive UI · API integration",
-        type: "muted",
+        type: "info",
       },
       { text: "", type: "muted" },
       { text: "✓ 8 projects · all production-deployed", type: "success" },
@@ -112,7 +112,7 @@ const TAB_CONTENT: Record<
     lines: [
       { text: "$ contact --reach-out", type: "cmd" },
       { text: "", type: "muted" },
-      { text: "initiating connection...", type: "muted" },
+      { text: "initiating connection...", type: "info" },
       { text: "", type: "muted" },
       { text: "email     → sohaibyounas24@gmail.com", type: "info" },
       { text: "linkedin  → linkedin.com/in/sohaib-younas", type: "info" },
@@ -194,7 +194,7 @@ export function Terminal() {
     >
       <div className="container mx-auto">
         <SectionReveal>
-          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
             Terminal
           </p>
           <h2 className="mb-8 sm:mb-12 font-display text-display-md font-bold text-foreground">

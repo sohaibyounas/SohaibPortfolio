@@ -67,7 +67,7 @@ export function Metrics() {
     >
       <div className="container mx-auto">
         <SectionReveal>
-          <p className="mb-8 sm:mb-12 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mb-8 sm:mb-12 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
             By the numbers
           </p>
         </SectionReveal>
@@ -82,7 +82,7 @@ export function Metrics() {
                 <p className="mt-1.5 sm:mt-2 font-display text-xs sm:text-sm font-semibold text-foreground">
                   {metric.label}
                 </p>
-                <p className="mt-1 font-mono text-[10px] sm:text-xs text-muted-foreground">
+                <p className="mt-1 font-mono text-[10px] sm:text-xs text-foreground">
                   {metric.description}
                 </p>
               </div>

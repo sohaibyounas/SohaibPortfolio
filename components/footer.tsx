@@ -55,7 +55,7 @@ export function Footer() {
             >
               SOHAIB<span className="text-accent">.</span>DEV
             </button>
-            <p className="max-w-xs text-sm text-muted-foreground">
+            <p className="max-w-xs text-sm text-foreground">
               Frontend Developer building modern digital experiences with React,
               Next.js and TypeScript.
             </p>
@@ -70,7 +70,7 @@ export function Footer() {
                     rel={link.external ? "noopener noreferrer" : undefined}
                     onClick={!link.external ? (e) => { e.preventDefault(); scrollTo(link.href); } : undefined}
                     aria-label={link.label}
-                    className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground"
+                    className="group relative flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground transition-all hover:border-foreground/20 hover:text-foreground"
                   >
                     <link.icon size={15} />
                     <span className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#84cc16] px-3 py-1 text-xs font-semibold text-black opacity-0 transition-all duration-300 hidden sm:block group-hover:-top-11 group-hover:opacity-100">
@@ -82,7 +82,7 @@ export function Footer() {
                 href="/resume"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 items-center gap-2 rounded-lg border border-border px-3 font-mono text-xs text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground"
+                className="flex h-9 items-center gap-2 rounded-lg border border-border px-3 font-mono text-xs text-foreground transition-all hover:border-foreground/20 hover:text-foreground"
               >
                 <Download size={12} /> Resume
               </a>
@@ -91,7 +91,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+            <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
               Navigation
             </p>
             <nav className="flex flex-col gap-2" aria-label="Footer navigation">
@@ -99,7 +99,7 @@ export function Footer() {
                 <button
                   key={link.href}
                   onClick={() => scrollTo(link.href)}
-                  className="w-fit text-sm text-muted-foreground transition-colors hover:text-foreground link-underline"
+                  className="w-fit text-sm text-foreground transition-colors hover:text-foreground link-underline"
                 >
                   {link.label}
                 </button>
@@ -109,7 +109,7 @@ export function Footer() {
 
           {/* Status */}
           <div>
-            <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+            <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
               Status
             </p>
             <div className="flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-2 w-fit">
@@ -118,7 +118,7 @@ export function Footer() {
                 Available for work
               </span>
             </div>
-            <p className="mt-4 font-mono text-xs text-muted-foreground">
+            <p className="mt-4 font-mono text-xs text-foreground">
               Based in Pakistan
               <br />
               Open to remote opportunities
@@ -128,7 +128,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-6 sm:pt-8">
-          <p className="font-mono text-xs text-muted-foreground hover:text-white text-center">
+          <p className="font-mono text-xs text-foreground hover:text-white text-center">
             © 2026 Sohaib Younas. All rights reserved.
           </p>
         </div>

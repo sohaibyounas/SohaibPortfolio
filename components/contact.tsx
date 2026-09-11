@@ -62,7 +62,7 @@ export function Contact() {
           {/* Left: CTA */}
           <div>
             <SectionReveal>
-              <p className="mb-4 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+              <p className="mb-4 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
                 Contact
               </p>
               <h2
@@ -73,7 +73,7 @@ export function Contact() {
                 <br className="hidden sm:inline" />
                 <span className="text-muted-foreground">worth building?</span>
               </h2>
-              <p className="mb-8 sm:mb-10 max-w-full sm:max-w-sm text-sm sm:text-base text-muted-foreground">
+              <p className="mb-8 sm:mb-10 max-w-full sm:max-w-sm text-sm sm:text-base text-foreground">
                 Let&apos;s create something fast, useful and memorable. I&apos;m
                 currently available for full-time roles and freelance projects.
               </p>
@@ -92,13 +92,13 @@ export function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">LinkedIn</p>
-                    <p className="font-mono text-xs text-muted-foreground truncate">
+                    <p className="font-mono text-xs text-foreground truncate">
                       linkedin.com/in/sohaib-younas
                     </p>
                   </div>
                   <ArrowUpRight
                     size={14}
-                    className="text-muted-foreground shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="text-foreground shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </a>
 
@@ -111,11 +111,11 @@ export function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">Email Me</p>
-                    <p className="font-mono text-xs text-muted-foreground truncate">sohaibyounas24@gmail.com</p>
+                    <p className="font-mono text-xs text-foreground truncate">sohaibyounas24@gmail.com</p>
                   </div>
                   <ArrowUpRight
                     size={14}
-                    className="text-muted-foreground shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="text-foreground shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </a>
               </div>
@@ -134,7 +134,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="mb-2 block font-mono text-xs text-muted-foreground"
+                    className="mb-2 block font-mono text-xs text-foreground"
                   >
                     NAME
                   </label>
@@ -157,7 +157,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="mb-2 block font-mono text-xs text-muted-foreground"
+                    className="mb-2 block font-mono text-xs text-foreground"
                   >
                     EMAIL
                   </label>
@@ -180,7 +180,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="mb-2 block font-mono text-xs text-muted-foreground"
+                    className="mb-2 block font-mono text-xs text-foreground"
                   >
                     MESSAGE
                   </label>

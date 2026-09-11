@@ -17,7 +17,8 @@ export default function ResumePage() {
             <span className="hidden sm:inline">Back to Portfolio</span>
           </Link>
           <span className="font-display text-sm font-semibold tracking-wide text-foreground">
-            Sohaib Younas <span className="text-muted-foreground font-normal">/ Resume</span>
+            Sohaib Younas{" "}
+            <span className="text-muted-foreground font-normal">/ Resume</span>
           </span>
         </div>
 

@@ -24,7 +24,7 @@ export function About() {
           {/* Left: editorial heading */}
           <div className="lg:col-span-5">
             <SectionReveal>
-              <p className="mb-4 sm:mb-6 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+              <p className="mb-4 sm:mb-6 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
                 About
               </p>
               <h2
