@@ -35,7 +35,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "A production-focused web application with modern responsive interfaces and API-driven functionality.",
-    image: "/mixxer-v2.png",
+    image: "/mixxer.png",
     tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI", "CSS Modules"],
     live: "https://mixxerapp.vercel.app/",
     github: "https://github.com/sohaibyounas/MixxerApp",
@@ -63,7 +63,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "A data-driven web platform built with React.js and integrated REST APIs.",
-    image: "/dewis-v2.png",
+    image: "/dewis.png",
     tech: ["React.js", "JavaScript", "REST APIs", "Component Architecture", "Tailwind CSS"],
     live: "https://dewis.netlify.app/",
     github: "https://github.com/sohaibyounas/DewisApp",
@@ -91,7 +91,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
-    image: "/amexio-v2.png",
+    image: "/amexio.png",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
     live: "https://amexiofuse.netlify.app/",
     github: "https://github.com/sohaibyounas/Amexio-fuse",
@@ -119,7 +119,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "Full-stack E-Commerce store built with React.js and Next.js, featuring API integration and dynamic shopping cart capabilities.",
-    image: "/next-merce-v2.png",
+    image: "/next-merce.png",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
     live: "https://nextmercee.netlify.app/",
     github: "https://github.com/sohaibyounas/NextMerce",
@@ -146,7 +146,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "Luxury floral and lifestyle application crafted with React.js, Next.js, and elegant responsive design principles.",
-    image: "/blossend-v2.png",
+    image: "/blossend.png",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
     live: "https://blossend.netlify.app/",
     github: "https://github.com/sohaibyounas/Blossend",
@@ -172,7 +172,7 @@ const PROJECTS_DATA = {
     category: "E-Commerce",
     description:
       "Enterprise-grade e-commerce & SaaS web application built with React.js and Next.js, featuring API integration.",
-    image: "/openpro-v2.png",
+    image: "/openpro.png",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
     live: "https://open-my-pro-alpha.vercel.app/",
     github: "https://github.com/sohaibyounas/OpenMyPro",
@@ -198,7 +198,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "Production task & project management application built with React.js, Next.js, and Supabase integration.",
-    image: "/taskflowpro-v2.png",
+    image: "/taskflowpro.png",
     tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Supabase"],
     live: "https://taskflow-sync.netlify.app/login",
     github: "https://github.com/sohaibyounas/TaskFlow-Pro",
@@ -224,7 +224,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "A modern wellness and lifestyle publication platform featuring dynamic article categorization, fluid responsive layouts, and interactive newsletter integration.",
-    image: "/uplift-v2.png",
+    image: "/uplift.png",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     live: "https://uplift-blog-amber.vercel.app/",
     github: "https://github.com/sohaibyounas/Uplift-Blog",
@@ -250,7 +250,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "Professional in-browser file conversion tool with OCR capabilities. Supports DOCX, PDF, PPTX, and image formats with client-side processing and complete privacy.",
-    image: "/filesconvertor-v2.png",
+    image: "/filesconvertor.png",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "OCR", "Web Workers"],
     live: "https://filesconvertor.netlify.app/",
     github: "https://github.com/sohaibyounas/FilesConvertor",
@@ -276,7 +276,7 @@ const PROJECTS_DATA = {
     category: "Web Application",
     description:
       "Interactive full-stack engineering platform featuring an in-browser Monaco IDE sandbox, animated API and JWT request visualizers, progressive roadmaps, and AI-powered tutoring.",
-    image: "/codelearn-v2.png",
+    image: "/codelearn.png",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "AI SDK"],
     live: "https://codelearn-tech.netlify.app/",
     github: "https://github.com/sohaibyounas/ULearn",
