@@ -367,7 +367,7 @@ export function Hero() {
                     <span className="h-2.5 w-2.5 rounded-full bg-accent/60" />
                   </div>
                   <span className="font-mono text-xs text-foreground">
-                    architecture.tsx
+                    Architecture
                   </span>
                   <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
                 </div>

@@ -7,34 +7,30 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { smoothScrollTo } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
+  { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#stack" },
+  { label: "Projects", href: "#work" },
   { label: "Experience", href: "#experience" },
-  { label: "Stack", href: "#stack" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState("");
-  const { scrollY } = useScroll();
-  const scrolled = React.useRef(false);
+  const [activeSection, setActiveSection] = React.useState("#top");
+  const { scrollY, scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   React.useEffect(() => {
     const unsub = scrollY.on("change", (v) => {
-      const s = v > 40;
-      if (s !== scrolled.current) {
-        scrolled.current = s;
-        setIsScrolled(s);
-      }
+      setIsScrolled(v > 30);
     });
     return unsub;
   }, [scrollY]);
 
   // Active section tracking
   React.useEffect(() => {
-    const ids = ["work", "about", "experience", "stack", "contact"];
+    const ids = ["top", "about", "stack", "work", "experience", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,7 +39,7 @@ export function Navbar() {
           }
         });
       },
-      { rootMargin: "-40% 0px -50% 0px" },
+      { rootMargin: "-30% 0px -40% 0px" },
     );
 
     ids.forEach((id) => {
@@ -56,71 +52,97 @@ export function Navbar() {
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
-    smoothScrollTo(href);
+    if (href === "#top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("#top");
+    } else {
+      smoothScrollTo(href);
+    }
   };
+
+  const currentActive = isScrolled ? activeSection || "#top" : "#top";
 
   return (
     <>
+      {/* ─── Top Scroll Progress Bar (Line with project accent theme colors) ─── */}
+      <motion.div
+        style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
+        className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-gradient-to-r from-emerald-500 via-accent to-emerald-400 shadow-[0_0_12px_rgba(34,197,94,0.85)] pointer-events-none"
+      />
+
+      {/* ─── Dynamic Header: Initial -> Scrolled Floating Card ─── */}
       <motion.header
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "border-b border-border/50 bg-background/80 backdrop-blur-xl"
-            : "bg-transparent"
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 pointer-events-none ${
+          isScrolled ? "top-3 sm:top-4 px-3 sm:px-6" : "top-0 px-0"
         }`}
       >
-        <div className="container mx-auto flex h-16 items-center justify-between">
-          {/* Logo */}
+        <div
+          className={`mx-auto flex h-16 items-center justify-between pointer-events-auto transition-all duration-300 ${
+            isScrolled
+              ? "max-w-5xl lg:max-w-6xl rounded-2xl border border-white/10 dark:border-white/10 border-border/80 bg-background/85 dark:bg-[#0c101d]/90 backdrop-blur-xl shadow-2xl shadow-black/40 px-4 sm:px-6"
+              : "container mx-auto px-4 sm:px-6 bg-transparent border-transparent"
+          }`}
+        >
+          {/* Left: Original SOHAIB.DEV Logo */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => scrollTo("#top")}
             className="font-display text-sm font-bold tracking-[0.18em] text-foreground uppercase hover:text-accent transition-colors"
           >
             SOHAIB<span className="text-accent">.</span>DEV
           </button>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav Links */}
           <nav
             className="hidden items-center gap-1 lg:flex"
             aria-label="Main navigation"
           >
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
-                className={`relative px-3 py-2 text-sm transition-colors ${
-                  activeSection === link.href
-                    ? "text-foreground"
-                    : "text-foreground hover:text-foreground"
-                }`}
-              >
-                {activeSection === link.href && (
-                  <motion.span
-                    layoutId="nav-indicator"
-                    className="absolute inset-0 rounded-md bg-muted"
-                    transition={{ type: "spring", damping: 25, stiffness: 350 }}
-                  />
-                )}
-                <span className="relative z-10">{link.label}</span>
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = currentActive === link.href;
+              return (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className={`relative px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-foreground font-semibold"
+                      : "text-foreground/75 hover:text-foreground"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-xl bg-muted/80 dark:bg-white/10 border border-border/60 dark:border-white/10 shadow-sm"
+                      transition={{
+                        type: "spring",
+                        damping: 26,
+                        stiffness: 350,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </button>
+              );
+            })}
           </nav>
 
-          {/* Right CTA */}
+          {/* Right: Theme Toggle + Restored Let's Talk CTA */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
+
             <button
               onClick={() => scrollTo("#contact")}
-              className="hidden items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-accent-foreground lg:flex"
+              className="hidden items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-accent-foreground sm:flex"
             >
               Let&apos;s Talk <ArrowUpRight size={14} />
             </button>
 
-            {/* Mobile hamburger */}
+            {/* Mobile hamburger button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground transition-colors hover:bg-muted lg:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-border text-foreground transition-colors hover:bg-muted lg:hidden"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
             >
@@ -161,7 +183,7 @@ export function Navbar() {
             animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
             exit={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 flex flex-col bg-background pt-20 lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-background pt-24 lg:hidden"
           >
             <nav className="flex flex-1 flex-col items-center justify-center gap-2 px-6">
               {navLinks.map((link, i) => (
@@ -169,21 +191,21 @@ export function Navbar() {
                   key={link.href}
                   initial={{ opacity: 0, x: -24 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
+                  transition={{ delay: 0.08 + i * 0.05, duration: 0.35 }}
                   onClick={() => scrollTo(link.href)}
-                  className="w-full border-b border-border py-4 text-left font-display text-2xl font-semibold text-foreground transition-colors hover:text-accent"
+                  className="w-full border-b border-border py-3.5 text-left font-display text-xl font-semibold text-foreground transition-colors hover:text-accent flex items-center justify-between"
                 >
-                  <span className="mr-4 font-mono text-xs text-muted-foreground">
+                  <span>{link.label}</span>
+                  <span className="font-mono text-xs text-muted-foreground">
                     0{i + 1}
                   </span>
-                  {link.label}
                 </motion.button>
               ))}
 
               <motion.button
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.45 }}
                 onClick={() => scrollTo("#contact")}
                 className="mt-8 w-full rounded-full bg-accent py-4 text-center text-base font-semibold text-accent-foreground"
               >

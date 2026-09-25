@@ -48,20 +48,20 @@ export function ProjectCaseStudy({
             >
               <Link
                 href="/#work"
-                className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
+                className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-foreground transition-colors hover:text-foreground"
               >
                 <ArrowLeft size={14} /> Back to Work
               </Link>
 
               <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className="font-mono text-xs text-muted-foreground">{project.category}</span>
+                <span className="font-mono text-xs text-foreground">{project.category}</span>
               </div>
 
               <h1 className="font-display text-display-xl font-bold text-foreground mb-6">
                 {project.name}
               </h1>
 
-              <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg mb-10">
+              <p className="max-w-xl text-base leading-relaxed text-foreground sm:text-lg mb-10">
                 {project.description}
               </p>
 
@@ -119,14 +119,14 @@ export function ProjectCaseStudy({
                 <SectionReveal>
                   <div className="sticky top-24 space-y-8">
                     <div>
-                      <p className="mb-3 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                      <p className="mb-3 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
                         Technologies
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-xs text-muted-foreground"
+                            className="rounded-full border border-border bg-muted px-3 py-1 font-mono text-xs text-foreground"
                           >
                             {t}
                           </span>
@@ -135,10 +135,10 @@ export function ProjectCaseStudy({
                     </div>
 
                     <div>
-                      <p className="mb-2 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+                      <p className="mb-2 font-mono text-xs tracking-[0.2em] text-foreground uppercase">
                         My Role
                       </p>
-                      <p className="text-sm text-muted-foreground">{project.role}</p>
+                      <p className="text-sm text-foreground">{project.role}</p>
                     </div>
                   </div>
                 </SectionReveal>
@@ -151,7 +151,7 @@ export function ProjectCaseStudy({
                     <h2 className="mb-4 font-display text-xl font-bold text-foreground">
                       Overview
                     </h2>
-                    <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <p className="text-sm leading-relaxed text-foreground sm:text-base">
                       {project.overview}
                     </p>
                   </div>
@@ -162,7 +162,7 @@ export function ProjectCaseStudy({
                     <h2 className="mb-4 font-display text-xl font-bold text-foreground">
                       The Problem
                     </h2>
-                    <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <p className="text-sm leading-relaxed text-foreground sm:text-base">
                       {project.problem}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export function ProjectCaseStudy({
                     <h2 className="mb-4 font-display text-xl font-bold text-foreground">
                       The Solution
                     </h2>
-                    <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <p className="text-sm leading-relaxed text-foreground sm:text-base">
                       {project.solution}
                     </p>
                   </div>
@@ -186,7 +186,7 @@ export function ProjectCaseStudy({
                     </h2>
                     <ul className="space-y-3">
                       {project.challenges.map((c, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <li key={i} className="flex items-start gap-3 text-sm text-foreground">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                           {c}
                         </li>
@@ -202,7 +202,7 @@ export function ProjectCaseStudy({
                     </h2>
                     <ul className="space-y-3">
                       {project.learnings.map((l, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <li key={i} className="flex items-start gap-3 text-sm text-foreground">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                           {l}
                         </li>
@@ -218,7 +218,7 @@ export function ProjectCaseStudy({
         {/* ── Next Project ── */}
         <section className="border-t border-border py-16">
           <div className="container mx-auto">
-            <p className="mb-4 font-mono text-xs text-muted-foreground uppercase tracking-[0.2em]">
+            <p className="mb-4 font-mono text-xs text-foreground uppercase tracking-[0.2em]">
               Next Project
             </p>
             <Link
@@ -229,13 +229,13 @@ export function ProjectCaseStudy({
                 <h3 className="font-display text-display-md font-bold text-foreground transition-colors group-hover:text-accent">
                   {nextProject.name}
                 </h3>
-                <p className="mt-1 font-mono text-xs text-muted-foreground">
+                <p className="mt-1 font-mono text-xs text-foreground">
                   {nextProject.category}
                 </p>
               </div>
               <ArrowUpRight
                 size={24}
-                className="text-muted-foreground transition-all group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="text-foreground transition-all group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </Link>
           </div>
