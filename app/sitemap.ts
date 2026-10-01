@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 const BASE_URL = "https://sohaib.dev";
 
 const PROJECT_SLUGS = [
+  "alreem",
   "mixxer",
   "dewis",
   "amexio",
@@ -10,6 +11,10 @@ const PROJECT_SLUGS = [
   "blossend",
   "openpro",
   "taskflowpro",
+  "ecommerce-dashboard",
+  "uplift",
+  "filesconvertor",
+  "codelearn",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

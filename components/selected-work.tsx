@@ -73,14 +73,14 @@ const PROJECTS = [
     slug: "next-merce",
     index: "05",
     name: "Next Merce",
-    category: "Web Application",
+    category: "E-Commerce",
     description:
-      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
+      "Modern e-commerce storefront featuring dynamic product catalogs, instant cart persistence, promotional banners, and streamlined checkout.",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     image: "/next-merce-v2.png",
     live: "https://nextmercee.netlify.app/",
     github: "https://github.com/sohaibyounas/NextMerce",
-    color: "#a78bfa",
+    color: "#f59e0b",
   },
 
   // blossend
@@ -88,29 +88,29 @@ const PROJECTS = [
     slug: "blossend",
     index: "06",
     name: "Blossend",
-    category: "Web Application",
+    category: "Healthcare & Wellness",
     description:
-      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
+      "Elite health, wellness, and medical professional discovery platform connecting clients with verified practitioners and bespoke care.",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     image: "/blossend-v2.png",
     live: "https://blossend.netlify.app/",
     github: "https://github.com/sohaibyounas/Blossend",
-    color: "#a78bfa",
+    color: "#ec4899",
   },
 
-  // open my-pro E-Commerece
+  // open my-pro
   {
     slug: "openpro",
     index: "07",
     name: "Open My Pro",
-    category: "E-Commerece",
+    category: "Professional Services SaaS",
     description:
-      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript"],
+      "Modern professional services marketplace and booking management platform featuring AI-powered tools, geo-distance filtering, and instant scheduling.",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     image: "/openpro-v2.png",
     live: "https://open-my-pro-alpha.vercel.app/",
     github: "https://github.com/sohaibyounas/OpenMyPro",
-    color: "#a78bfa",
+    color: "#8b5cf6",
   },
 
   // taskflow pro
@@ -118,20 +118,35 @@ const PROJECTS = [
     slug: "taskflowpro",
     index: "08",
     name: "Taskflow Pro",
-    category: "Web Application",
+    category: "Productivity & Workspace",
     description:
-      "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Supabase"],
+      "Agile workspace and sprint task management application featuring Kanban boards, Trello-inspired card synchronization, and Supabase authentication.",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     image: "/taskflowpro-v2.png",
-    live: "https://taskflow-sync.netlify.app/login",
+    live: "https://taskflow-sync.netlify.app/",
     github: "https://github.com/sohaibyounas/TaskFlow-Pro",
-    color: "#a78bfa",
+    color: "#06b6d4",
+  },
+
+  // e-commerce dashboard
+  {
+    slug: "ecommerce-dashboard",
+    index: "09",
+    name: "E-Commerce Dashboard",
+    category: "E-Commerce & SaaS",
+    description:
+      "Comprehensive enterprise management suite featuring real-time revenue analytics, order processing workflows, product inventory control, and customer metrics.",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
+    image: "/ecommerce-dashboard-v2.png",
+    live: "https://e-commerce-production-0a3a.up.railway.app/dashboard",
+    github: "https://github.com/sohaibyounas/E-Commerce",
+    color: "#38bdf8",
   },
 
   // uplift
   {
     slug: "uplift",
-    index: "09",
+    index: "10",
     name: "Uplift",
     category: "Web Application",
     description:
@@ -152,7 +167,7 @@ const PROJECTS = [
   // fileconvert pro
   {
     slug: "filesconvertor",
-    index: "10",
+    index: "11",
     name: "FileConvert Pro",
     category: "Web Application",
     description:
@@ -174,7 +189,7 @@ const PROJECTS = [
   // codelearn
   {
     slug: "codelearn",
-    index: "11",
+    index: "12",
     name: "CodeLearn",
     category: "Web Application",
     description:

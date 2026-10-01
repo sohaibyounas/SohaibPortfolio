@@ -36,7 +36,13 @@ const PROJECTS_DATA = {
     description:
       "A production-focused web application with modern responsive interfaces and API-driven functionality.",
     image: "/mixxer.png",
-    tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI", "CSS Modules"],
+    tech: [
+      "React.js",
+      "JavaScript",
+      "REST APIs",
+      "Responsive UI",
+      "CSS Modules",
+    ],
     live: "https://mixxerapp.vercel.app/",
     github: "https://github.com/sohaibyounas/MixxerApp",
     overview:
@@ -64,7 +70,13 @@ const PROJECTS_DATA = {
     description:
       "A data-driven web platform built with React.js and integrated REST APIs.",
     image: "/dewis.png",
-    tech: ["React.js", "JavaScript", "REST APIs", "Component Architecture", "Tailwind CSS"],
+    tech: [
+      "React.js",
+      "JavaScript",
+      "REST APIs",
+      "Component Architecture",
+      "Tailwind CSS",
+    ],
     live: "https://dewis.netlify.app/",
     github: "https://github.com/sohaibyounas/DewisApp",
     overview:
@@ -92,7 +104,13 @@ const PROJECTS_DATA = {
     description:
       "Enterprise-grade web application built with React.js and Next.js, featuring API integration and a scalable component system.",
     image: "/amexio.png",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
+    tech: [
+      "React.js",
+      "Next.js",
+      "API Integration",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
     live: "https://amexiofuse.netlify.app/",
     github: "https://github.com/sohaibyounas/Amexio-fuse",
     overview:
@@ -116,106 +134,179 @@ const PROJECTS_DATA = {
   "next-merce": {
     slug: "next-merce",
     name: "Next Merce",
-    category: "Web Application",
+    category: "E-Commerce",
     description:
-      "Full-stack E-Commerce store built with React.js and Next.js, featuring API integration and dynamic shopping cart capabilities.",
+      "Modern e-commerce storefront featuring dynamic product catalogs, instant cart persistence, promotional banners, and streamlined checkout.",
     image: "/next-merce.png",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     live: "https://nextmercee.netlify.app/",
     github: "https://github.com/sohaibyounas/NextMerce",
     overview:
-      "Next Merce is a high-performance e-commerce platform designed for fast product discovery, seamless navigation, and real-time shopping cart management.",
+      "Next Merce is a high-performance e-commerce platform designed for fast product discovery, seamless category navigation, and real-time shopping cart management.",
     problem:
-      "Traditional online stores suffer from slow page loads and sluggish cart operations, negatively impacting user conversion rates.",
+      "Traditional online stores suffer from slow page loads and sluggish cart operations, negatively impacting user conversion rates and mobile shopping experience.",
     solution:
-      "Leveraged Next.js Server Components and client-side optimistic state updates for near-instantaneous page transitions and immediate cart reflections.",
-    role: "Sole developer responsible for full application design and implementation.",
+      "Leveraged Next.js Server Components and client-side optimistic state updates for near-instantaneous page transitions and immediate cart reflections with persistent local storage.",
+    role: "Sole developer responsible for full application design, component hierarchy, and responsive implementation.",
     challenges: [
-      "Optimizing dynamic product catalog filtering and search",
+      "Optimizing dynamic product catalog filtering and search across categories",
       "State synchronization between shopping cart drawer and checkout flow",
-      "Ensuring responsive layout across diverse mobile viewports",
+      "Ensuring responsive layout across diverse mobile viewports and tablet devices",
     ],
     learnings: [
       "Optimistic UI updates dramatically boost e-commerce user conversion",
-      "Next.js App Router route handlers simplify API integrations",
+      "Next.js App Router route handlers simplify API integrations and state caching",
     ],
   },
   blossend: {
     slug: "blossend",
     name: "Blossend",
-    category: "Web Application",
+    category: "Healthcare & Wellness",
     description:
-      "Luxury floral and lifestyle application crafted with React.js, Next.js, and elegant responsive design principles.",
+      "Elite health, wellness, and medical professional discovery platform connecting clients with verified practitioners and personalized consultations.",
     image: "/blossend.png",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     live: "https://blossend.netlify.app/",
     github: "https://github.com/sohaibyounas/Blossend",
     overview:
-      "Blossend offers an immersive digital showcase for high-end boutique products, prioritizing aesthetic elegance and fluid micro-interactions.",
+      "Blossend offers an immersive digital directory and booking experience for healthcare and wellness experts, prioritizing practitioner verification, specialty filtering, and fluid micro-interactions.",
     problem:
-      "Client desired a digital brand experience that felt ultra-premium while keeping load times under 1 second.",
+      "Clients needed a trustworthy, modern platform to find and connect with top-tier wellness practitioners without clunky directory interfaces or confusing scheduling flows.",
     solution:
-      "Crafted custom CSS animations, optimized web font loading, and built modular UI components tailored to showcase high-resolution product imagery.",
-    role: "Frontend Architect & Designer.",
+      "Engineered an elegant, responsive interface with fast practitioner search, specialized practice categorizations, and interactive booking previews.",
+    role: "Frontend Architect & UI Developer responsible for complete component structure and responsive styling.",
     challenges: [
-      "Balancing heavy image visuals with fast initial load speed",
-      "Implementing custom fluid transitions across page routes",
+      "Structuring multifaceted practitioner directory filters by practice and distance",
+      "Balancing rich imagery and profile presentations with fast page load performance",
+      "Designing a calming, luxury-inspired visual aesthetic aligned with wellness principles",
     ],
     learnings: [
-      "Subtle micro-animations significantly elevate perceived brand value",
-      "Image optimization techniques (AVIF/WebP) are crucial for visual-heavy sites",
+      "Subtle micro-animations and typography hierarchy elevate user trust in healthcare applications",
+      "Modular search filter state prevents unnecessary DOM repaints during rapid filtering",
     ],
   },
   openpro: {
     slug: "openpro",
     name: "Open My Pro",
-    category: "E-Commerce",
+    category: "Professional Services SaaS",
     description:
-      "Enterprise-grade e-commerce & SaaS web application built with React.js and Next.js, featuring API integration.",
+      "Modern professional services marketplace and booking management platform featuring AI-powered tools, geo-distance filtering, and instant scheduling.",
     image: "/openpro.png",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Tailwind CSS"],
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
     live: "https://open-my-pro-alpha.vercel.app/",
     github: "https://github.com/sohaibyounas/OpenMyPro",
     overview:
-      "Open My Pro is an all-in-one e-commerce management platform providing merchants with powerful dashboard tools and a clean customer-facing interface.",
+      "Open My Pro is an all-in-one professional services platform enabling clients to discover, filter by zip code radius and practice specialty, and connect directly with verified experts.",
     problem:
-      "Merchants needed a cohesive interface to handle analytics, inventory, and storefront displays within a single unified web app.",
+      "Service providers and clients needed a streamlined workflow to bridge discovery and appointment management without friction.",
     solution:
-      "Engineered a modular Next.js architecture with centralized state management, clean data tables, and an intuitive storefront navigation structure.",
-    role: "Full-stack Frontend Lead.",
+      "Engineered a responsive Next.js web application with radius-based distance filtering, practice category sorting, and interactive profile cards.",
+    role: "Lead Frontend Engineer responsible for UI architecture, search filters, and responsive design.",
     challenges: [
-      "Complex dashboard data visualization across device sizes",
-      "Handling authentication and session states securely",
+      "Implementing multi-criteria search filtering including distance radius and practice domains",
+      "Ensuring rapid initial load speed and fluid transitions on mobile devices",
+      "Building accessible, reusable form controls for scheduling and inquiries",
     ],
     learnings: [
-      "Clean component separation accelerates feature iteration speed",
-      "Designing flexible design tokens keeps complex dashboards cohesive",
+      "Client-side caching of filter parameters dramatically enhances perceived search responsiveness",
+      "Clear visual indicators for verified professionals significantly increase user confidence",
     ],
   },
   taskflowpro: {
     slug: "taskflowpro",
     name: "Taskflow Pro",
-    category: "Web Application",
+    category: "Productivity & Workspace",
     description:
-      "Production task & project management application built with React.js, Next.js, and Supabase integration.",
+      "Agile workspace and sprint task management application featuring Kanban boards, Trello-inspired card synchronization, and Supabase authentication.",
     image: "/taskflowpro.png",
-    tech: ["React.js", "Next.js", "API Integration", "TypeScript", "Supabase"],
-    live: "https://taskflow-sync.netlify.app/login",
+    tech: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    live: "https://taskflow-sync.netlify.app/",
     github: "https://github.com/sohaibyounas/TaskFlow-Pro",
     overview:
-      "Taskflow Pro is a collaborative task management application offering kanban workflows, project tracking, and real-time sync.",
+      "Taskflow Pro is a collaborative sprint and project management application providing engineering teams with Kanban boards, sprint card tracking, and one-click demo access.",
     problem:
-      "Teams needed a lightweight, intuitive alternative to overly complex project management tools.",
+      "Teams often find modern enterprise project management tools bloated, slow, and overly intricate for fast-paced agile development.",
     solution:
-      "Integrated Supabase real-time subscriptions with a clean React drag-and-drop workflow interface.",
-    role: "Lead Frontend Developer.",
+      "Built a focused, agile workspace interface powered by Supabase with instant demo authentication, real-time board updates, and intuitive card management.",
+    role: "Lead Frontend Developer responsible for authentication flows, board UI, and responsive interaction design.",
     challenges: [
-      "Real-time state synchronization across concurrent active users",
-      "Drag and drop accessibility and responsive touch handling",
+      "Implementing frictionless one-click demo credentials and Supabase auth workflows",
+      "State synchronization for Kanban columns, sprint tags, and task state mutations",
+      "Ensuring high responsiveness across touch and pointer devices",
     ],
     learnings: [
-      "Real-time web sockets require robust fallback reconnection handlers",
-      "Clear feedback indicators are vital for asynchronous sync tasks",
+      "Streamlined demo credential auto-fill drastically improves user onboarding conversion",
+      "Optimistic UI updates are essential for fluid Kanban board card movements",
+    ],
+  },
+  "ecommerce-dashboard": {
+    slug: "ecommerce-dashboard",
+    name: "E-Commerce Dashboard",
+    category: "E-Commerce & SaaS",
+    description:
+      "Comprehensive enterprise management suite featuring real-time revenue analytics, order processing workflows, product inventory control, and customer metrics.",
+    image: "/ecommerce-dashboard.png",
+    tech: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST APIs",
+      "Analytics",
+    ],
+    live: "https://e-commerce-production-0a3a.up.railway.app/dashboard",
+    github: "https://github.com/sohaibyounas/E-Commerce",
+    overview:
+      "E-Commerce Dashboard (EcomDash Pro) is a production-grade merchant management portal engineered to streamline multichannel sales, monitor real-time order workflows, track inventory levels, and visualize sales KPIs through responsive, interactive dashboards.",
+    problem:
+      "Online store operators struggle with fragmented systems for inventory, order fulfillment, and financial performance metrics, leading to operational delays and revenue leakage.",
+    solution:
+      "Engineered a unified, high-performance dashboard with modular data cards, dynamic sales trend visualizations, streamlined order fulfillment statuses, and responsive navigation across all devices.",
+    role: "Full-Stack Frontend Developer responsible for dashboard architecture, data visualization interfaces, responsive layout systems, and API integration.",
+    challenges: [
+      "Designing real-time data visualizations and sales trend metrics that maintain high rendering performance",
+      "Structuring complex state management for order filtering, inventory categorization, and notifications",
+      "Building an intuitive, mobile-responsive layout for comprehensive data tables on compact screens",
+    ],
+    learnings: [
+      "Modular data table architecture drastically simplifies filter and pagination state management",
+      "Aggregating critical KPI metrics at the top level increases merchant operational efficiency",
+      "Optimized chart rendering avoids redundant re-renders when updating streaming analytics data",
+    ],
+  },
+  "e-commerce": {
+    slug: "e-commerce",
+    name: "E-Commerce Dashboard",
+    category: "E-Commerce & SaaS",
+    description:
+      "Comprehensive enterprise management suite featuring real-time revenue analytics, order processing workflows, product inventory control, and customer metrics.",
+    image: "/ecommerce-dashboard.png",
+    tech: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST APIs",
+      "Analytics",
+    ],
+    live: "https://e-commerce-production-0a3a.up.railway.app/dashboard",
+    github: "https://github.com/sohaibyounas/E-Commerce",
+    overview:
+      "E-Commerce Dashboard (EcomDash Pro) is a production-grade merchant management portal engineered to streamline multichannel sales, monitor real-time order workflows, track inventory levels, and visualize sales KPIs through responsive, interactive dashboards.",
+    problem:
+      "Online store operators struggle with fragmented systems for inventory, order fulfillment, and financial performance metrics, leading to operational delays and revenue leakage.",
+    solution:
+      "Engineered a unified, high-performance dashboard with modular data cards, dynamic sales trend visualizations, streamlined order fulfillment statuses, and responsive navigation across all devices.",
+    role: "Full-Stack Frontend Developer responsible for dashboard architecture, data visualization interfaces, responsive layout systems, and API integration.",
+    challenges: [
+      "Designing real-time data visualizations and sales trend metrics that maintain high rendering performance",
+      "Structuring complex state management for order filtering, inventory categorization, and notifications",
+      "Building an intuitive, mobile-responsive layout for comprehensive data tables on compact screens",
+    ],
+    learnings: [
+      "Modular data table architecture drastically simplifies filter and pagination state management",
+      "Aggregating critical KPI metrics at the top level increases merchant operational efficiency",
+      "Optimized chart rendering avoids redundant re-renders when updating streaming analytics data",
     ],
   },
   uplift: {
@@ -225,7 +316,13 @@ const PROJECTS_DATA = {
     description:
       "A modern wellness and lifestyle publication platform featuring dynamic article categorization, fluid responsive layouts, and interactive newsletter integration.",
     image: "/uplift.png",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
     live: "https://uplift-blog-amber.vercel.app/",
     github: "https://github.com/sohaibyounas/Uplift-Blog",
     overview:
@@ -251,7 +348,14 @@ const PROJECTS_DATA = {
     description:
       "Professional in-browser file conversion tool with OCR capabilities. Supports DOCX, PDF, PPTX, and image formats with client-side processing and complete privacy.",
     image: "/filesconvertor.png",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "OCR", "Web Workers"],
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "OCR",
+      "Web Workers",
+    ],
     live: "https://filesconvertor.netlify.app/",
     github: "https://github.com/sohaibyounas/FilesConvertor",
     overview:
@@ -277,7 +381,14 @@ const PROJECTS_DATA = {
     description:
       "Interactive full-stack engineering platform featuring an in-browser Monaco IDE sandbox, animated API and JWT request visualizers, progressive roadmaps, and AI-powered tutoring.",
     image: "/codelearn.png",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Monaco Editor", "AI SDK"],
+    tech: [
+      "Next.js",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Monaco Editor",
+      "AI SDK",
+    ],
     live: "https://codelearn-tech.netlify.app/",
     github: "https://github.com/sohaibyounas/ULearn",
     overview:

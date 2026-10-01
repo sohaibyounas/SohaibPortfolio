@@ -64,48 +64,64 @@ const TAB_CONTENT: Record<
     lines: [
       { text: "$ ls ./projects", type: "cmd" },
       { text: "", type: "muted" },
-      { text: "total 8 projects", type: "info" },
+      { text: "total 12 projects", type: "info" },
       { text: "", type: "muted" },
       {
-        text: "drwxr  alreem/      → Web Application · React.js",
+        text: "drwxr  alreem/              → Web Application · React.js + APIs",
         type: "info",
       },
       {
-        text: "drwxr  mixxer/      → Web Application · React.js",
+        text: "drwxr  mixxer/              → Web Application · React.js + APIs",
         type: "info",
       },
       {
-        text: "drwxr  dewis/       → Web Application · React.js + APIs",
+        text: "drwxr  dewis/               → Web Application · React.js + APIs",
         type: "info",
       },
       {
-        text: "drwxr  amexio/      → Web Application · React + Next.js",
+        text: "drwxr  amexio/              → Web Application · React + Next.js",
         type: "info",
       },
       {
-        text: "drwxr  next-merce/  → Web Application · React + Next.js",
+        text: "drwxr  next-merce/          → E-Commerce      · React + Next.js",
         type: "info",
       },
       {
-        text: "drwxr  blossend/    → Web Application · React + Next.js",
+        text: "drwxr  blossend/            → Health & Wellness· React + Next.js",
         type: "info",
       },
       {
-        text: "drwxr  openpro/     → E-Commerce      · React + Next.js",
+        text: "drwxr  openpro/             → Services SaaS   · React + Next.js",
         type: "info",
       },
       {
-        text: "drwxr  taskflowpro/ → Web Application · React + Next.js + Supabase",
+        text: "drwxr  taskflowpro/         → Productivity    · React + Next.js + Supabase",
+        type: "info",
+      },
+      {
+        text: "drwxr  ecommerce-dashboard/ → E-Commerce & SaaS· React + Next.js + Analytics",
+        type: "info",
+      },
+      {
+        text: "drwxr  uplift/              → Lifestyle Blog  · Next.js + Tailwind",
+        type: "info",
+      },
+      {
+        text: "drwxr  filesconvertor/      → File Utility    · Next.js + Web Workers + OCR",
+        type: "info",
+      },
+      {
+        text: "drwxr  codelearn/           → EdTech Sandbox  · Next.js + Monaco IDE + AI",
         type: "info",
       },
       { text: "", type: "muted" },
-      { text: "$ cat mixxer/README.md", type: "cmd" },
+      { text: "$ cat next-merce/README.md", type: "cmd" },
       {
-        text: "Production web app · responsive UI · API integration",
+        text: "Production web apps · responsive UI · API integration · live deployments",
         type: "info",
       },
       { text: "", type: "muted" },
-      { text: "✓ 8 projects · all production-deployed", type: "success" },
+      { text: "✓ 12 projects · all production-deployed", type: "success" },
     ],
   },
   contact: {
