@@ -202,7 +202,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "loading" || status === "success"}
-                  className="group flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_hsl(142_70%_45%/0.3)] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="group flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(48,175,255,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === "loading" ? (
                     <>
@@ -228,7 +228,7 @@ export function Contact() {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
-                      className="flex items-center gap-2 rounded-lg border border-emerald-500/20 bg-emerald-500/10 p-3 text-sm text-emerald-400"
+                      className="flex items-center gap-2 rounded-lg border border-[#c4f7ca]/30 bg-[#c4f7ca]/10 p-3 text-sm text-[#c4f7ca]"
                     >
                       <CheckCircle size={16} />
                       Message sent! I&apos;ll get back to you within 24 hours.

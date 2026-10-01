@@ -131,7 +131,7 @@ const TAB_CONTENT: Record<
 
 const TYPE_COLORS: Record<string, string> = {
   cmd: "text-accent font-semibold",
-  success: "text-emerald-400",
+  success: "text-[#c4f7ca]",
   info: "text-foreground/80",
   muted: "text-muted-foreground",
   accent: "text-accent",

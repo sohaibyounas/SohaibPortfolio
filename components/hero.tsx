@@ -12,11 +12,11 @@ import { smoothScrollTo } from "@/lib/utils";
 
 // ─── Tech Flow Diagram ───
 const nodes = [
-  { id: "ui", label: "User Interface", x: 160, y: 30, color: "#22c55e" },
-  { id: "react", label: "React", x: 160, y: 120, color: "#61dafb" },
+  { id: "ui", label: "User Interface", x: 160, y: 30, color: "#30afff" },
+  { id: "react", label: "React", x: 160, y: 120, color: "#92eeff" },
   { id: "nextjs", label: "Next.js", x: 160, y: 210, color: "#ffffff" },
-  { id: "api", label: "REST API", x: 160, y: 300, color: "#a78bfa" },
-  { id: "db", label: "Database", x: 160, y: 390, color: "#f59e0b" },
+  { id: "api", label: "REST API", x: 160, y: 300, color: "#c4f7ca" },
+  { id: "db", label: "Database", x: 160, y: 390, color: "#d8ffc5" },
 ];
 
 const connections = [
@@ -239,7 +239,7 @@ export function Hero() {
           width: 350,
           height: 350,
           background:
-            "radial-gradient(circle, hsl(142 70% 45% / 0.4), transparent 70%)",
+            "radial-gradient(circle, rgba(48, 175, 255, 0.35), transparent 70%)",
         }}
       />
 
@@ -297,7 +297,7 @@ export function Hero() {
             >
               <button
                 onClick={() => scrollTo("work")}
-                className="group flex justify-center items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_hsl(142_70%_45%/0.4)] w-full xs:w-auto"
+                className="group flex justify-center items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-[0_0_30px_rgba(48,175,255,0.4)] w-full xs:w-auto"
               >
                 View My Work
                 <ArrowUpRight

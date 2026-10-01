@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -16,6 +17,8 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState("#top");
   const { scrollY, scrollYProgress } = useScroll();
@@ -48,10 +51,19 @@ export function Navbar() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
+    if (pathname !== "/") {
+      if (href === "#top") {
+        router.push("/");
+      } else {
+        router.push("/" + href);
+      }
+      return;
+    }
+
     if (href === "#top") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setActiveSection("#top");
@@ -60,14 +72,19 @@ export function Navbar() {
     }
   };
 
-  const currentActive = isScrolled ? activeSection || "#top" : "#top";
+  const isProjectPage = pathname.startsWith("/projects");
+  const currentActive = isProjectPage
+    ? "#work"
+    : isScrolled
+    ? activeSection || "#top"
+    : "#top";
 
   return (
     <>
       {/* ─── Top Scroll Progress Bar (Line with project accent theme colors) ─── */}
       <motion.div
         style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
-        className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-gradient-to-r from-emerald-500 via-accent to-emerald-400 shadow-[0_0_12px_rgba(34,197,94,0.85)] pointer-events-none"
+        className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-gradient-to-r from-[#30afff] via-[#92eeff] to-[#c4f7ca] shadow-[0_0_12px_rgba(48,175,255,0.85)] pointer-events-none"
       />
 
       {/* ─── Dynamic Header: Initial -> Scrolled Floating Card ─── */}

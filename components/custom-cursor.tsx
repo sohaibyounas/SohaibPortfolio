@@ -81,13 +81,13 @@ export function CustomCursor() {
             height: cursorState === "view" ? 80 : cursorState === "hover" ? 44 : 36,
             backgroundColor:
               cursorState === "view"
-                ? "rgba(34, 197, 94, 0.15)"
+                ? "rgba(48, 175, 255, 0.15)"
                 : cursorState === "hover"
                 ? "rgba(245, 245, 245, 0.12)"
                 : "rgba(245, 245, 245, 0)",
             borderColor:
               cursorState === "view"
-                ? "rgba(34, 197, 94, 0.8)"
+                ? "rgba(48, 175, 255, 0.8)"
                 : "rgba(245, 245, 245, 0.4)",
           }}
           transition={{ type: "spring", damping: 22, stiffness: 300 }}

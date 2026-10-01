@@ -33,6 +33,12 @@ const config: Config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        palette: {
+          blue: "#30afff",
+          cyan: "#92eeff",
+          lime: "#d8ffc5",
+          mint: "#c4f7ca",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

@@ -15,9 +15,26 @@ import { Terminal } from "@/components/terminal";
 import { Metrics } from "@/components/metrics";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import { smoothScrollTo } from "@/lib/utils";
 
 export default function Home() {
   const [loaderDone, setLoaderDone] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleHashScroll = () => {
+      if (typeof window !== "undefined" && window.location.hash) {
+        setTimeout(() => {
+          smoothScrollTo(window.location.hash);
+        }, 120);
+      }
+    };
+
+    if (loaderDone) {
+      handleHashScroll();
+      window.addEventListener("hashchange", handleHashScroll);
+      return () => window.removeEventListener("hashchange", handleHashScroll);
+    }
+  }, [loaderDone]);
 
   return (
     <>

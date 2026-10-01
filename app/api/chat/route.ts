@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-});
-
 const SYSTEM_INSTRUCTION = `
 You are the official AI Assistant for Sohaib Younas's Developer Portfolio (https://sohaib-dev-portfolio.vercel.app).
 Answer questions regarding Sohaib's frontend engineering experience, React.js & Next.js skills, and his 11 projects:
@@ -30,9 +26,9 @@ Keep your answers short and concise.
 `;
 
 const CANDIDATE_MODELS = [
-  "gemini-3.6-flash",
-  "gemini-3.5-flash",
   "gemini-3.8-flash",
+  "gemini-3.6-flash",
+  "gemini-2.5-flash",
   "gemini-2.0-flash",
   "gemini-1.5-flash",
   "gemini-1.5-pro",
@@ -40,6 +36,18 @@ const CANDIDATE_MODELS = [
 
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.GEMINI_API_KEY?.trim();
+    if (!apiKey) {
+      return NextResponse.json(
+        {
+          error:
+            "GEMINI_API_KEY environment variable is not configured. Please add GEMINI_API_KEY to your Vercel Project Settings > Environment Variables and redeploy.",
+        },
+        { status: 500 },
+      );
+    }
+
+    const ai = new GoogleGenAI({ apiKey });
     const { messages } = await req.json();
 
     const formattedContents = messages

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Linkedin, Mail, Download } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
@@ -36,7 +37,18 @@ const NAV_LINKS = [
 ];
 
 export function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const scrollTo = (href: string) => {
+    if (pathname !== "/") {
+      if (href === "#top") {
+        router.push("/");
+      } else {
+        router.push("/" + href);
+      }
+      return;
+    }
     smoothScrollTo(href);
   };
 
@@ -52,7 +64,13 @@ export function Footer() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => {
+                if (pathname !== "/") {
+                  router.push("/");
+                } else {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               className="mb-4 block font-display text-sm font-bold tracking-[0.18em] text-foreground uppercase hover:text-accent transition-colors"
             >
               SOHAIB<span className="text-accent">.</span>DEV
