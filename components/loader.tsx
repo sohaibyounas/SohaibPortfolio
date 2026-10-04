@@ -3,16 +3,19 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function Loader({ onComplete }: { onComplete: () => void }) {
+export function Loader({ onComplete }: { onComplete?: () => void }) {
   const [count, setCount] = React.useState(0);
   const [done, setDone] = React.useState(false);
+  const onCompleteRef = React.useRef(onComplete);
 
   React.useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
-
+  React.useEffect(() => {
     let current = 0;
     const target = 100;
-    const duration = 1600; // ms
+    const duration = 1400; // ms
     const interval = duration / target;
 
     const timer = setInterval(() => {
@@ -22,13 +25,15 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
         clearInterval(timer);
         setTimeout(() => {
           setDone(true);
-          setTimeout(onComplete, 700);
-        }, 200);
+          setTimeout(() => {
+            onCompleteRef.current?.();
+          }, 600);
+        }, 150);
       }
     }, interval);
 
     return () => clearInterval(timer);
-  }, [onComplete]);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -37,15 +42,15 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
           key="loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0A0A0A]"
+          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background pointer-events-auto"
         >
           {/* Logotype */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-12 font-display text-sm font-semibold tracking-[0.3em] text-white/40 uppercase"
+            className="mb-12 font-display text-sm font-semibold tracking-[0.3em] text-muted-foreground uppercase"
           >
             SOHAIB.DEV
           </motion.div>
@@ -54,7 +59,7 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
           <div className="relative overflow-hidden">
             <motion.span
               key={count}
-              className="block font-display text-[clamp(5rem,15vw,10rem)] font-bold leading-none tracking-tighter text-white"
+              className="block font-display text-[clamp(5rem,15vw,10rem)] font-bold leading-none tracking-tighter text-foreground"
               style={{ fontVariantNumeric: "tabular-nums" }}
             >
               {count}
@@ -62,9 +67,9 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
           </div>
 
           {/* Progress bar */}
-          <div className="mt-8 h-px w-48 overflow-hidden bg-white/10">
+          <div className="mt-8 h-px w-48 overflow-hidden bg-border">
             <motion.div
-              className="h-full bg-white"
+              className="h-full bg-foreground"
               animate={{ width: `${count}%` }}
               transition={{ ease: "linear", duration: 0 }}
             />

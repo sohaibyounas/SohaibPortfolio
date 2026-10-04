@@ -90,8 +90,8 @@ export default function RootLayout({
               jobTitle: "Frontend Developer",
               url: "https://sohaib.dev",
               sameAs: [
-                "https://github.com/sohaib-younas",
-                "https://linkedin.com/in/sohaib-younas",
+                "https://github.com/sohaibyounas",
+                "https://www.linkedin.com/in/sohaibyounas/",
               ],
               knowsAbout: [
                 "React.js",
@@ -122,7 +122,7 @@ export default function RootLayout({
           <div className="grain-overlay" aria-hidden="true" />
           {children}
 
-          {/* Floating AI Chatbot har page par show hoga */}
+          {/* Floating AI Chatbot — renders on every page */}
           <PortfolioChatbot />
         </ThemeProvider>
       </body>

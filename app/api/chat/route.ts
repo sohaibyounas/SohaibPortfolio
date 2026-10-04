@@ -21,7 +21,7 @@ Answer questions regarding Sohaib's frontend engineering experience, React.js & 
 Experience:
 - React Developer at Drudots Technologies (2025 — Present)
 - Frontend Developer (Freelance, 2022 — 2024)
-Contact: sohaibyounas24@gmail.com | GitHub: https://github.com/sohaibyounas
+Contact: sohaibyounas24@gmail.com | GitHub: https://github.com/sohaibyounas | LinkedIn: https://www.linkedin.com/in/sohaibyounas/
 
 Keep your answers short and concise.
 `;

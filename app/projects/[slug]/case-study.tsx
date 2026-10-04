@@ -8,23 +8,7 @@ import { ArrowLeft, ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-
-type Project = {
-  slug: string;
-  name: string;
-  category: string;
-  description: string;
-  image: string;
-  tech: string[];
-  live: string;
-  github: string;
-  overview: string;
-  problem: string;
-  solution: string;
-  role: string;
-  challenges: string[];
-  learnings: string[];
-};
+import type { ProjectCaseStudy as Project } from "@/data/projects";
 
 export function ProjectCaseStudy({
   project,

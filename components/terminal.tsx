@@ -131,8 +131,8 @@ const TAB_CONTENT: Record<
       { text: "initiating connection...", type: "info" },
       { text: "", type: "muted" },
       { text: "email     → sohaibyounas24@gmail.com", type: "info" },
-      { text: "linkedin  → linkedin.com/in/sohaib-younas", type: "info" },
-      { text: "github    → github.com/sohaib-younas", type: "info" },
+      { text: "linkedin  → linkedin.com/in/sohaibyounas", type: "info" },
+      { text: "github    → github.com/sohaibyounas", type: "info" },
       { text: "", type: "muted" },
       { text: "response_time → < 24 hours", type: "accent" },
       { text: "availability  → open to work", type: "success" },
@@ -162,13 +162,14 @@ function TypewriterLines({
 
   React.useEffect(() => {
     let i = 0;
+    setVisibleCount(0);
 
     const timer = setInterval(() => {
       i++;
       setVisibleCount(i);
 
       if (i >= lines.length) clearInterval(timer);
-    }, 80);
+    }, 60);
     return () => clearInterval(timer);
   }, [lines]);
 
@@ -194,11 +195,9 @@ function TypewriterLines({
 
 export function Terminal() {
   const [activeTab, setActiveTab] = React.useState<TabId>("who am i");
-  const [prevTab, setPrevTab] = React.useState<TabId>("who am i");
 
   const switchTab = (id: TabId) => {
     if (id === activeTab) return;
-    setPrevTab(activeTab);
     setActiveTab(id);
   };
 

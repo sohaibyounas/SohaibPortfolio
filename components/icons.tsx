@@ -1,6 +1,10 @@
 import * as React from "react";
 
-export function GithubIcon({ size = 24, className, ...props }: any) {
+export interface GithubIconProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+}
+
+export function GithubIcon({ size = 24, className, ...props }: GithubIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

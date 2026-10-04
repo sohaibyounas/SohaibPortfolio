@@ -3,18 +3,10 @@
 import * as React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Linkedin, Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { SectionReveal } from "@/components/section-reveal";
-
-const schema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(20, "Message must be at least 20 characters"),
-});
-
-type FormValues = z.infer<typeof schema>;
+import { contactSchema, type ContactFormValues } from "@/lib/validations";
 
 export function Contact() {
   const [status, setStatus] = React.useState<"idle" | "loading" | "success" | "error">("idle");
@@ -24,9 +16,9 @@ export function Contact() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormValues>({ resolver: zodResolver(schema) });
+  } = useForm<ContactFormValues>({ resolver: zodResolver(contactSchema) });
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async (data: ContactFormValues) => {
     setStatus("loading");
     try {
       const response = await fetch("/api/contact", {
@@ -82,7 +74,7 @@ export function Contact() {
             <SectionReveal delay={0.15}>
               <div className="flex flex-col gap-3.5 sm:gap-4">
                 <a
-                  href="https://linkedin.com/in/sohaib-younas"
+                  href="https://www.linkedin.com/in/sohaibyounas/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-3 rounded-xl border border-border p-3.5 sm:p-4 transition-all hover:border-foreground/20 hover:bg-muted"
@@ -93,7 +85,7 @@ export function Contact() {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">LinkedIn</p>
                     <p className="font-mono text-xs text-foreground truncate">
-                      linkedin.com/in/sohaib-younas
+                      linkedin.com/in/sohaibyounas
                     </p>
                   </div>
                   <ArrowUpRight

@@ -40,24 +40,20 @@ export default function Home() {
     <>
       <Loader onComplete={() => setLoaderDone(true)} />
       <CustomCursor />
-      {loaderDone && (
-        <>
-          <Navbar />
-          <main>
-            <Hero />
-            <TechMarquee />
-            <About />
-            <Experience />
-            <SelectedWork />
-            <Philosophy />
-            <TechStack />
-            <Terminal />
-            <Metrics />
-            <Contact />
-          </main>
-          <Footer />
-        </>
-      )}
+      <Navbar />
+      <main>
+        <Hero />
+        <TechMarquee />
+        <About />
+        <Experience />
+        <SelectedWork />
+        <Philosophy />
+        <TechStack />
+        <Terminal />
+        <Metrics />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 }

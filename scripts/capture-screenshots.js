@@ -11,9 +11,9 @@ const projects = [
   { slug: "openpro", url: "https://open-my-pro-alpha.vercel.app/", output: "openpro.png" },
   { slug: "taskflowpro", url: "https://taskflow-sync.netlify.app/", output: "taskflowpro.png" },
   { slug: "ecommerce-dashboard", url: "https://e-commerce-production-0a3a.up.railway.app/dashboard", output: "ecommerce-dashboard.png" },
-  { slug: "uplift", url: "https://uplift-blog-amber.vercel.app/", output: "uplift-v2.png" },
-  { slug: "filesconvertor", url: "https://filesconvertor.netlify.app/", output: "filesconvertor-v2.png" },
-  { slug: "codelearn", url: "https://codelearn-tech.netlify.app/", output: "codelearn-v2.png" }
+  { slug: "uplift", url: "https://uplift-blog-amber.vercel.app/", output: "uplift.png" },
+  { slug: "filesconvertor", url: "https://filesconvertor.netlify.app/", output: "filesconvertor.png" },
+  { slug: "codelearn", url: "https://codelearn-tech.netlify.app/", output: "codelearn.png" }
 ];
 
 async function captureScreenshots() {
@@ -29,7 +29,7 @@ async function captureScreenshots() {
       await page.setViewport({ width: 1280, height: 800 });
       await page.goto(project.url, { waitUntil: 'networkidle2', timeout: 60000 });
       
-      const outputPath = path.join(__dirname, 'public', project.output);
+      const outputPath = path.join(__dirname, '..', 'public', project.output);
       await page.screenshot({ path: outputPath });
       console.log(`Successfully saved ${project.output}`);
       await page.close();

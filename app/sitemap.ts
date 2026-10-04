@@ -1,24 +1,12 @@
 import type { MetadataRoute } from "next";
+import { getAllProjectSlugs } from "@/data/projects";
 
 const BASE_URL = "https://sohaib.dev";
 
-const PROJECT_SLUGS = [
-  "alreem",
-  "mixxer",
-  "dewis",
-  "amexio",
-  "next-merce",
-  "blossend",
-  "openpro",
-  "taskflowpro",
-  "ecommerce-dashboard",
-  "uplift",
-  "filesconvertor",
-  "codelearn",
-];
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projects: MetadataRoute.Sitemap = PROJECT_SLUGS.map((slug) => ({
+  const projectSlugs = getAllProjectSlugs();
+
+  const projects: MetadataRoute.Sitemap = projectSlugs.map((slug) => ({
     url: `${BASE_URL}/projects/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
@@ -29,9 +17,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${BASE_URL}/resume`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     ...projects,
   ];
 }
+
