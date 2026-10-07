@@ -64,7 +64,7 @@ const TAB_CONTENT: Record<
     lines: [
       { text: "$ ls ./projects", type: "cmd" },
       { text: "", type: "muted" },
-      { text: "total 12 projects", type: "info" },
+      { text: "total 14 projects", type: "info" },
       { text: "", type: "muted" },
       {
         text: "drwxr  alreem/              → Web Application · React.js + APIs",
@@ -114,6 +114,14 @@ const TAB_CONTENT: Record<
         text: "drwxr  codelearn/           → EdTech Sandbox  · Next.js + Monaco IDE + AI",
         type: "info",
       },
+      {
+        text: "drwxr  gilbard/             → Gaming Portal   · Next.js + MUI + Motion",
+        type: "info",
+      },
+      {
+        text: "drwxr  qr-studio/           → Vector Utility  · Next.js + Canvas + SVG",
+        type: "info",
+      },
       { text: "", type: "muted" },
       { text: "$ cat next-merce/README.md", type: "cmd" },
       {
@@ -121,7 +129,7 @@ const TAB_CONTENT: Record<
         type: "info",
       },
       { text: "", type: "muted" },
-      { text: "✓ 12 projects · all production-deployed", type: "success" },
+      { text: "✓ 14 projects · all production-deployed", type: "success" },
     ],
   },
   contact: {
@@ -158,11 +166,16 @@ function TypewriterLines({
 }: {
   lines: { text: string; type: string }[];
 }) {
+  const [prevLines, setPrevLines] = React.useState(lines);
   const [visibleCount, setVisibleCount] = React.useState(0);
+
+  if (prevLines !== lines) {
+    setPrevLines(lines);
+    setVisibleCount(0);
+  }
 
   React.useEffect(() => {
     let i = 0;
-    setVisibleCount(0);
 
     const timer = setInterval(() => {
       i++;
@@ -271,7 +284,7 @@ export function Terminal() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.15 }}
                 >
-                  <TypewriterLines lines={TAB_CONTENT[activeTab].lines} />
+                  <TypewriterLines key={activeTab} lines={TAB_CONTENT[activeTab].lines} />
                 </motion.div>
               </AnimatePresence>
             </div>

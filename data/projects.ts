@@ -374,6 +374,64 @@ export const PROJECTS: ProjectCaseStudy[] = [
       "Sandboxed in-browser playgrounds eliminate initial setup friction for aspiring engineers",
     ],
   },
+  {
+    slug: "gilbard",
+    index: "13",
+    name: "Gilbard",
+    category: "Gaming Portal & Media",
+    description:
+      "Next-generation gaming portal featuring dynamic game discovery, trailer streaming showcases, community forum channels, and an immersive dark-mode UI.",
+    tech: ["Next.js", "React.js", "Material UI", "Framer Motion", "REST APIs", "TypeScript"],
+    image: "/gilbard.png",
+    live: "https://gilbardgame.netlify.app/",
+    github: "https://github.com/sohaibyounas/Gilbard",
+    color: "#FF6B00",
+    overview:
+      "Gilbard is a next-generation gaming portal and entertainment hub engineered to bring gamers the latest releases, cinematic trailers, community discussion boards, and rich game profiles with an immersive cyberpunk-inspired aesthetic.",
+    problem:
+      "Traditional gaming portals can feel visually cluttered, slow to load heavy media assets, and difficult to navigate across mobile devices without sacrificing the rich visual atmosphere gamers expect.",
+    solution:
+      "Engineered a high-performance Next.js web application utilizing Material UI theming, fluid Framer Motion transitions, responsive media carousels, and optimized asset loading to deliver an engaging, cinematic user experience.",
+    role: "Frontend Architect & UI Developer responsible for component architecture, responsive design, animations, and game catalog presentation.",
+    challenges: [
+      "Delivering smooth high-resolution image transitions and trailers without degrading page load speed",
+      "Creating an immersive dark-mode aesthetic with custom neon accents while maintaining readability and WCAG contrast",
+      "Implementing fluid multi-category game filtering and dynamic responsive layouts for mobile and desktop viewports",
+    ],
+    learnings: [
+      "Careful image optimization and lazy-loading are crucial when balancing media-rich gaming visuals with top-tier performance",
+      "Micro-animations and thematic color palettes drastically enhance brand identity and community engagement in entertainment applications",
+    ],
+  },
+  {
+    slug: "qr-studio",
+    index: "14",
+    name: "QR Studio",
+    category: "Utility SaaS & Vector Generator",
+    description:
+      "Precision in-browser QR code design suite featuring custom dot styles, brand color gradients, embedded logos, and 300 DPI SVG/PDF vector exports.",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Canvas API", "SVG Processing"],
+    image: "/qrcreatecode.png",
+    live: "https://qrcreatecode.netlify.app/",
+    github: "https://github.com/sohaibyounas/QR-Studio",
+    color: "#0D9488",
+    overview:
+      "QR Studio is a professional, 100% client-side QR code generator that enables creators, marketers, and businesses to generate pixel-perfect branded QR codes with custom patterns, gradient fills, embedded brand logos, and high-resolution vector exports without paywalls or tracking.",
+    problem:
+      "Most existing online QR generators hide basic features behind aggressive subscriptions, inject unwanted tracking redirects, or only produce low-resolution, blurry raster images unfit for print production.",
+    solution:
+      "Developed a client-side vector generator supporting 11+ data types (URLs, vCards, Wi-Fi, WhatsApp, crypto), custom gradient and dot-pattern styling, real-time live preview, and high-fidelity 300 DPI SVG and PDF downloads.",
+    role: "Full-Stack Frontend Developer responsible for UI/UX design, canvas/SVG rendering logic, format parsing, and client-side export generation.",
+    challenges: [
+      "Generating accurate SVG and high-DPI canvas renders while ensuring barcode scannability across diverse QR reader apps",
+      "Handling real-time state synchronization between deep customization options (gradients, eye styles, logo overlays) and the live preview",
+      "Implementing zero-server client-side PDF and SVG file generation directly in modern browsers",
+    ],
+    learnings: [
+      "QR error correction levels must be dynamically calculated when embedding central logos to ensure 100% scannability",
+      "Client-side processing guarantees zero data leakage, creating high user trust for sensitive Wi-Fi and contact credentials",
+    ],
+  },
 ];
 
 /** Lookup a project by slug — used by [slug]/page.tsx */

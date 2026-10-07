@@ -13,7 +13,9 @@ const projects = [
   { slug: "ecommerce-dashboard", url: "https://e-commerce-production-0a3a.up.railway.app/dashboard", output: "ecommerce-dashboard.png" },
   { slug: "uplift", url: "https://uplift-blog-amber.vercel.app/", output: "uplift.png" },
   { slug: "filesconvertor", url: "https://filesconvertor.netlify.app/", output: "filesconvertor.png" },
-  { slug: "codelearn", url: "https://codelearn-tech.netlify.app/", output: "codelearn.png" }
+  { slug: "codelearn", url: "https://codelearn-tech.netlify.app/", output: "codelearn.png" },
+  { slug: "gilbard", url: "https://gilbardgame.netlify.app/", output: "gilbard.png" },
+  { slug: "qr-studio", url: "https://qrcreatecode.netlify.app/", output: "qrcreatecode.png" }
 ];
 
 async function captureScreenshots() {

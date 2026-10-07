@@ -332,7 +332,7 @@ export function Hero() {
             >
               {[
                 { value: "3+", label: "Years" },
-                { value: "10+", label: "Projects" },
+                { value: "14+", label: "Projects" },
                 { value: "React", label: "Primary Stack" },
               ].map((stat) => (
                 <div key={stat.label} className="text-left">
