@@ -31,18 +31,20 @@ Keep your answers short and concise.
 // GEMINI_MODEL lets you switch models from Vercel without a code change.
 const CANDIDATE_MODELS = [
   process.env.GEMINI_MODEL?.trim(),
-  "gemini-3.8-flash",
   "gemini-3.6-flash",
+  "gemini-3.8-flash",
 ].filter((m, i, arr): m is string => !!m && arr.indexOf(m) === i);
 
 const MAX_HISTORY = 12;
 const MAX_MESSAGE_CHARS = 1000;
+// Per-model limit so one overloaded model can't hang the whole request.
+const MODEL_TIMEOUT_MS = 20000;
 
-// Only these failures are worth retrying on another model. Auth / bad-request
-// errors fail the same way on every model, so retrying just adds latency.
+// Auth / bad-request errors fail the same way on every model, so retrying
+// just adds latency. Anything else (404, 429, 5xx, timeouts) tries the next one.
 function isRetryable(err: any) {
   const status = err?.status ?? err?.code;
-  return status === 404 || status === 429 || status === 500 || status === 503;
+  return status !== 400 && status !== 401 && status !== 403;
 }
 
 export async function POST(req: Request) {
@@ -101,6 +103,7 @@ export async function POST(req: Request) {
           config: {
             systemInstruction: SYSTEM_INSTRUCTION,
             temperature: 0.7,
+            httpOptions: { timeout: MODEL_TIMEOUT_MS },
           },
         });
 
