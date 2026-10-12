@@ -62,6 +62,14 @@ function renderMarkdown(text: string): React.ReactNode[] {
       elements.push(<div key={key++} className="h-1.5" />);
       continue;
     }
+    if (/^#{1,6}\s+/.test(line)) {
+      elements.push(
+        <p key={key++} className="mt-1 font-semibold text-foreground">
+          {parseInline(line.replace(/^#{1,6}\s+/, ""))}
+        </p>,
+      );
+      continue;
+    }
     if (/^[\*\-]\s+/.test(line)) {
       elements.push(
         <div key={key++} className="flex items-start gap-1.5 my-0.5">
@@ -137,7 +145,11 @@ export default function PortfolioChatbot() {
         ...prev,
         {
           role: "assistant",
-          content: "Sorry, unable to answer right now. Please try again!",
+          // Show the real server error while developing; keep it friendly in production.
+          content:
+            process.env.NODE_ENV === "development"
+              ? `Error: ${err?.message || err}`
+              : "Sorry, unable to answer right now. Please try again!",
         },
       ]);
     } finally {

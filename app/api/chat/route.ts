@@ -28,19 +28,28 @@ Contact: sohaibyounas24@gmail.com | GitHub: https://github.com/sohaibyounas | Li
 Keep your answers short and concise.
 `;
 
+// GEMINI_MODEL lets you switch models from Vercel without a code change.
 const CANDIDATE_MODELS = [
+  process.env.GEMINI_MODEL?.trim(),
   "gemini-3.8-flash",
   "gemini-3.6-flash",
-  "gemini-2.5-flash",
-  "gemini-2.0-flash",
-  "gemini-1.5-flash",
-  "gemini-1.5-pro",
-];
+].filter((m, i, arr): m is string => !!m && arr.indexOf(m) === i);
+
+const MAX_HISTORY = 12;
+const MAX_MESSAGE_CHARS = 1000;
+
+// Only these failures are worth retrying on another model. Auth / bad-request
+// errors fail the same way on every model, so retrying just adds latency.
+function isRetryable(err: any) {
+  const status = err?.status ?? err?.code;
+  return status === 404 || status === 429 || status === 500 || status === 503;
+}
 
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.GEMINI_API_KEY?.trim();
     if (!apiKey) {
+      console.error("GEMINI_API_KEY is missing at runtime");
       return NextResponse.json(
         {
           error:
@@ -51,13 +60,23 @@ export async function POST(req: Request) {
     }
 
     const ai = new GoogleGenAI({ apiKey });
-    const { messages } = await req.json();
+    const body = await req.json().catch(() => null);
+    const messages = body?.messages;
+
+    if (!Array.isArray(messages)) {
+      return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    }
 
     const formattedContents = messages
-      .filter((m: { role: string }) => m.role === "user" || m.role === "assistant")
+      .filter(
+        (m: any) =>
+          (m?.role === "user" || m?.role === "assistant") &&
+          typeof m.content === "string",
+      )
+      .slice(-MAX_HISTORY)
       .map((m: { role: string; content: string }) => ({
         role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.content || "" }],
+        parts: [{ text: m.content.slice(0, MAX_MESSAGE_CHARS) }],
       }));
 
     while (formattedContents.length > 0 && formattedContents[0].role === "model") {
@@ -92,6 +111,7 @@ export async function POST(req: Request) {
       } catch (err: any) {
         lastError = err;
         console.warn(`Model ${model} failed:`, err?.message || err);
+        if (!isRetryable(err)) break;
       }
     }
 
