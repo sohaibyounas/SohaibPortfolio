@@ -134,6 +134,13 @@ export default function PortfolioChatbot() {
         body: JSON.stringify({ messages: newMsgs }),
       });
       const data = await res.json();
+      if (res.status === 429) {
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: data.error },
+        ]);
+        return;
+      }
       if (!res.ok) throw new Error(data.error || "Server error");
       setMessages((prev) => [
         ...prev,

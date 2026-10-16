@@ -28,12 +28,25 @@ export async function POST(req: Request) {
 
     const resend = new Resend(resendKey);
 
-    await resend.emails.send({
+    // Resend reports failures in the result instead of throwing
+    const { error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: "sohaibyounas24@gmail.com",
+      replyTo: email,
       subject: `New portfolio inquiry from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
+
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json(
+        {
+          error:
+            "Your message couldn't be sent right now. Please email sohaibyounas24@gmail.com directly.",
+        },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (error: any) {

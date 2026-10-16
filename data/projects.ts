@@ -7,8 +7,11 @@ export interface ProjectCard {
   tech: string[];
   image: string;
   live: string;
-  github: string;
+  /** Omit for private / client repositories */
+  github?: string;
   color: string;
+  /** Shown on the homepage; everything else lives on /projects */
+  featured?: boolean;
 }
 
 export interface ProjectCaseStudy extends ProjectCard {
@@ -26,66 +29,124 @@ export interface ProjectCaseStudy extends ProjectCard {
  */
 export const PROJECTS: ProjectCaseStudy[] = [
   {
-    slug: "alreem",
+    slug: "arkansas-weather-watchers",
     index: "01",
-    name: "Alreem",
-    category: "Web Application",
+    name: "Arkansas Weather Watchers",
+    category: "Weather Intelligence Platform",
     description:
-      "A production-focused web application with modern responsive interfaces and API-driven functionality. Built with emphasis on component architecture and user experience.",
+      "Real-time weather intelligence platform for Arkansas featuring an interactive multi-layer radar, live severe-weather alerts, geolocated forecasts, and student weather reporting.",
+    tech: ["React.js", "TypeScript", "Tailwind CSS", "Tomorrow.io API", "OpenWeatherMap", "Geolocation"],
+    image: "/arkansas-weather-watchers.png",
+    live: "https://arkansasweatherwatchers.org/",
+    color: "#FF7A00",
+    featured: true,
+    overview:
+      "Arkansas Weather Watchers is a statewide weather media platform delivering real-time forecasts, an interactive radar with storm-tracking layers, live NWS-style warnings and advisories, and educational resources for students and communities across Arkansas.",
+    problem:
+      "During severe weather, residents need fast, trustworthy information in one place. Existing sources were scattered across apps and broadcasts, and slow, cluttered interfaces made it hard to act quickly on warnings.",
+    solution:
+      "Built a fast, dark-themed React interface that combines geolocated forecasts, a live alerts ticker, and an interactive radar with toggleable layers (precipitation, storm cells, lightning, hail, rotation, tornado risk), a timeline player and a broadcast mode — powered by Tomorrow.io and OpenWeatherMap data.",
+    role: "Frontend Developer responsible for UI architecture, radar and alert interfaces, weather API integration, and responsive design.",
+    challenges: [
+      "Normalising data from multiple weather providers into one consistent UI model",
+      "Keeping the radar timeline, layer toggles and live alerts responsive while data streams in",
+      "Handling denied location permissions and API failures gracefully with clear retry states",
+    ],
+    learnings: [
+      "Safety-critical UIs need clear hierarchy — warnings must be readable at a glance",
+      "Designing loading, empty and error states up front matters as much as the happy path when depending on third-party APIs",
+    ],
+  },
+  {
+    slug: "datedraft",
+    index: "02",
+    name: "Date Draft",
+    category: "Dating App Landing Page",
+    description:
+      "Conversion-focused marketing site for a dating app built around \"trading\" profiles instead of swiping — bold editorial typography, animated stats, interactive profile cards, and app store CTAs.",
+    tech: ["React.js", "Vite", "Tailwind CSS", "Responsive UI", "Google Analytics"],
+    image: "/datedraft.png",
+    live: "https://datedraft.com/",
+    color: "#E0469B",
+    featured: true,
+    overview:
+      "Date Draft is a dating app where people meet on purpose — detailed profiles, stated intentions and a signature \"trade\" mechanic that replaces endless swiping. The website introduces the concept, explains how it works, and drives App Store and Google Play downloads.",
+    problem:
+      "Dating app marketing sites tend to look the same. Date Draft needed a landing page that explained a genuinely new interaction model (profile trading) in seconds and turned visitors into downloads.",
+    solution:
+      "Designed and built a single-page React site with a strong magenta-on-dark brand, phone mockups in the hero, animated counters, a step-by-step \"three moves\" flow, interactive browsable profile cards and a chat preview — all mobile-first with clear download CTAs throughout.",
+    role: "Frontend Developer responsible for building the landing page, animations, responsive layout and analytics integration.",
+    challenges: [
+      "Explaining a new product mechanic visually without walls of text",
+      "Keeping rich imagery and phone mockups sharp yet fast-loading on mobile",
+      "Maintaining a consistent, premium brand feel across many distinct sections",
+    ],
+    learnings: [
+      "Storytelling section order has a bigger impact on conversion than any single visual",
+      "Animated social proof (counters, ratings) works best when it is subtle and fast",
+    ],
+  },
+  {
+    slug: "alreem",
+    index: "03",
+    name: "Alreem",
+    category: "Marketplace Seller Dashboard",
+    description:
+      "Seller dashboard for a multi-vendor marketplace — shop profile management, order processing, dispute handling, inventory and draft listings, and a buyer inbox in one elegant gold-on-dark interface.",
     tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI"],
     image: "/alreem.png",
     live: "https://alreems.netlify.app/",
     github: "https://github.com/sohaibyounas/Alreem",
     color: "#B9A863",
     overview:
-      "Alreem is a production-grade web application built to deliver smooth, responsive user experiences backed by reliable API-driven workflows and clean component architecture.",
+      "Alreem is the seller-side portal of a UAE-based multi-vendor marketplace. Vendors use it to set up and edit their shop, manage incoming orders and disputes, maintain live and draft inventory, and talk to buyers through a built-in inbox.",
     problem:
-      "The client required an intuitive, modern interface capable of consuming multiple APIs while maintaining responsive layout consistency across varying screen resolutions.",
+      "Sellers needed one place to run their entire shop. Juggling orders, disputes, stock and customer messages across separate tools slowed fulfilment and caused missed messages.",
     solution:
-      "Engineered an efficient React.js component structure with standardized API error handling, fluid CSS layouts, and intuitive navigation states.",
-    role: "Frontend Developer responsible for architecture, responsive styling, and API integration.",
+      "Built a React dashboard with a persistent sidebar for every seller workflow — Dashboard, Manage Order, Dispute Order, Inventory, Draft Inventory, Inbox and Edit Shop — all connected to REST APIs with consistent loading and error states and a premium branded look.",
+    role: "Frontend Developer responsible for dashboard architecture, seller workflows, API integration and responsive styling.",
     challenges: [
-      "Building a modular component hierarchy for effortless feature extension",
-      "Ensuring rapid initial page loads and responsive behavior across mobile devices",
+      "Structuring many seller workflows into a navigation that stays simple and predictable",
+      "Keeping order, dispute and inventory views in sync with backend state",
+      "Delivering a luxury brand feel without hurting readability of dense data",
     ],
     learnings: [
-      "Modular component design speeds up iteration and testing significantly",
-      "Early API contract alignment prevents integration friction later on",
+      "A clear information architecture matters more than visuals in admin tools",
+      "Agreeing API contracts early prevents integration friction later on",
     ],
   },
   {
     slug: "mixxer",
-    index: "02",
+    index: "04",
     name: "Mixxer",
-    category: "Web Application",
+    category: "Social Meetups App",
     description:
-      "A production-focused web application with modern responsive interfaces and API-driven functionality. Built with emphasis on component architecture and user experience.",
+      "Mobile-first website for Mixxer, a social app that helps people discover and plan meetups and outings based on shared interests, schedules and group preferences.",
     tech: ["React.js", "JavaScript", "REST APIs", "Responsive UI", "CSS Modules"],
     image: "/mixxer.png",
     live: "https://mixxerapp.vercel.app/",
     github: "https://github.com/sohaibyounas/MixxerApp",
     color: "#22c55e",
     overview:
-      "Mixxer is a full-featured web application designed for seamless user interaction and real-time data display. The project required building a highly responsive interface that connected to multiple REST API endpoints while maintaining a smooth user experience.",
+      "Mixxer is a social networking app built around real-world meetups. The website introduces the app — features, about, FAQs and contact — and drives Google Play and App Store downloads with a warm, lifestyle-focused visual identity.",
     problem:
-      "The client needed a scalable frontend that could handle dynamic data, complex state management, and a wide variety of screen sizes without sacrificing performance or usability.",
+      "Planning group outings is messy: people have different interests and schedules. Mixxer needed a site that made the value instantly clear and converted visitors into app downloads, especially on mobile.",
     solution:
-      "I built a component-driven React application with clean state management, optimistic UI updates, and a mobile-first responsive design system. Every component was designed to be reusable and composable.",
-    role: "Led the full frontend development from architecture decisions to final delivery.",
+      "Built a mobile-first React site with an immersive hero, clear feature sections, FAQ and contact flows, and prominent store CTAs — using reusable components and CSS Modules for scoped, maintainable styling.",
+    role: "Frontend Developer — led development from component architecture to responsive implementation and deployment.",
     challenges: [
-      "Managing complex asynchronous data flows from multiple API endpoints",
-      "Ensuring consistent performance across mobile and desktop",
-      "Building a reusable component system from scratch",
+      "Keeping full-bleed lifestyle imagery fast and readable across screen sizes",
+      "Making download CTAs prominent without overwhelming the content",
+      "Building a reusable section/component system for quick content updates",
     ],
     learnings: [
-      "Importance of defining component contracts early",
-      "API error handling patterns at scale",
       "Mobile-first design significantly reduces responsive design complexity",
+      "A strong hero message plus one clear CTA beats many competing actions",
     ],
   },
   {
     slug: "dewis",
-    index: "03",
+    index: "05",
     name: "Dewis",
     category: "Web Application",
     description:
@@ -115,7 +176,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "amexio",
-    index: "04",
+    index: "06",
     name: "AmeXio",
     category: "Web Application",
     description:
@@ -145,7 +206,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "next-merce",
-    index: "05",
+    index: "07",
     name: "Next Merce",
     category: "E-Commerce",
     description:
@@ -174,7 +235,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "blossend",
-    index: "06",
+    index: "08",
     name: "Blossend",
     category: "Healthcare & Wellness",
     description:
@@ -203,7 +264,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "openpro",
-    index: "07",
+    index: "09",
     name: "Open My Pro",
     category: "Professional Services SaaS",
     description:
@@ -232,7 +293,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "taskflowpro",
-    index: "08",
+    index: "10",
     name: "Taskflow Pro",
     category: "Productivity & Workspace",
     description:
@@ -261,7 +322,8 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "ecommerce-dashboard",
-    index: "09",
+    featured: true,
+    index: "11",
     name: "E-Commerce Dashboard",
     category: "E-Commerce & SaaS",
     description:
@@ -291,7 +353,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "uplift",
-    index: "10",
+    index: "12",
     name: "Uplift",
     category: "Web Application",
     description:
@@ -319,7 +381,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "filesconvertor",
-    index: "11",
+    index: "13",
     name: "FileConvert Pro",
     category: "Web Application",
     description:
@@ -347,7 +409,8 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "codelearn",
-    index: "12",
+    featured: true,
+    index: "14",
     name: "CodeLearn",
     category: "Web Application",
     description:
@@ -376,7 +439,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "gilbard",
-    index: "13",
+    index: "15",
     name: "Gilbard",
     category: "Gaming Portal & Media",
     description:
@@ -405,7 +468,7 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     slug: "qr-studio",
-    index: "14",
+    index: "16",
     name: "QR Studio",
     category: "Utility SaaS & Vector Generator",
     description:
@@ -443,3 +506,6 @@ export function getProjectBySlug(slug: string): ProjectCaseStudy | undefined {
 export function getAllProjectSlugs(): string[] {
   return PROJECTS.map((p) => p.slug);
 }
+
+/** Projects highlighted on the homepage */
+export const FEATURED_PROJECTS = PROJECTS.filter((p) => p.featured);

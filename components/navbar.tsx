@@ -11,8 +11,8 @@ const navLinks = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#stack" },
-  { label: "Projects", href: "#work" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#work" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -33,7 +33,7 @@ export function Navbar() {
 
   // Active section tracking
   React.useEffect(() => {
-    const ids = ["top", "about", "stack", "work", "experience", "contact"];
+    const ids = ["top", "about", "stack", "experience", "work", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

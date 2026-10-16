@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Linkedin, Mail, Download } from "lucide-react";
+import { Linkedin, Mail, FileText } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { smoothScrollTo } from "@/lib/utils";
 
@@ -124,7 +124,7 @@ export function Footer() {
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 className="group flex h-9 items-center gap-2 rounded-lg border border-border bg-card/50 px-3 font-mono text-xs text-foreground transition-all duration-200 hover:border-accent hover:text-accent hover:bg-accent/10 hover:shadow-[0_4px_12px_rgba(var(--accent-rgb),0.18)]"
               >
-                <Download
+                <FileText
                   size={12}
                   className="transition-transform duration-200 group-hover:translate-y-0.5"
                 />

@@ -7,8 +7,9 @@ import {
   useSpring,
   AnimatePresence,
 } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText } from "lucide-react";
 import { smoothScrollTo } from "@/lib/utils";
+import { PROJECTS } from "@/data/projects";
 
 // ─── Tech Flow Diagram ───
 const nodes = [
@@ -89,9 +90,11 @@ function TechFlowDiagram() {
           return (
             <motion.circle
               key={`packet-${i}`}
+              cx={from.x}
+              cy={from.y + 20}
               r={3}
               fill={nodes[conn.from].color}
-              initial={{ opacity: 0 }}
+              initial={{ cx: from.x, cy: from.y + 20, opacity: 0 }}
               animate={{
                 cx: [from.x, to.x],
                 cy: [from.y + 20, to.y - 20],
@@ -134,6 +137,7 @@ function TechFlowDiagram() {
               fill="#0a0a0a"
               stroke={node.color}
               strokeWidth="1.5"
+              initial={{ r: 20 }}
               animate={{ r: [20, 21, 20] }}
               transition={{
                 duration: 2.5,
@@ -318,7 +322,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="flex justify-center items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-foreground/30 hover:bg-muted w-full xs:w-auto"
               >
-                <Download size={14} />
+                <FileText size={14} />
                 Resume
               </a>
             </motion.div>
@@ -332,7 +336,7 @@ export function Hero() {
             >
               {[
                 { value: "3+", label: "Years" },
-                { value: "14+", label: "Projects" },
+                { value: `${PROJECTS.length}+`, label: "Projects" },
                 { value: "React", label: "Primary Stack" },
               ].map((stat) => (
                 <div key={stat.label} className="text-left">

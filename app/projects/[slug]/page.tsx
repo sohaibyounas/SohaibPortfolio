@@ -16,9 +16,23 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
 
+  const title = `${project.name} — Sohaib Younas`;
   return {
-    title: `${project.name} — Sohaib Younas`,
+    title,
     description: project.description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title,
+      description: project.description,
+      url: `/projects/${project.slug}`,
+      images: [{ url: project.image, alt: `${project.name} screenshot` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.description,
+      images: [project.image],
+    },
   };
 }
 

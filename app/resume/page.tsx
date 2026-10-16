@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Download, ExternalLink, ArrowLeft } from "lucide-react";
+import { Download, ArrowLeft } from "lucide-react";
+import { PdfViewer } from "@/components/pdf-viewer";
 
 export default function ResumePage() {
   return (
@@ -25,15 +26,6 @@ export default function ResumePage() {
         <div className="flex items-center gap-2">
           <a
             href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-mono text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
-          >
-            <ExternalLink size={13} />
-            <span className="hidden sm:inline">Raw PDF</span>
-          </a>
-          <a
-            href="/resume.pdf"
             download="Sohaib_Younas_Resume.pdf"
             className="flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
           >
@@ -44,11 +36,11 @@ export default function ResumePage() {
       </header>
 
       {/* PDF Viewport */}
-      <main className="relative flex-1 w-full bg-neutral-900">
-        <embed
+      <main className="relative flex-1 w-full overflow-y-auto bg-neutral-900 px-3 py-4 sm:px-6 sm:py-8">
+        <PdfViewer
           src="/resume.pdf"
-          type="application/pdf"
-          className="h-full w-full"
+          dataSrc="/resume/data"
+          downloadName="Sohaib_Younas_Resume.pdf"
         />
       </main>
     </div>

@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import PortfolioChatbot from "@/components/PortfolioChatbot";
+import { SITE_URL } from "@/lib/site";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -25,6 +26,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: "Sohaib Younas | Frontend Developer",
   description:
     "Frontend Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications. Based in Pakistan.",
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sohaib.dev",
+    url: SITE_URL,
     siteName: "Sohaib Younas",
     title: "Sohaib Younas — Frontend Developer | React & Next.js",
     description:
@@ -88,7 +91,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Sohaib Younas",
               jobTitle: "Frontend Developer",
-              url: "https://sohaib.dev",
+              url: SITE_URL,
               sameAs: [
                 "https://github.com/sohaibyounas",
                 "https://www.linkedin.com/in/sohaibyounas/",

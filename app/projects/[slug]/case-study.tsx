@@ -31,10 +31,10 @@ export function ProjectCaseStudy({
               transition={{ duration: 0.5 }}
             >
               <Link
-                href="/#work"
-                className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-foreground transition-colors hover:text-foreground"
+                href="/projects"
+                className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-foreground transition-colors hover:text-accent"
               >
-                <ArrowLeft size={14} /> Back to Work
+                <ArrowLeft size={14} /> All Projects
               </Link>
 
               <div className="flex flex-wrap items-center gap-3 mb-5">
@@ -58,14 +58,16 @@ export function ProjectCaseStudy({
                 >
                   <ExternalLink size={14} /> Live Demo
                 </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-muted"
-                >
-                  <Github size={14} /> GitHub
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-muted"
+                  >
+                    <Github size={14} /> GitHub
+                  </a>
+                )}
               </div>
             </motion.div>
           </div>

@@ -15,7 +15,10 @@ const projects = [
   { slug: "filesconvertor", url: "https://filesconvertor.netlify.app/", output: "filesconvertor.png" },
   { slug: "codelearn", url: "https://codelearn-tech.netlify.app/", output: "codelearn.png" },
   { slug: "gilbard", url: "https://gilbardgame.netlify.app/", output: "gilbard.png" },
-  { slug: "qr-studio", url: "https://qrcreatecode.netlify.app/", output: "qrcreatecode.png" }
+  { slug: "qr-studio", url: "https://qrcreatecode.netlify.app/", output: "qrcreatecode.png" },
+  // Home page needs live location data; the radar view screenshots reliably
+  { slug: "arkansas-weather-watchers", url: "https://arkansasweatherwatchers.org/radar", output: "arkansas-weather-watchers.png" },
+  { slug: "datedraft", url: "https://datedraft.com/", output: "datedraft.png" }
 ];
 
 async function captureScreenshots() {

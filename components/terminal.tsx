@@ -3,6 +3,13 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionReveal } from "@/components/section-reveal";
+import { PROJECTS } from "@/data/projects";
+
+// Built from the project data so the listing never goes stale
+const PROJECT_LINES = PROJECTS.map((p) => ({
+  text: `drwxr  ${(p.slug + "/").padEnd(27)}→ ${p.category}`,
+  type: "info" as const,
+}));
 
 type TabId = "who am i" | "skills" | "projects" | "contact";
 
@@ -64,64 +71,9 @@ const TAB_CONTENT: Record<
     lines: [
       { text: "$ ls ./projects", type: "cmd" },
       { text: "", type: "muted" },
-      { text: "total 14 projects", type: "info" },
+      { text: `total ${PROJECTS.length} projects`, type: "info" },
       { text: "", type: "muted" },
-      {
-        text: "drwxr  alreem/              → Web Application · React.js + APIs",
-        type: "info",
-      },
-      {
-        text: "drwxr  mixxer/              → Web Application · React.js + APIs",
-        type: "info",
-      },
-      {
-        text: "drwxr  dewis/               → Web Application · React.js + APIs",
-        type: "info",
-      },
-      {
-        text: "drwxr  amexio/              → Web Application · React + Next.js",
-        type: "info",
-      },
-      {
-        text: "drwxr  next-merce/          → E-Commerce      · React + Next.js",
-        type: "info",
-      },
-      {
-        text: "drwxr  blossend/            → Health & Wellness· React + Next.js",
-        type: "info",
-      },
-      {
-        text: "drwxr  openpro/             → Services SaaS   · React + Next.js",
-        type: "info",
-      },
-      {
-        text: "drwxr  taskflowpro/         → Productivity    · React + Next.js + Supabase",
-        type: "info",
-      },
-      {
-        text: "drwxr  ecommerce-dashboard/ → E-Commerce & SaaS· React + Next.js + Analytics",
-        type: "info",
-      },
-      {
-        text: "drwxr  uplift/              → Lifestyle Blog  · Next.js + Tailwind",
-        type: "info",
-      },
-      {
-        text: "drwxr  filesconvertor/      → File Utility    · Next.js + Web Workers + OCR",
-        type: "info",
-      },
-      {
-        text: "drwxr  codelearn/           → EdTech Sandbox  · Next.js + Monaco IDE + AI",
-        type: "info",
-      },
-      {
-        text: "drwxr  gilbard/             → Gaming Portal   · Next.js + MUI + Motion",
-        type: "info",
-      },
-      {
-        text: "drwxr  qr-studio/           → Vector Utility  · Next.js + Canvas + SVG",
-        type: "info",
-      },
+      ...PROJECT_LINES,
       { text: "", type: "muted" },
       { text: "$ cat next-merce/README.md", type: "cmd" },
       {
@@ -129,7 +81,7 @@ const TAB_CONTENT: Record<
         type: "info",
       },
       { text: "", type: "muted" },
-      { text: "✓ 14 projects · all production-deployed", type: "success" },
+      { text: `✓ ${PROJECTS.length} projects · all production-deployed`, type: "success" },
     ],
   },
   contact: {

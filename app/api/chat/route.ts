@@ -1,24 +1,27 @@
 import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
+import { PROJECTS } from "@/data/projects";
+import { SITE_URL } from "@/lib/site";
+
+// Per-IP limits so nobody can drain the Gemini quota
+const RATE_LIMITS = [
+  { limit: 8, windowMs: 60_000 },
+  { limit: 40, windowMs: 60 * 60_000 },
+];
+
+// Generated from the project data so the assistant never drifts out of sync
+const PROJECT_LIST = PROJECTS.map(
+  (p, i) =>
+    `${i + 1}. ${p.name} (${p.category}): ${p.description} Live: ${p.live} | Case study: ${SITE_URL}/projects/${p.slug}`,
+).join("\n");
 
 const SYSTEM_INSTRUCTION = `
-You are the official AI Assistant for Sohaib Younas's Developer Portfolio (https://sohaib-dev-portfolio.vercel.app).
-Answer questions regarding Sohaib's frontend engineering experience, React.js & Next.js skills, and his 14 projects:
+You are the official AI Assistant for Sohaib Younas's Developer Portfolio (${SITE_URL}).
+Answer questions regarding Sohaib's frontend engineering experience, React.js & Next.js skills, and his ${PROJECTS.length} projects:
 
-1. CodeLearn (EdTech sandbox with Monaco IDE & AI tutor): https://codelearn-tech.netlify.app/
-2. FileConvert Pro (Client-side file converter with OCR & Web Workers): https://filesconvertor.netlify.app/
-3. Uplift (Wellness & lifestyle digital magazine): https://uplift-blog-amber.vercel.app/
-4. E-Commerce Dashboard (Enterprise revenue analytics & order suite): https://e-commerce-production-0a3a.up.railway.app/dashboard
-5. Taskflow Pro (Task manager with Supabase auth & sync): https://taskflow-sync.netlify.app/
-6. Open My Pro (Professional services & marketplace SaaS): https://open-my-pro-alpha.vercel.app/
-7. Blossend (Healthcare & luxury wellness platform): https://blossend.netlify.app/
-8. Next Merce (Modern e-commerce platform): https://nextmercee.netlify.app/
-9. AmeXio (Enterprise platform with TypeScript): https://amexiofuse.netlify.app/
-10. Dewis (Data-driven web application with REST APIs): https://dewis.netlify.app/
-11. Mixxer (Audio and media mixing interface): https://mixxerapp.vercel.app/
-12. Alreem (Responsive web application with component architecture): https://alreems.netlify.app/
-13. Gilbard (Next-gen gaming portal & media community hub): https://gilbardgame.netlify.app/
-14. QR Studio (Precision custom QR code generator with vector SVG/PDF export): https://qrcreatecode.netlify.app/
+${PROJECT_LIST}
+All projects: ${SITE_URL}/projects
 
 Experience:
 - React Developer at Drudots Technologies (2025 — Present)
@@ -48,6 +51,17 @@ function isRetryable(err: any) {
 }
 
 export async function POST(req: Request) {
+  const limited = rateLimit(`chat:${getClientIp(req)}`, RATE_LIMITS);
+  if (!limited.ok) {
+    return NextResponse.json(
+      {
+        error:
+          "You're sending messages too quickly. Please wait a moment and try again.",
+      },
+      { status: 429, headers: { "Retry-After": String(limited.retryAfter) } },
+    );
+  }
+
   try {
     const apiKey = process.env.GEMINI_API_KEY?.trim();
     if (!apiKey) {
