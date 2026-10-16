@@ -84,7 +84,7 @@ export function Navbar() {
       {/* ─── Top Scroll Progress Bar (Line with project accent theme colors) ─── */}
       <motion.div
         style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
-        className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-gradient-to-r from-[#30afff] via-[#92eeff] to-[#c4f7ca] shadow-[0_0_12px_rgba(48,175,255,0.85)] pointer-events-none"
+        className="fixed top-0 left-0 right-0 z-60 h-[3px] bg-linear-to-r from-palette-blue via-palette-cyan to-palette-mint shadow-[0_0_12px_rgba(48,175,255,0.85)] pointer-events-none"
       />
 
       {/* ─── Dynamic Header: Initial -> Scrolled Floating Card ─── */}
@@ -131,7 +131,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 rounded-xl bg-muted/80 dark:bg-white/10 border border-border/60 dark:border-white/10 shadow-sm"
+                      className="absolute inset-0 rounded-xl bg-muted/80 dark:bg-white/10 border border-border/60 dark:border-white/10 shadow-xs"
                       transition={{
                         type: "spring",
                         damping: 26,

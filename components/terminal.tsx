@@ -107,7 +107,7 @@ const TAB_CONTENT: Record<
 
 const TYPE_COLORS: Record<string, string> = {
   cmd: "text-accent font-semibold",
-  success: "text-[#c4f7ca]",
+  success: "text-palette-mint",
   info: "text-foreground/80",
   muted: "text-muted-foreground",
   accent: "text-accent",
@@ -146,7 +146,7 @@ function TypewriterLines({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.15 }}
-          className={`font-mono text-[11px] leading-5 sm:text-xs sm:leading-6 md:text-sm whitespace-pre-wrap break-words ${TYPE_COLORS[line.type] ?? "text-foreground"}`}
+          className={`font-mono text-[11px] leading-5 sm:text-xs sm:leading-6 md:text-sm md:leading-5 whitespace-pre-wrap wrap-break-word ${TYPE_COLORS[line.type] ?? "text-foreground"}`}
         >
           {line.text || "\u00A0"}
         </motion.div>

@@ -87,7 +87,7 @@ export function Experience() {
                 <div className="relative">
                   {/* Timeline dot */}
                   <div
-                    className="absolute -left-[2.75rem] top-6 hidden h-3 w-3 rounded-full border-2 border-background ring-2 ring-border lg:block"
+                    className="absolute -left-11 top-6 hidden h-3 w-3 rounded-full border-2 border-background ring-2 ring-border lg:block"
                     style={{
                       backgroundColor: exp.current
                         ? "hsl(var(--accent))"

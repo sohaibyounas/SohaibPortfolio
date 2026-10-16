@@ -10,7 +10,7 @@ const TECH_ITEMS: TechItemData[] = [
     name: "CSS",
     icon: (
       <svg
-        className="h-6 w-6 rounded-md shadow-sm"
+        className="h-6 w-6 rounded-md shadow-xs"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -34,7 +34,7 @@ const TECH_ITEMS: TechItemData[] = [
     name: "Bootstrap",
     icon: (
       <svg
-        className="h-6 w-6 rounded-md shadow-sm"
+        className="h-6 w-6 rounded-md shadow-xs"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -135,7 +135,7 @@ const TECH_ITEMS: TechItemData[] = [
     name: "TypeScript",
     icon: (
       <svg
-        className="h-6 w-6 rounded-md shadow-sm"
+        className="h-6 w-6 rounded-md shadow-xs"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -151,7 +151,7 @@ const TECH_ITEMS: TechItemData[] = [
     name: "JavaScript",
     icon: (
       <svg
-        className="h-6 w-6 rounded-md shadow-sm"
+        className="h-6 w-6 rounded-md shadow-xs"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -222,7 +222,7 @@ const TECH_ITEMS: TechItemData[] = [
     name: "Zod",
     icon: (
       <svg
-        className="h-6 w-6 rounded-md shadow-sm"
+        className="h-6 w-6 rounded-md shadow-xs"
         viewBox="0 0 24 24"
         fill="none"
       >
@@ -241,7 +241,7 @@ const TECH_ITEMS: TechItemData[] = [
 
 function TechCard({ item }: { item: TechItemData }) {
   return (
-    <div className="group flex shrink-0 items-center gap-3.5 rounded-2xl border border-border/80 bg-card/75 dark:bg-[#0c101a] dark:border-white/10 px-4 py-2.5 sm:px-5 sm:py-3 shadow-sm hover:border-foreground/30 dark:hover:border-white/25 hover:bg-card dark:hover:bg-[#111726] hover:-translate-y-0.5 transition-all duration-200 select-none cursor-default">
+    <div className="group flex shrink-0 items-center gap-3.5 rounded-2xl border border-border/80 bg-card/75 dark:bg-[#0c101a] dark:border-white/10 px-4 py-2.5 sm:px-5 sm:py-3 shadow-xs hover:border-foreground/30 dark:hover:border-white/25 hover:bg-card dark:hover:bg-[#111726] hover:-translate-y-0.5 transition-all duration-200 select-none cursor-default">
       <div className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
         {item.icon}
       </div>
@@ -270,8 +270,8 @@ export function TechMarquee() {
       {/* Marquee */}
       <div className="relative overflow-hidden py-1">
         {/* Fade masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-28 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-28 bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-28 bg-linear-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-28 bg-linear-to-l from-background to-transparent" />
 
         <div className="flex overflow-hidden">
           <div className="marquee-track flex gap-3.5 sm:gap-4 whitespace-nowrap items-center py-2">

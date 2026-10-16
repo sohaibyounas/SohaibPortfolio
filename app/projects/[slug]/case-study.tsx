@@ -82,7 +82,7 @@ export function ProjectCaseStudy({
               transition={{ duration: 0.6, delay: 0.3 }}
               className="relative overflow-hidden rounded-xl"
             >
-              <div className="relative aspect-[16/9] w-full">
+              <div className="relative aspect-video w-full">
                 <Image
                   src={project.image}
                   alt={`${project.name} screenshot`}

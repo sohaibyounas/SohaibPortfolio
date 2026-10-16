@@ -31,7 +31,7 @@ function ProjectCard({
             isEven ? "lg:order-first" : "lg:order-last"
           }`}
         >
-          <div className="relative aspect-[16/10] w-full">
+          <div className="relative aspect-16/10 w-full">
             <Image
               src={project.image}
               alt={`${project.name} project screenshot`}
@@ -39,12 +39,12 @@ function ProjectCard({
               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
           </div>
 
           {/* Hover overlay — on desktop the custom "View" cursor replaces the pill */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:bg-black/25">
-            <span className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20 lg:hidden">
+            <span className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-xs transition-all hover:bg-white/20 lg:hidden">
               View Case Study <ArrowUpRight size={14} />
             </span>
           </div>

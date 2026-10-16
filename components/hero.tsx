@@ -229,7 +229,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100dvh] flex-col justify-between overflow-hidden bg-background pt-24 pb-8 sm:pt-28 lg:pt-20 lg:pb-12"
+      className="relative flex min-h-dvh flex-col justify-between overflow-hidden bg-background pt-24 pb-8 sm:pt-28 lg:pt-20 lg:pb-12"
       onMouseMove={handleMouseMove}
       aria-label="Hero section"
     >
@@ -274,7 +274,7 @@ export function Hero() {
             </motion.div>
 
             {/* Main heading */}
-            <h1 className="font-display text-3xl font-bold tracking-tight text-foreground xs:text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] sm:leading-[1.04]">
+            <h1 className="font-display text-3xl font-bold tracking-tight text-foreground xs:text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] sm:leading-[1.04] md:leading-none">
               <StaggerText text="Frontend experiences" />
               <br className="hidden sm:inline" />{" "}
               <StaggerText text="that matter." className="text-accent" />
@@ -361,7 +361,7 @@ export function Hero() {
             <div className="relative">
               {/* Frame border */}
               <div className="absolute inset-0 rounded-2xl border border-border/60" />
-              <div className="relative rounded-2xl bg-card/30 p-8 backdrop-blur-sm">
+              <div className="relative rounded-2xl bg-card/30 p-8 backdrop-blur-xs">
                 {/* Header bar */}
                 <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
                   <div className="flex gap-1.5">

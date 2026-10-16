@@ -7,20 +7,20 @@ import { SITE_URL } from "@/lib/site";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-space-grotesk",
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 const body = Inter({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-inter",
   display: "swap",
 });
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains-mono",
   weight: ["400", "500", "700"],
   display: "swap",
 });
@@ -81,7 +81,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      // Font variables live on <html> so Tailwind's :root theme vars can resolve them
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -114,7 +119,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${display.variable} ${body.variable} ${mono.variable} font-sans antialiased`}
+        className="font-sans antialiased"
       >
         <ThemeProvider
           attribute="class"

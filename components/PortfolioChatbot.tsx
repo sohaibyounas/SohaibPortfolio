@@ -168,7 +168,7 @@ export default function PortfolioChatbot() {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm sm:hidden"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-xs sm:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -243,14 +243,14 @@ export default function PortfolioChatbot() {
             </div>
             <form
               onSubmit={handleSend}
-              className="border-t border-border bg-muted/30 backdrop-blur-sm p-3 flex gap-2 shrink-0"
+              className="border-t border-border bg-muted/30 backdrop-blur-xs p-3 flex gap-2 shrink-0"
             >
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about my projects..."
-                className="flex-1 rounded-lg border border-border bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent"
+                className="flex-1 rounded-lg border border-border bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:border-accent"
               />
               <button
                 type="submit"

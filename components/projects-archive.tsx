@@ -34,7 +34,7 @@ function ArchiveCard({ project }: { project: ProjectCaseStudy }) {
     >
       <Link
         href={`/projects/${project.slug}`}
-        className="relative block aspect-[16/10] overflow-hidden border-b border-border"
+        className="relative block aspect-16/10 overflow-hidden border-b border-border"
       >
         <Image
           src={project.image}
@@ -174,7 +174,7 @@ export function ProjectsArchive() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search projects, tech, category…"
               aria-label="Search projects"
-              className="w-full rounded-full border border-border bg-background py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-foreground/50 outline-none transition-colors focus:border-accent"
+              className="w-full rounded-full border border-border bg-background py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-foreground/50 outline-hidden transition-colors focus:border-accent"
             />
           </div>
 

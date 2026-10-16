@@ -136,7 +136,7 @@ export function Contact() {
                     placeholder="Your name"
                     autoComplete="name"
                     {...register("name")}
-                    className="w-full rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder-muted-foreground outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
+                    className="w-full rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder-muted-foreground outline-hidden transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
                   />
                   {errors.name && (
                     <p className="mt-1.5 font-mono text-xs text-red-400">
@@ -159,7 +159,7 @@ export function Contact() {
                     placeholder="your@email.com"
                     autoComplete="email"
                     {...register("email")}
-                    className="w-full rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder-muted-foreground outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
+                    className="w-full rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder-muted-foreground outline-hidden transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
                   />
                   {errors.email && (
                     <p className="mt-1.5 font-mono text-xs text-red-400">
@@ -181,7 +181,7 @@ export function Contact() {
                     placeholder="Tell me about your project..."
                     rows={5}
                     {...register("message")}
-                    className="w-full resize-none rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder-muted-foreground outline-none transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
+                    className="w-full resize-none rounded-lg border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder-muted-foreground outline-hidden transition-colors focus:border-accent/50 focus:ring-1 focus:ring-accent/30"
                   />
                   {errors.message && (
                     <p className="mt-1.5 font-mono text-xs text-red-400">
@@ -220,7 +220,7 @@ export function Contact() {
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
-                      className="flex items-center gap-2 rounded-lg border border-[#c4f7ca]/30 bg-[#c4f7ca]/10 p-3 text-sm text-[#c4f7ca]"
+                      className="flex items-center gap-2 rounded-lg border border-palette-mint/30 bg-palette-mint/10 p-3 text-sm text-palette-mint"
                     >
                       <CheckCircle size={16} />
                       Message sent! I&apos;ll get back to you within 24 hours.
