@@ -28,12 +28,12 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: "/" },
-  title: "Sohaib Younas | Frontend Developer",
+  title: "Sohaib Younas | Full Stack Developer",
   description:
-    "Frontend Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications. Based in Pakistan.",
+    "Full Stack Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications. Based in Pakistan.",
   keywords: [
     "Sohaib Younas",
-    "Frontend Developer",
+    "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
     "JavaScript",
@@ -49,15 +49,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Sohaib Younas",
-    title: "Sohaib Younas — Frontend Developer | React & Next.js",
+    title: "Sohaib Younas — Full Stack Developer | React & Next.js",
     description:
-      "Frontend Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications.",
+      "Full Stack Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sohaib Younas — Frontend Developer",
+    title: "Sohaib Younas — Full Stack Developer",
     description:
-      "Frontend Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern web applications.",
+      "Full Stack Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern web applications.",
     creator: "@sohaib_younas",
   },
   robots: {
@@ -95,7 +95,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Sohaib Younas",
-              jobTitle: "Frontend Developer",
+              jobTitle: "Full Stack Developer",
               url: SITE_URL,
               sameAs: [
                 "https://github.com/sohaibyounas",
@@ -117,10 +117,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        suppressHydrationWarning
-        className="font-sans antialiased"
-      >
+      <body suppressHydrationWarning className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

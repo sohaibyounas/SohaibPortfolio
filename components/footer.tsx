@@ -57,7 +57,7 @@ export function Footer() {
       className="border-t border-border bg-background"
       aria-label="Site footer"
     >
-      <div className="container mx-auto py-12 sm:py-16">
+      <div className="container mx-auto pb-8 sm:pb-10 pt-12 sm:pt-16">
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-3">
           {/* Brand */}
           <div>

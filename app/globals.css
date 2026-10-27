@@ -453,3 +453,112 @@
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* ─── Chatbot launcher (wave pill) ─── */
+.chat-launcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2.75rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  background:
+    linear-gradient(180deg, hsl(var(--accent) / 0.08) 0%, hsl(var(--accent) / 0.18) 100%) padding-box,
+    linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+    linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(203 100% 72%) 50%, hsl(var(--accent)) 100%) border-box;
+  color: hsl(var(--foreground));
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.45);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow:
+    0 0 16px rgba(var(--accent-rgb), 0.45),
+    0 0 40px rgba(var(--accent-rgb), 0.2),
+    inset 0 1px 3px rgba(255, 255, 255, 0.35);
+  -webkit-box-reflect: below 6px linear-gradient(transparent 50%, rgba(0, 0, 0, 0.28));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.chat-launcher:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 22px rgba(var(--accent-rgb), 0.65),
+    0 0 52px rgba(var(--accent-rgb), 0.3),
+    inset 0 1px 3px rgba(255, 255, 255, 0.35);
+}
+.chat-launcher:active {
+  transform: scale(0.96);
+}
+.chat-launcher > :not(.chat-launcher__wave) {
+  position: relative;
+  z-index: 1;
+}
+.chat-launcher__wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 55%;
+  /* wave shape is a mask so the fill follows the theme accent */
+  background: hsl(var(--accent));
+  opacity: 0.55;
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 30 C20 30 25 22 35 26 S50 34 60 28 S70 4 80 6 S92 30 105 30 S125 26 135 24 S150 2 160 8 S172 30 185 28 S200 24 200 30 V40 H0Z'/%3E%3C/svg%3E");
+  -webkit-mask: var(--wave) repeat-x 0 0 / 50% 100%;
+  mask: var(--wave) repeat-x 0 0 / 50% 100%;
+  animation: chat-wave 5s linear infinite;
+  transition: height 0.4s ease;
+  pointer-events: none;
+}
+.chat-launcher__wave--back {
+  opacity: 0.22;
+  height: 70%;
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+.chat-launcher:hover .chat-launcher__wave {
+  height: 70%;
+}
+.chat-launcher:hover .chat-launcher__wave--back {
+  height: 85%;
+}
+@keyframes chat-wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-launcher__wave {
+    animation: none;
+  }
+}
+/* Label swap: "SOHAIB.DEV" at rest, "ASK AI" slides up on hover/focus */
+.chat-launcher__label {
+  display: grid;
+  justify-items: center;
+  height: 1.4em;
+  line-height: 1.4em;
+  overflow: hidden;
+}
+.chat-launcher__label > span {
+  grid-area: 1 / 1;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.chat-launcher__label > span:last-child {
+  transform: translateY(100%);
+}
+.chat-launcher:hover .chat-launcher__label > span:first-child,
+.chat-launcher:focus-visible .chat-launcher__label > span:first-child {
+  transform: translateY(-100%);
+}
+.chat-launcher:hover .chat-launcher__label > span:last-child,
+.chat-launcher:focus-visible .chat-launcher__label > span:last-child {
+  transform: translateY(0);
+}

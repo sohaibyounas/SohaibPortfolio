@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Send, Bot, X, Loader2, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Send, X, Loader2 } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -174,13 +175,29 @@ export default function PortfolioChatbot() {
       )}
       <div className="fixed z-50 font-sans bottom-0 right-0 left-0 sm:bottom-5 sm:right-5 sm:left-auto">
         {!isOpen && (
-          <div className="flex justify-end p-4 sm:p-0">
+          <div className="pointer-events-none flex justify-end p-4 pb-10 sm:p-0 sm:pb-8">
+            {/* extra bottom padding leaves room for the button's reflection */}
             <button
               onClick={() => setIsOpen(true)}
-              className="flex items-center gap-2 rounded-full bg-accent px-4 py-3 text-accent-foreground font-semibold shadow-xl hover:bg-accent/90 transition-all hover:scale-105 cursor-pointer"
+              className="chat-launcher pointer-events-auto"
+              aria-label="Open AI chat"
             >
-              <Sparkles className="h-5 w-5" />
-              <span className="text-sm font-medium">Ask AI</span>
+              <span
+                aria-hidden
+                className="chat-launcher__wave chat-launcher__wave--back"
+              />
+              <span aria-hidden className="chat-launcher__wave" />
+              <Image
+                src="/icon.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="shrink-0 rounded-md"
+              />
+              <span className="chat-launcher__label">
+                <span>Sohaib.dev</span>
+                <span aria-hidden>Ask AI</span>
+              </span>
             </button>
           </div>
         )}
@@ -211,9 +228,13 @@ export default function PortfolioChatbot() {
                   }
                 >
                   {m.role === "assistant" && (
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
-                      <Bot className="h-3.5 w-3.5" />
-                    </div>
+                    <Image
+                      src="/icon.svg"
+                      alt=""
+                      width={24}
+                      height={24}
+                      className="h-6 w-6 shrink-0 rounded-md"
+                    />
                   )}
                   <div
                     className={
