@@ -4,7 +4,8 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Linkedin, Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { ArrowUpRight, Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons";
 import { SectionReveal } from "@/components/section-reveal";
 import { contactSchema, type ContactFormValues } from "@/lib/validations";
 
@@ -80,7 +81,7 @@ export function Contact() {
                   className="group flex items-center gap-3 rounded-xl border border-border p-3.5 sm:p-4 transition-all hover:border-foreground/20 hover:bg-muted"
                 >
                   <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400">
-                    <Linkedin size={18} />
+                    <LinkedinIcon size={18} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground">LinkedIn</p>

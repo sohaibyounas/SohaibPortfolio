@@ -3,15 +3,15 @@
 import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Linkedin, Mail, FileText } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
+import { Mail, FileText } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { smoothScrollTo } from "@/lib/utils";
 
 const SOCIAL_LINKS = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/sohaibyounas/",
-    icon: Linkedin,
+    icon: LinkedinIcon,
     external: true,
   },
   {

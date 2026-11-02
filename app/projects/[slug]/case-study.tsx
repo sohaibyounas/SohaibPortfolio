@@ -4,7 +4,8 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 import { SectionReveal } from "@/components/section-reveal";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -65,7 +66,7 @@ export function ProjectCaseStudy({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-muted"
                   >
-                    <Github size={14} /> GitHub
+                    <GithubIcon size={14} /> GitHub
                   </a>
                 )}
               </div>
