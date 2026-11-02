@@ -1,15 +1,28 @@
 # Sohaib Younas — Portfolio
 
-Frontend engineer portfolio built with **Next.js 14 (App Router)**, **Tailwind CSS**,
-**shadcn/ui**-style components, and **Framer Motion** animations.
+Full stack developer portfolio built with **Next.js 16 (App Router)**, **React 19**,
+**TypeScript**, **Tailwind CSS v4** and **Framer Motion**, with server-side API routes
+for an AI assistant and a contact form.
 
 ## Features
 - Dark / light theme toggle (`next-themes`), respects system preference
-- Scroll-triggered section reveals + hero typing animation
-- Smooth scrolling nav with mobile hamburger menu
-- Floating "scroll to top" button that appears after scrolling past the navbar
-- Fully responsive from mobile to desktop
-- Content sourced from the resume: experience, projects, skills, education
+- Scroll-triggered section reveals and animated hero
+- Project archive with case-study pages generated from `data/projects.ts`
+- In-browser resume viewer (`pdfjs-dist`)
+- AI portfolio assistant — `app/api/chat` (Google Gemini, with model fallback)
+- Contact form — `app/api/contact` (Zod validation + Resend email)
+- Per-IP rate limiting on both API routes
+- SEO: metadata, JSON-LD, sitemap and robots
+
+## Environment variables
+
+Create `.env.local`:
+
+```bash
+GEMINI_API_KEY=...      # AI assistant
+GEMINI_MODEL=...        # optional, overrides the default model
+RESEND_API_KEY=...      # contact form email delivery
+```
 
 ## Run locally
 
@@ -20,36 +33,16 @@ npm run dev
 
 Open http://localhost:3000
 
-## Build for production
+## Scripts
 
-```bash
-npm run build
-npm start
-```
-
-## Push to GitHub
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: portfolio site"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git push -u origin main
-```
-
-## Free hosting options
-
-| Platform | Notes |
+| Command | Description |
 |---|---|
-| **Vercel** | Made by the Next.js team — zero-config, auto-deploys on every push, free SSL + custom domain. Best default choice. |
-| **Netlify** | Great free tier, auto-deploys from GitHub, easy custom domains. |
-| **Cloudflare Pages** | Very fast global CDN, generous free tier. |
-| **Render** | Free static/site hosting with auto-deploy from GitHub. |
-| **GitHub Pages** | Free, but needs `next export`/static config — a bit more setup for App Router. |
+| `npm run dev` | Start the dev server (Turbopack) |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | ESLint |
 
-### Deploy on Vercel (recommended)
-1. Push the repo to GitHub (steps above).
-2. Go to vercel.com → "Add New Project" → import the GitHub repo.
-3. Framework preset auto-detects "Next.js" — leave defaults, click **Deploy**.
-4. You get a live `*.vercel.app` URL immediately; add a custom domain later if you want.
+## Deploy
+
+Deployed on **Vercel**. Import the repo, add the environment variables above under
+Project Settings → Environment Variables, and deploy.

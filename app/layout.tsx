@@ -30,12 +30,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   title: "Sohaib Younas | Full Stack Developer",
   description:
-    "Full Stack Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications. Based in Pakistan.",
+    "Full Stack Developer with 3+ years of frontend experience (React, Next.js) and hands-on backend work with Node.js, Express and MongoDB. Based in Pakistan.",
   keywords: [
     "Sohaib Younas",
     "Full Stack Developer",
+    "MERN Stack Developer",
     "React Developer",
     "Next.js Developer",
+    "Node.js Developer",
+    "Express.js",
+    "MongoDB",
     "JavaScript",
     "TypeScript",
     "Tailwind CSS",
@@ -49,15 +53,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Sohaib Younas",
-    title: "Sohaib Younas — Full Stack Developer | React & Next.js",
+    title: "Sohaib Younas — Full Stack Developer | React, Next.js & Node.js",
     description:
-      "Full Stack Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern responsive web applications.",
+      "Full Stack Developer with 3+ years of frontend experience (React, Next.js) and hands-on backend work with Node.js, Express and MongoDB.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sohaib Younas — Full Stack Developer",
     description:
-      "Full Stack Developer specializing in React.js, Next.js, JavaScript, TypeScript and modern web applications.",
+      "Full Stack Developer with 3+ years of frontend experience (React, Next.js) and hands-on backend work with Node.js, Express and MongoDB.",
     creator: "@sohaib_younas",
   },
   robots: {
@@ -108,6 +112,10 @@ export default function RootLayout({
                 "TypeScript",
                 "Tailwind CSS",
                 "REST APIs",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Mongoose",
               ],
               address: {
                 "@type": "PostalAddress",

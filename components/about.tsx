@@ -4,12 +4,12 @@ import * as React from "react";
 import { SectionReveal } from "@/components/section-reveal";
 
 const STATS = [
-  { value: "3+", label: "Years Experience" },
-  { value: "React / Next.js", label: "Primary Stack" },
+  { value: "3+", label: "Years Frontend" },
+  { value: "React / Next.js", label: "Frontend" },
+  { value: "Node / Express", label: "Backend" },
+  { value: "MongoDB", label: "Database" },
+  { value: "REST", label: "API Design" },
   { value: "Production", label: "Applications" },
-  { value: "API", label: "Integration" },
-  { value: "Responsive", label: "UI Systems" },
-  { value: "Component", label: "Architecture" },
 ];
 
 export function About() {
@@ -33,7 +33,7 @@ export function About() {
               >
                 More than just <br className="hidden sm:inline" />
                 <span className="text-muted-foreground">
-                  writing components.
+                  shipping screens.
                 </span>
               </h2>
             </SectionReveal>
@@ -43,15 +43,18 @@ export function About() {
           <div className="lg:col-span-7">
             <SectionReveal delay={0.15}>
               <p className="mb-4 sm:mb-6 text-sm leading-relaxed text-foreground sm:text-base md:text-lg">
-                I&apos;m a frontend developer focused on turning complex product
-                requirements into fast, accessible and intuitive web
-                experiences.
+                I&apos;m a full stack developer with 3+ years of frontend
+                experience (React, Next.js) and hands-on backend work with
+                Node.js, Express and MongoDB — focused on turning complex
+                product requirements into fast, accessible and reliable web
+                applications.
               </p>
               <p className="text-sm leading-relaxed text-foreground sm:text-base md:text-lg">
-                I build responsive interfaces that balance product requirements,
-                performance and maintainable frontend architecture. My approach
-                is to treat every component as a product decision—not just a
-                coding task.
+                On the frontend I build responsive interfaces with React and
+                Next.js; on the backend I design REST APIs with Node.js and
+                Express, model data in MongoDB and wire it together with
+                Next.js API routes and Server Actions. My approach is to treat
+                every feature as a product decision—not just a coding task.
               </p>
             </SectionReveal>
 

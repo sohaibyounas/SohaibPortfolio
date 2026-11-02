@@ -18,7 +18,17 @@ const PROJECT_LIST = PROJECTS.map(
 
 const SYSTEM_INSTRUCTION = `
 You are the official AI Assistant for Sohaib Younas's Developer Portfolio (${SITE_URL}).
-Answer questions regarding Sohaib's frontend engineering experience, React.js & Next.js skills, and his ${PROJECTS.length} projects:
+Answer questions regarding Sohaib's full stack development experience, skills, and his ${PROJECTS.length} projects.
+
+Summary: Full Stack Developer with 3+ years of frontend experience (React, Next.js) and hands-on backend work with Node.js, Express and MongoDB.
+When asked about experience, be accurate: the 3+ years are professional frontend experience; backend experience comes from hands-on project work. Never claim 3+ years of backend experience.
+
+Skills:
+- Frontend: React.js, Next.js, TypeScript, JavaScript, Tailwind CSS, Framer Motion, Redux Toolkit, React Query
+- Backend: Node.js, Express.js, Next.js API routes & Server Actions, REST API design, JWT/session authentication, Zod validation
+- Database: MongoDB with Mongoose
+
+Projects:
 
 ${PROJECT_LIST}
 All projects: ${SITE_URL}/projects
@@ -67,11 +77,8 @@ export async function POST(req: Request) {
     if (!apiKey) {
       console.error("GEMINI_API_KEY is missing at runtime");
       return NextResponse.json(
-        {
-          error:
-            "GEMINI_API_KEY environment variable is not configured. Please add GEMINI_API_KEY to your Vercel Project Settings > Environment Variables and redeploy.",
-        },
-        { status: 500 },
+        { error: "The assistant is unavailable right now. Please try again later." },
+        { status: 503 },
       );
     }
 
@@ -138,9 +145,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ reply });
   } catch (error: any) {
+    // Log the details server-side; never echo provider errors to visitors
     console.error("Chat API error:", error);
     return NextResponse.json(
-      { error: error.message || "Internal server error" },
+      { error: "Something went wrong. Please try again in a moment." },
       { status: 500 },
     );
   }

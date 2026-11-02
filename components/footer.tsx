@@ -76,8 +76,8 @@ export function Footer() {
               SOHAIB<span className="text-accent">.</span>DEV
             </motion.button>
             <p className="max-w-xs text-sm text-foreground">
-              Frontend Developer building modern digital experiences with React,
-              Next.js and TypeScript.
+              Full Stack Developer building modern web applications with React,
+              Next.js, Node.js and MongoDB.
             </p>
 
             {/* Social Links with smooth hover animations */}

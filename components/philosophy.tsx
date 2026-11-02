@@ -9,7 +9,7 @@ const PRINCIPLES = [
     number: "01",
     title: "Performance",
     description:
-      "Fast interfaces through optimized rendering, code splitting and lazy loading. Speed is a feature.",
+      "Fast interfaces and lean APIs — optimized rendering, code splitting and efficient queries. Speed is a feature.",
   },
   {
     number: "02",
@@ -21,7 +21,7 @@ const PRINCIPLES = [
     number: "03",
     title: "Scalability",
     description:
-      "Components should remain maintainable as products grow. Architecture decisions today determine velocity tomorrow.",
+      "Components, APIs and data models should stay maintainable as products grow. Architecture decisions today determine velocity tomorrow.",
   },
   {
     number: "04",
@@ -78,7 +78,7 @@ export function Philosophy() {
             id="philosophy-heading"
             className="mb-10 sm:mb-16 max-w-2xl font-display text-display-lg font-bold text-foreground"
           >
-            Good frontend isn&apos;t just{" "}
+            Good software isn&apos;t just{" "}
             <br className="hidden sm:inline" />
             <span className="text-foreground">about looking good.</span>
           </h2>

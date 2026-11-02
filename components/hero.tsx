@@ -16,8 +16,8 @@ const nodes = [
   { id: "ui", label: "User Interface", x: 160, y: 30, color: "#30afff" },
   { id: "react", label: "React", x: 160, y: 120, color: "#92eeff" },
   { id: "nextjs", label: "Next.js", x: 160, y: 210, color: "#ffffff" },
-  { id: "api", label: "REST API", x: 160, y: 300, color: "#c4f7ca" },
-  { id: "db", label: "Database", x: 160, y: 390, color: "#d8ffc5" },
+  { id: "api", label: "Node / Express", x: 160, y: 300, color: "#c4f7ca" },
+  { id: "db", label: "MongoDB", x: 160, y: 390, color: "#d8ffc5" },
 ];
 
 const connections = [
@@ -275,7 +275,7 @@ export function Hero() {
 
             {/* Main heading */}
             <h1 className="font-display text-3xl font-bold tracking-tight text-foreground xs:text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] sm:leading-[1.04] md:leading-none">
-              <StaggerText text="Frontend experiences" />
+              <StaggerText text="Full stack products" />
               <br className="hidden sm:inline" />{" "}
               <StaggerText text="that matter." className="text-accent" />
             </h1>
@@ -287,8 +287,9 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg text-foreground leading-relaxed"
             >
-              Frontend developer crafting modern, fast and accessible web
-              applications with React, Next.js, and TypeScript.
+              Full stack developer with 3+ years of frontend experience in
+              React and Next.js, and hands-on backend work with Node.js,
+              Express and MongoDB.
             </motion.p>
 
             {/* CTAs */}
@@ -335,9 +336,9 @@ export function Hero() {
               className="mt-8 sm:mt-10 grid grid-cols-3 gap-2 sm:gap-6 border-t border-border pt-6 sm:pt-8"
             >
               {[
-                { value: "3+", label: "Years" },
+                { value: "3+", label: "Years Frontend" },
                 { value: `${PROJECTS.length}+`, label: "Projects" },
-                { value: "React", label: "Primary Stack" },
+                { value: "MERN", label: "Primary Stack" },
               ].map((stat) => (
                 <div key={stat.label} className="text-left">
                   <p className="font-display text-lg sm:text-xl font-bold text-foreground">
